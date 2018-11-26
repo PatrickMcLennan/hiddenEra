@@ -3,13 +3,18 @@
 
   &__list {
     display: flex;
-    border: 1px solid black;
   }
 
   &__item {
     flex: 1 1 auto;
     list-style-type: none;
-    display: flex;
-    justify-content: flex-end;
+    text-align: right;
+  }
+
+  &__link {
+    flex: 1 1 auto;
+    cursor: pointer;
+    padding: .5vh .75vw;
+    border: 1px solid black;
   }
 }
