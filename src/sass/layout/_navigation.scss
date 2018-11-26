@@ -1,0 +1,15 @@
+.nav {
+  flex: .5 1 auto;
+
+  &__list {
+    display: flex;
+    border: 1px solid black;
+  }
+
+  &__item {
+    flex: 1 1 auto;
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-end;
+  }
+}

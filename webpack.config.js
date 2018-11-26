@@ -18,7 +18,7 @@ module.exports = {
         options: {
           presets: [
             '@babel/preset-env'
-          ]
+            ]
           }
         }]
       },
