@@ -10,30 +10,31 @@ html(lang="en")
 
     header.header
 
+      //- NAV
+      - const menuData = [ {url: '#home', text: 'Home'}, {url: '#dates', text: 'Dates'}, {url: '#aboutUs', text: 'About Us'}, {url: '#preorder', text: 'Pre-Order Remaster'} ]
+      mixin menuItem(url, text)
+        li.nav__item
+          a.nav__link(src=url) text
+
       nav.nav
         ul.nav__list
-          li.nav__item
-            a.nav__link(src="#") Home
-          li.nav__item
-            a.nav__link(src="#") Dates
-          li.nav__item
-            a.nav__link(src="#") About Us
-          li.nav__item
-            a.nav__link(src="#") Pre-Order Remaster
+          each i in menuData
+            +menuItem(i.url, i.text)
 
     main.main
 
+      //- HOME
       section.home
         figure.home__figure
-          img.home__pic(src="https://a2-images.myspacecdn.com/images02/148/aedc3b7b1b8146b49d869b8a39f896a3/full.jpg" alt="Hidden Era Group Shot")
+          img.home__pic(src="https://a2-images.myspacecdn.com/images02/148/aedc3b7b1b8146b49d869b8a39f896a3/full.jpg" alt="Hidden Era Money Shot")
           figcaption.home__caption
             h1.home__header Hidden Era
             h2.home__tag Reunion Tour 2019
             .home__links
-              a.home__btn(src="#") Pre-Order Tickets
-              a.home__btn(src="#") Pre-Order Best-Of Blu-Ray
+              a.home__btn(href="#dates") Pre-Order Tickets
+              a.home__btn(href="#preorder") Pre-Order Best-Of Blu-Ray
 
-      //-
+      //- TOUR DATES
       - const shows = "dates__table"
       mixin tableRow(venue, show, date, price)
         tr(class=`${shows}__row`)
@@ -43,7 +44,6 @@ html(lang="en")
           td(class=`${shows}__price`)= price
           td(class=`${shows}__cta`)
             a(class=`${shows}__btn`) Tickets Avaiable
-      //-
 
       section.dates
         h3.dates__header.section__header Tickets are going fast -- pre-order yours now!
@@ -60,14 +60,20 @@ html(lang="en")
           +tableRow('Burlington Central High School','Spring Talent Show', 'March 15th, 2019 (2nd period)', '$10, $5 with a canned good donation')
           +tableRow('T.B.A', 'No Frills Employee Party', 'July 1st, 2019', '/')
 
-      //- section.aboutUs
-      //-   h4.aboutUs__header.section__header We haven't aged a day
-      //-   figure.aboutUs__figure
-      //-     img.aboutUs__img(src="" alt="Patrick McLennan")
-      //-     figcaption.aboutUs__caption
-      //-       h4.aboutUs__name Patrick McLennan
-      //-       h4.aboutUs__laugh Likes: Cheese
-      //-       p.aboutUs__text Lorem ipsum dolor sit amet consectetur adipisicing elit. In quo delectus a velit est sunt impedit ex nesciunt quia iure ullam itaque cumque, praesentium quisquam autem tenetur sequi voluptate sed?
+      //- ABOUT US
+      section.aboutUs
+        h4.aboutUs__header.section__header We haven't aged a day
+        figure.aboutUs__figure
+          img.aboutUs__img(src="" alt="Patrick McLennan")
+          figcaption.aboutUs__caption
+            h4.aboutUs__name Patrick McLennan
+            h4.aboutUs__laugh Likes: Cheese
+            p.aboutUs__text Lorem ipsum dolor sit amet consectetur adipisicing elit. In quo delectus a velit est sunt impedit ex nesciunt quia iure ullam itaque cumque, praesentium quisquam autem tenetur sequi voluptate sed?
+
+      section.preorder
+        h4.preorder__header.section__header You've heard the classics -- Now you can own them
+
+      footer.footer
 
 
 
