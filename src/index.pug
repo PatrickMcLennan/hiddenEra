@@ -33,59 +33,41 @@ html(lang="en")
               a.home__btn(src="#") Pre-Order Tickets
               a.home__btn(src="#") Pre-Order Best-Of Blu-Ray
 
+      //-
+      - const shows = "dates__table"
+      mixin tableRow(venue, show, date, price)
+        tr(class=`${shows}__row`)
+          td(class=`${shows}__venue`)= venue
+          td(class=`${shows}__shows`)= show
+          td(class=`${shows}__date`)= date
+          td(class=`${shows}__price`)= price
+          td(class=`${shows}__cta`)
+            a(class=`${shows}__btn`) Tickets Avaiable
+      //-
+
       section.dates
         h3.dates__header.section__header Tickets are going fast -- pre-order yours now!
-        table.dates__table
-          tr.dates__table__row
-            th.dates__table__heading Venue
-            th.dates__table__heading Show
-            th.dates__table__heading Date
-            th.dates__table__heading Price
-            th.dates__table__heading Tickets
-          tr.dates__table__row
-            td.dates__table__venue Holiday Inn, Burlington Ontario
-            td.dates__table__show Burlington International Games Kick-Off
-            td.dates__table__date August 2nd 2019
-            td.dates__table__price /
-            td.dates__table__cta
-              a.dates__table__btn Tickets Still Available
-          tr.dates__table__row
-            td.dates__table__venue Burlington Central High School
-            td.dates__table__date Fall Talent Show
-            td.dates__table__date October 12th, 2019 (2nd Period)
-            td.dates__table__price $10, $5 with canned good donation
-            td.dates__table__cta
-              a.dates__table__btn Tickets Still Available
-          tr.dates__table__row
-            td.dates__table__venue Burlington Central High School
-            td.dates__table__date Christmas Talent Show
-            td.dates__table__date December 21st, 2019 (5th Period)
-            td.dates__table__price $10, $5 with canned good donation
-            td.dates__table__cta
-              a.dates__table__btn Tickets Still Available
-          tr.dates__table__row
-            td.dates__table__venue Burlington Central High School
-            td.dates__table__date Spring Talent Show
-            td.dates__table__date March 15th, 2019 (2nd Period)
-            td.dates__table__price $10, $5 with canned good donation
-            td.dates__table__cta
-              a.dates__table__btn Tickets Still Available
-          tr.dates__table__row
-            td.dates__table__venue T.B.D
-            td.dates__table__date No Frills Employee Party
-            td.dates__table__date July 1st, 2019
-            td.dates__table__price /
-            td.dates__table__cta
-              a.dates__table__btn Tickets Still Available
+        table(class=shows)
+          tr(class=`${shows}__row`)
+            th(class=`${shows}__heading`) Venue
+            th(class=`${shows}__heading`) Show
+            th(class=`${shows}__heading`) Date
+            th(class=`${shows}__heading`) Price
+            th(class=`${shows}__heading`) Tickets
+          +tableRow('Holiday Inn, Burlington ON','Burlington International Games (B.I.G) Kick-off', 'August 2nd, 2019', '/')
+          +tableRow('Burlington Central High School','Fall Talent Show', 'October 12th, 2019 (2nd period)', '$10, $5 with canned good donation')
+          +tableRow('Burlington Central High School','Christmas Talent Show', 'December 21st, 2019 (5th period)', '$10, $5 with a canned good donation')
+          +tableRow('Burlington Central High School','Spring Talent Show', 'March 15th, 2019 (2nd period)', '$10, $5 with a canned good donation')
+          +tableRow('T.B.A', 'No Frills Employee Party', 'July 1st, 2019', '/')
 
-      section.aboutUs
-        h4.aboutUs__header.section__header We haven't aged a day
-        figure.aboutUs__figure
-          img.aboutUs__img(src="")
-          figcaption.aboutUs__caption
-            h4.aboutUs__name Patrick McLennan
-            h4.aboutUs__laugh Likes: Cheese
-            p.aboutUs__text Lorem ipsum dolor sit amet consectetur adipisicing elit. In quo delectus a velit est sunt impedit ex nesciunt quia iure ullam itaque cumque, praesentium quisquam autem tenetur sequi voluptate sed?
+      //- section.aboutUs
+      //-   h4.aboutUs__header.section__header We haven't aged a day
+      //-   figure.aboutUs__figure
+      //-     img.aboutUs__img(src="" alt="Patrick McLennan")
+      //-     figcaption.aboutUs__caption
+      //-       h4.aboutUs__name Patrick McLennan
+      //-       h4.aboutUs__laugh Likes: Cheese
+      //-       p.aboutUs__text Lorem ipsum dolor sit amet consectetur adipisicing elit. In quo delectus a velit est sunt impedit ex nesciunt quia iure ullam itaque cumque, praesentium quisquam autem tenetur sequi voluptate sed?
 
 
 
