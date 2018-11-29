@@ -4,7 +4,5 @@
   display: flex;
   justify-content: $content;
   align-items: $align;
-  @if $direction == column {
-    flex-direction: column;
-  }
+  flex-direction: $direction;
 }
