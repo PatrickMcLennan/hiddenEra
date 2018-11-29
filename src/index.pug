@@ -27,12 +27,46 @@ html(lang="en")
           { venue: 'T.B.A', show: 'Bobs No-Frills Employee Party', date: 'July 1st, 2019', price: '/' },
         ]
       }
+      const aboutUs = {
+        members: [
+          {
+            name: 'Patrick McLennan',
+            img: 'https://www.google.ca/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwiP8qvho_reAhWjnOAKHSNyAmUQjRx6BAgBEAU&url=https%3A%2F%2Fwww.cbc.ca%2Fkidscbc2%2Fthe-feed%2F9-unsinkable-rubber-duckie-facts&psig=AOvVaw16XgHLVYIV6c7Wo2PUXmqC&ust=1543604165628472',
+            laughLine: '6 strings of fury',
+            text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur nulla explicabo aperiam nisi totam dolore illo exercitationem iste. Quae, facere.'
+          },
+          {
+            name: 'Tom Duff',
+            img: 'https://www.google.ca/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwiP8qvho_reAhWjnOAKHSNyAmUQjRx6BAgBEAU&url=https%3A%2F%2Fwww.cbc.ca%2Fkidscbc2%2Fthe-feed%2F9-unsinkable-rubber-duckie-facts&psig=AOvVaw16XgHLVYIV6c7Wo2PUXmqC&ust=1543604165628472',
+            laughLine: 'Lock up your daughters',
+            text: 'Hidden Era is an Equal Oppurtunity employer.'
+          },
+          {
+            name: 'John Duff',
+            img: 'https://www.google.ca/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwiP8qvho_reAhWjnOAKHSNyAmUQjRx6BAgBEAU&url=https%3A%2F%2Fwww.cbc.ca%2Fkidscbc2%2Fthe-feed%2F9-unsinkable-rubber-duckie-facts&psig=AOvVaw16XgHLVYIV6c7Wo2PUXmqC&ust=1543604165628472',
+            laughLine: 'Dreamer.  Visionary.  Driver.',
+            text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur nulla explicabo aperiam nisi totam dolore illo exercitationem iste. Quae, facere.'
+          },
+          {
+            name: 'Blake Hutton',
+            img: 'https://www.google.ca/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwiP8qvho_reAhWjnOAKHSNyAmUQjRx6BAgBEAU&url=https%3A%2F%2Fwww.cbc.ca%2Fkidscbc2%2Fthe-feed%2F9-unsinkable-rubber-duckie-facts&psig=AOvVaw16XgHLVYIV6c7Wo2PUXmqC&ust=1543604165628472',
+            laughLine: '6 strings of fury',
+            text: 'Don\'t let Blakes cool demeanor fool you -- the thunderous bass lines coming from his 12 watt practice amp will leave you breathless.  Excited for the upcoming shows, Blake has only 2 dislikes in this world -- Wheat and Injustice, which he often claims go hand in hand.'
+          },
+          {
+            name: 'Marc Decaire',
+            img: 'https://www.google.ca/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwiP8qvho_reAhWjnOAKHSNyAmUQjRx6BAgBEAU&url=https%3A%2F%2Fwww.cbc.ca%2Fkidscbc2%2Fthe-feed%2F9-unsinkable-rubber-duckie-facts&psig=AOvVaw16XgHLVYIV6c7Wo2PUXmqC&ust=1543604165628472',
+            laughLine: 'Regional Man of Mystery',
+            text: 'Voted Best Looking member of Hidden Era, unanimously, everytime, Marc Decaire redefined what a vocalist for a High School rock band should be.  If you see Marc in the wild, please tell him to call one of us.'
+          },
+        ]
+      }
 
-    mixin menuItem(url, text)
+    mixin navLink(url, text)
       li.nav__item
         a.nav__link(src=url)= text
 
-    mixin tableRow(venue, show, date, price)
+    mixin datesListing(venue, show, date, price)
       tr.dates__table__row
         td.dates__table__venue= venue
         td.dates__table__shows= show
@@ -41,13 +75,14 @@ html(lang="en")
         td.dates__table__cta
           a.dates__table__btn Tickets Avaiable
 
+
+
     //- HTML
     header.header
-
       nav.nav
         ul.nav__list
           each i in nav.menuData
-            +menuItem(i.url, i.text)
+            +navLink(i.url, i.text)
 
     main.main
 
@@ -71,7 +106,7 @@ html(lang="en")
             th.dates__table__heading Price
             th.dates__table__heading Tickets
           each i in dates.listings
-            +tableRow(i.venue, i.show, i.date, i.price)
+            +datesListing(i.venue, i.show, i.date, i.price)
 
       section.aboutUs
         h3.aboutUs__header.section__header We haven't aged a day
