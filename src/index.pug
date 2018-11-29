@@ -7,23 +7,50 @@ html(lang="en")
     link(rel="stylesheet", href="style.css")
     title hiddenEra
   body
+    //- LOGIC
+    -
+      const nav = {
+        menuData: [
+          { url: '#home', text: 'Home' },
+          { url: '#dates', text: 'Dates' },
+          { url: '#aboutUs', text: 'About Us' },
+          { url: '#preorder', text: 'Pre-order Remaster' },
+        ],
+      }
+      const dates = {
+        avgPrice: '$10, $5 with canned good donation',
+        listings: [
+          { venue: 'Holiday Inn, Burlington ON', show: 'Burlington International Games (B.I.G) Kick-off', date: 'August 2nd, 2019', price: '/' },
+          { venue: 'Burlington Central High School', show: 'Fall Talent Show', date: 'October 12th, 2019 (2nd Period)', price: avgPrice },
+          { venue: 'Burlington Central High School', show: 'Christmas Talent Show', date: 'December 21st, 2019 (5th period)', price: avgPrice },
+          { venue: 'Burlington Central High School', show: 'Spring Talent Show', date: 'March 15th, 2019 (2nd period)', price: avgPrice },
+          { venue: 'T.B.A', show: 'Bobs No-Frills Employee Party', date: 'July 1st, 2019', price: '/' },
+        ]
+      }
 
+    mixin menuItem(url, text)
+      li.nav__item
+        a.nav__link(src=url)= text
+
+    mixin tableRow(venue, show, date, price)
+      tr.dates__table__row
+        td.dates__table__venue= venue
+        td.dates__table__shows= show
+        td.dates__table__date= date
+        td.dates__table__price= price
+        td.dates__table__cta
+          a.dates__table__btn Tickets Avaiable
+
+    //- HTML
     header.header
-
-      //- NAV
-      - const menuData = [ {url: '#home', text: 'Home'}, {url: '#dates', text: 'Dates'}, {url: '#aboutUs', text: 'About Us'}, {url: '#preorder', text: 'Pre-Order Remaster'} ]
-      mixin menuItem(url, text)
-        li.nav__item
-          a.nav__link(src=url) text
 
       nav.nav
         ul.nav__list
-          each i in menuData
+          each i in nav.menuData
             +menuItem(i.url, i.text)
 
     main.main
 
-      //- HOME
       section.home
         figure.home__figure
           img.home__pic(src="https://a2-images.myspacecdn.com/images02/148/aedc3b7b1b8146b49d869b8a39f896a3/full.jpg" alt="Hidden Era Money Shot")
@@ -34,35 +61,20 @@ html(lang="en")
               a.home__btn(href="#dates") Pre-Order Tickets
               a.home__btn(href="#preorder") Pre-Order Best-Of Blu-Ray
 
-      //- TOUR DATES
-      - const shows = "dates__table"
-      mixin tableRow(venue, show, date, price)
-        tr(class=`${shows}__row`)
-          td(class=`${shows}__venue`)= venue
-          td(class=`${shows}__shows`)= show
-          td(class=`${shows}__date`)= date
-          td(class=`${shows}__price`)= price
-          td(class=`${shows}__cta`)
-            a(class=`${shows}__btn`) Tickets Avaiable
-
       section.dates
         h3.dates__header.section__header Tickets are going fast -- pre-order yours now!
-        table(class=shows)
-          tr(class=`${shows}__row`)
-            th(class=`${shows}__heading`) Venue
-            th(class=`${shows}__heading`) Show
-            th(class=`${shows}__heading`) Date
-            th(class=`${shows}__heading`) Price
-            th(class=`${shows}__heading`) Tickets
-          +tableRow('Holiday Inn, Burlington ON','Burlington International Games (B.I.G) Kick-off', 'August 2nd, 2019', '/')
-          +tableRow('Burlington Central High School','Fall Talent Show', 'October 12th, 2019 (2nd period)', '$10, $5 with canned good donation')
-          +tableRow('Burlington Central High School','Christmas Talent Show', 'December 21st, 2019 (5th period)', '$10, $5 with a canned good donation')
-          +tableRow('Burlington Central High School','Spring Talent Show', 'March 15th, 2019 (2nd period)', '$10, $5 with a canned good donation')
-          +tableRow('T.B.A', 'No Frills Employee Party', 'July 1st, 2019', '/')
+        table.dates__table
+          tr.dates__table__row
+            th.dates__table__heading Venue
+            th.dates__table__heading Show
+            th.dates__table__heading Date
+            th.dates__table__heading Price
+            th.dates__table__heading Tickets
+          each i in dates.listings
+            +tableRow(i.venue, i.show, i.date, i.price)
 
-      //- ABOUT US
       section.aboutUs
-        h4.aboutUs__header.section__header We haven't aged a day
+        h3.aboutUs__header.section__header We haven't aged a day
         figure.aboutUs__figure
           img.aboutUs__img(src="" alt="Patrick McLennan")
           figcaption.aboutUs__caption
