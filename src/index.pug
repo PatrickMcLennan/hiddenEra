@@ -15,9 +15,11 @@ html(lang="en")
           subTotal: 'Sub Total',
           tax: 'HST',
           total: 'Total',
-          promo: 'Answer the skill testing question and save 5%!',
+          promo: 'LIMITED TIME OFFER - Answer this skill testing question and save 5%!',
           firstName: 'First Name',
           lastName: 'Last Name',
+          email: 'Email',
+          phone: 'Phone',
           address: 'Billing Address',
           city: 'City',
           province: 'Province/State',
@@ -126,17 +128,24 @@ html(lang="en")
               span $27.50
             .nav__customerInfo
               label.nav__firstName.nav__label(for="nav__firstName__input")= nav.cart.firstName
-                input.nav__firstName__input(type="text")
+                input#nav__firstName__input(type="text")
               label.nav__lastName.nav__label(for="nav__lastName__input")= nav.cart.lastName
-                input.nav__lastName__input(type="text")
+                input#nav__lastName__input(type="text")
+              label.nav__email.nav__label(for="nav__email__input")= nav.cart.email
+                input#nav__email__input(type="email")
+              label.nav__phone.nav__label(for="nav__phone__input")=nav.cart.phone
+                input#nav__phone__input(type="number")
               label.nav__address.nav__label(for="nav__address__input")= nav.cart.address
-                input.nav__address__input(type="text")
+                input#nav__address__input(type="text")
               label.nav__city.nav__label(for="nav__city__input")= nav.cart.city
-                input.nav__city__input(type="text")
+                input#nav__city__input(type="text")
               label.nav__province.nav__label(for="nav__province__input")= nav.cart.province
                 input.nav__province__input(type="text")
               label.nav__country.nav__label(for="nav__country__input")= nav.cart.country
-                input.nav__country__input(type="text")
+                input#nav__country__input(type="text")
+              label.nav__promo.nav__label(for="nav__promo__input")= nav.cart.promo
+                span
+                input#nav__promo__input(type="text")
 
 
 
