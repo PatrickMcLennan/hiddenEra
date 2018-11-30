@@ -11,13 +11,14 @@ html(lang="en")
     -
       const nav = {
         cart: {
+          inCart: 'Your Cart',
           subTotal: 'Sub Total',
-          tax: 'Tax',
+          tax: 'HST',
           total: 'Total',
           promo: 'Answer the skill testing question and save 5%!',
-          fName: 'First Name',
-          lName: 'Last Name',
-          street: 'Billing Address',
+          firstName: 'First Name',
+          lastName: 'Last Name',
+          address: 'Billing Address',
           city: 'City',
           province: 'Province/State',
           country: 'Country',
@@ -28,6 +29,7 @@ html(lang="en")
           { url: '#aboutUs', text: 'About Us' },
           { url: '#preorder', text: 'Pre-order Remaster' },
         ],
+        songs: ['Means to be', 'Will to Fight', 'Road To Redemption', 'Solemn Angel Eyes', 'Riding the bullet']
       }
       const dates = {
         avgPrice: '$10, $5 with canned good donation',
@@ -101,9 +103,42 @@ html(lang="en")
     header.header
 
       nav.nav
-        ul.nav__list
-          each i in nav.menu
-            +navMenu(i.url, i.text)
+        .nav__menu
+          ul.nav__list
+            each i in nav.menu
+              +navMenu(i.url, i.text)
+        .nav__player
+          ul.nav__list
+            each i in nav.songs
+              li.nav__song
+                button.nav__button= i
+        .nav__cart
+          h5.nav__cartTotal You have #[span 0] items in your Cart
+          form.nav__form
+            h6.nav__cartItemsHeader= nav.cart.inCart
+            ul.nav__cartItems
+              li.nav__cartItem Remastered DVD
+            h6.nav__subTotal= nav.cart.subTotal
+              span $25.00
+            h6.nav__tax= nav.cart.tax
+              span $2.50
+            h6.nav__total= nav.cart.total
+              span $27.50
+            .nav__customerInfo
+              label.nav__firstName.nav__label(for="nav__firstName__input")= nav.cart.firstName
+                input.nav__firstName__input(type="text")
+              label.nav__lastName.nav__label(for="nav__lastName__input")= nav.cart.lastName
+                input.nav__lastName__input(type="text")
+              label.nav__address.nav__label(for="nav__address__input")= nav.cart.address
+                input.nav__address__input(type="text")
+              label.nav__city.nav__label(for="nav__city__input")= nav.cart.city
+                input.nav__city__input(type="text")
+              label.nav__province.nav__label(for="nav__province__input")= nav.cart.province
+                input.nav__province__input(type="text")
+              label.nav__country.nav__label(for="nav__country__input")= nav.cart.country
+                input.nav__country__input(type="text")
+
+
 
     main.main
 
