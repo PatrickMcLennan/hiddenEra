@@ -10,7 +10,19 @@ html(lang="en")
     //- LOGIC
     -
       const nav = {
-        menuData: [
+        cart: {
+          subTotal: 'Sub Total',
+          tax: 'Tax',
+          total: 'Total',
+          promo: 'Answer the skill testing question and save 5%!',
+          fName: 'First Name',
+          lName: 'Last Name',
+          street: 'Billing Address',
+          city: 'City',
+          province: 'Province/State',
+          country: 'Country',
+        },
+        menu: [
           { url: '#home', text: 'Home' },
           { url: '#dates', text: 'Dates' },
           { url: '#aboutUs', text: 'About Us' },
@@ -19,6 +31,7 @@ html(lang="en")
       }
       const dates = {
         avgPrice: '$10, $5 with canned good donation',
+        headings: ['Venue', 'Show', 'Date', 'Price'],
         listings: [
           { venue: 'Holiday Inn, Burlington ON', show: 'Burlington International Games (B.I.G) Kick-off', date: 'August 2nd, 2019', price: '/' },
           { venue: 'Burlington Central High School', show: 'Fall Talent Show', date: 'October 12th, 2019 (2nd Period)', price: avgPrice },
@@ -33,25 +46,25 @@ html(lang="en")
             name: 'Patrick McLennan',
             img: 'https://www.google.ca/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwiP8qvho_reAhWjnOAKHSNyAmUQjRx6BAgBEAU&url=https%3A%2F%2Fwww.cbc.ca%2Fkidscbc2%2Fthe-feed%2F9-unsinkable-rubber-duckie-facts&psig=AOvVaw16XgHLVYIV6c7Wo2PUXmqC&ust=1543604165628472',
             laughLine: '6 strings of fury',
-            text: 'The song-writing tornado behind such classics as "Will To Fight", Patrick is often hailed as tour-de-force in the Grade 10 Burlington Central High School rock scene.  You can find Pat hiding behind $6k worth of guitar amps that he "doesn\'t need".'
+            text: 'The song-writing tornado behind such classics as "Will To Fight", Patrick is year after year hailed as a tour-de-force in the Grade 10 Burlington Central High School rock scene.  You can find Pat forcing band members to load $5k worth of guitar amps that he "doesn\'t need."'
           },
           {
             name: 'Tom Duff',
             img: 'https://www.google.ca/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwiP8qvho_reAhWjnOAKHSNyAmUQjRx6BAgBEAU&url=https%3A%2F%2Fwww.cbc.ca%2Fkidscbc2%2Fthe-feed%2F9-unsinkable-rubber-duckie-facts&psig=AOvVaw16XgHLVYIV6c7Wo2PUXmqC&ust=1543604165628472',
             laughLine: 'Lock up your daughters',
-            text: 'Hidden Era is an Equal Oppurtunity employer.'
+            text: 'Hidden Era is an Equal Oppurtunity Employer.'
           },
           {
             name: 'John Duff',
             img: 'https://www.google.ca/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwiP8qvho_reAhWjnOAKHSNyAmUQjRx6BAgBEAU&url=https%3A%2F%2Fwww.cbc.ca%2Fkidscbc2%2Fthe-feed%2F9-unsinkable-rubber-duckie-facts&psig=AOvVaw16XgHLVYIV6c7Wo2PUXmqC&ust=1543604165628472',
             laughLine: 'Dreamer.  Visionary.  Driver.',
-            text: 'The steady hand of the group, Johns natural ability to gain a G2 earned him immediate acceptance into the band.  Quiet and composed, John can be found obsessing over Swedish pop-star Robyn or patenting his yet-to-be-seen "Live-Fade-Out" technique that he claims will change the world.'
+            text: 'The steady hand of the group, Johns natural ability to gain a G2 earned him immediate acceptance into the band.  Quiet and composed, John can be found obsessing over Swedish pop-star Robyn or patenting his yet-to-be-seen "Live Fade-Out" technique.'
           },
           {
             name: 'Blake Hutton',
             img: 'https://www.google.ca/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwiP8qvho_reAhWjnOAKHSNyAmUQjRx6BAgBEAU&url=https%3A%2F%2Fwww.cbc.ca%2Fkidscbc2%2Fthe-feed%2F9-unsinkable-rubber-duckie-facts&psig=AOvVaw16XgHLVYIV6c7Wo2PUXmqC&ust=1543604165628472',
             laughLine: '6 strings of fury',
-            text: 'Don\'t let Blakes cool demeanor fool you -- the thunderous bass lines coming from his 12 watt practice amp will leave you breathless.  Excited for the upcoming shows, Blake has only 2 dislikes in this world -- Wheat and Injustice, which he often claims go hand in hand.'
+            text: 'Blakes quirky personality is a lot like his bass playing -- off-beat and timeless.  Excited for the upcoming shows, Blake has only 2 dislikes in this world -- Wheat and Injustice, which he often claims go hand in hand.'
           },
           {
             name: 'Marc Decaire',
@@ -62,7 +75,7 @@ html(lang="en")
         ]
       }
 
-    mixin navLink(url, text)
+    mixin navMenu(url, text)
       li.nav__item
         a.nav__link(src=url)= text
 
@@ -75,14 +88,22 @@ html(lang="en")
         td.dates__table__cta
           a.dates__table__btn Tickets Avaiable
 
-
+    mixin aboutUsProfile(name, img, laughLine, text)
+      figure.aboutUs__figure
+        .aboutUs__picBox
+          img.aboutUs__pic(url= img alt= name)
+          h5.aboutUs__name= name
+        figcaption.aboutUs__figcaption
+          h6.aboutUs__laughLine= laughLine
+          p.aboutUs__text= text
 
     //- HTML
     header.header
+
       nav.nav
         ul.nav__list
-          each i in nav.menuData
-            +navLink(i.url, i.text)
+          each i in nav.menu
+            +navMenu(i.url, i.text)
 
     main.main
 
@@ -100,28 +121,17 @@ html(lang="en")
         h3.dates__header.section__header Tickets are going fast -- pre-order yours now!
         table.dates__table
           tr.dates__table__row
-            th.dates__table__heading Venue
-            th.dates__table__heading Show
-            th.dates__table__heading Date
-            th.dates__table__heading Price
-            th.dates__table__heading Tickets
+            each i in dates.headings
+              th.dates__table__heading= i
           each i in dates.listings
             +datesListing(i.venue, i.show, i.date, i.price)
 
       section.aboutUs
         h3.aboutUs__header.section__header We haven't aged a day
-        figure.aboutUs__figure
-          img.aboutUs__img(src="" alt="Patrick McLennan")
-          figcaption.aboutUs__caption
-            h4.aboutUs__name Patrick McLennan
-            h4.aboutUs__laugh Likes: Cheese
-            p.aboutUs__text Lorem ipsum dolor sit amet consectetur adipisicing elit. In quo delectus a velit est sunt impedit ex nesciunt quia iure ullam itaque cumque, praesentium quisquam autem tenetur sequi voluptate sed?
+        each i in aboutUs.members
+          +aboutUsProfile(i.name, i.img, i.laughLine, i.text)
 
       section.preorder
         h4.preorder__header.section__header You've heard the classics -- Now you can own them
 
-      footer.footer
-
-
-
-
+    footer.footer
