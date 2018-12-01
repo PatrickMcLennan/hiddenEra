@@ -16,14 +16,16 @@ html(lang="en")
           tax: 'HST',
           total: 'Total',
           promo: 'LIMITED TIME OFFER - Answer this skill testing question and save 5%!',
-          firstName: 'First Name',
-          lastName: 'Last Name',
-          email: 'Email',
-          phone: 'Phone',
-          address: 'Billing Address',
-          city: 'City',
-          province: 'Province/State',
-          country: 'Country',
+          form: [
+            { ID: 'firstName', kind: "text", placeholder: 'First Name' },
+            { ID: 'lastName', kind: "text", placeholder: 'Last Name'},
+            { ID: 'email', kind: "email", text: 'Email' },
+            { ID: 'phone', kind: "number", text: 'Phone'},
+            { ID: 'address', kind: "text", placeholder: 'Billing Address'},
+            { ID: 'city', kind: "text", placeholder: 'City'},
+            { ID: 'province', kind: "text", placeholder: 'Province/State'},
+            { ID: 'country', kind: "text", placeholder: 'Country'},
+          ]
         },
         menu: [
           { url: '#home', text: 'Home' },
@@ -83,6 +85,9 @@ html(lang="en")
       li.nav__item
         a.nav__link(src=url)= text
 
+    mixin navInputs(identifier, kind, text)
+      input(id= identifier type=kind placeholder=text)
+
     mixin datesListing(venue, show, date, price)
       tr.dates__table__row
         td.dates__table__venue= venue
@@ -109,45 +114,28 @@ html(lang="en")
           ul.nav__list
             each i in nav.menu
               +navMenu(i.url, i.text)
-        .nav__player
-          ul.nav__list
+        .nav__player.player
+          ul.player__songList
             each i in nav.songs
-              li.nav__song
-                button.nav__button= i
-        .nav__cart
-          h5.nav__cartTotal You have #[span 0] items in your Cart
-          form.nav__form
-            h6.nav__cartItemsHeader= nav.cart.inCart
-            ul.nav__cartItems
-              li.nav__cartItem Remastered DVD
-            h6.nav__subTotal= nav.cart.subTotal
+              li.player__song
+                button.player__button= i
+        .nav__cart.cart
+          h5.cart__itemCount You have #[span 0] items in your Cart
+          form.cart__form
+            h6.cart__ItemsHeader= nav.cart.inCart
+            ul.cart__ItemsList
+              li.cart__Item Remastered DVD
+            h6.cart__subTotal= nav.cart.subTotal
               span $25.00
-            h6.nav__tax= nav.cart.tax
+            h6.cart__tax= nav.cart.tax
               span $2.50
-            h6.nav__total= nav.cart.total
+            h6.cart__total= nav.cart.total
               span $27.50
-            .nav__customerInfo
-              label.nav__firstName.nav__label(for="nav__firstName__input")= nav.cart.firstName
-                input#nav__firstName__input(type="text")
-              label.nav__lastName.nav__label(for="nav__lastName__input")= nav.cart.lastName
-                input#nav__lastName__input(type="text")
-              label.nav__email.nav__label(for="nav__email__input")= nav.cart.email
-                input#nav__email__input(type="email")
-              label.nav__phone.nav__label(for="nav__phone__input")=nav.cart.phone
-                input#nav__phone__input(type="number")
-              label.nav__address.nav__label(for="nav__address__input")= nav.cart.address
-                input#nav__address__input(type="text")
-              label.nav__city.nav__label(for="nav__city__input")= nav.cart.city
-                input#nav__city__input(type="text")
-              label.nav__province.nav__label(for="nav__province__input")= nav.cart.province
-                input.nav__province__input(type="text")
-              label.nav__country.nav__label(for="nav__country__input")= nav.cart.country
-                input#nav__country__input(type="text")
-              label.nav__promo.nav__label(for="nav__promo__input")= nav.cart.promo
-                span
-                input#nav__promo__input(type="text")
-
-
+            .cart__customerInfo
+              each i in nav.cart.form
+                +navInputs(i.ID, i.kind, i.placeholder)
+              label(for="promo") Answer a skill testing Question to save 5%
+                input#promo(type="text")
 
     main.main
 
@@ -179,3 +167,6 @@ html(lang="en")
         h4.preorder__header.section__header You've heard the classics -- Now you can own them
 
     footer.footer
+      .footer__copy
+      .footer__links
+      .footer__logo
