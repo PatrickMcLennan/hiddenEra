@@ -94,6 +94,12 @@ html(lang="en")
           },
         ]
       }
+      const footer = {
+        logo: [
+          { url: "https://github.com/PatrickMcLennan", path: "img/svg/github.svg", alt: "Patrick McLennans Github" },
+          { url: "https://www.linkedin.com/in/patrick-mclennan-42002a172/", path: "img/svg/linkedin.svg", alt: "Patrick McLennans LinkedIn" }
+        ]
+      }
 
     mixin navMenu(url, text)
       li.menu__item
@@ -127,6 +133,10 @@ html(lang="en")
           .aboutUs__equipment
             img.aboutUs__gear(src=i alt=`${name}'s equipment`)
 
+    mixin logoItem(url, path, alt)
+      li.myLogo__item
+        a.myLogo__link(href=url target="_blank")
+          img(src=path, alt=alt)
 
     nav.nav
       .nav__menu.menu
@@ -186,6 +196,8 @@ html(lang="en")
       section.aboutUs
         h3.aboutUs__header.section__header We haven't aged a day
         each i in aboutUs.members
+          button.aboutUs__selector `${i.name}`
+        each i in aboutUs.members
           +aboutUsProfile(i.name, i.img, i.laughLine, i.text, i.equipment)
 
       section.preorder
@@ -193,7 +205,17 @@ html(lang="en")
 
     footer.footer
       .footer__copy
+        p Copyright Hidden Era music.  All music, logos and goofy haircuts are protected by privacy laws and anybody seeking to replicate them must take a long hard look in the mirror and ask why.
+        p Management by Jake Rivers Media
+
       .footer__links
         each i in header.icons
           +socialIcons(i.path, i.alt)
-      .footer__myLogo
+      .footer__myLogo.myLogo
+        .myLogo__letters
+          h6.logo__p P
+          h6.logo__m M
+        ul.myLogo__list
+          each i in footer.logo
+            +logoItem(i.url, i.path, i.alt)
+
