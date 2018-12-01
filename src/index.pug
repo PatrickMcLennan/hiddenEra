@@ -18,13 +18,13 @@ html(lang="en")
           promo: 'LIMITED TIME OFFER - Answer this skill testing question and save 5%!',
           form: [
             { ID: 'firstName', kind: "text", placeholder: 'First Name' },
-            { ID: 'lastName', kind: "text", placeholder: 'Last Name'},
+            { ID: 'lastName', kind: "text", placeholder: 'Last Name' },
             { ID: 'email', kind: "email", text: 'Email' },
-            { ID: 'phone', kind: "number", text: 'Phone'},
-            { ID: 'address', kind: "text", placeholder: 'Billing Address'},
-            { ID: 'city', kind: "text", placeholder: 'City'},
-            { ID: 'province', kind: "text", placeholder: 'Province/State'},
-            { ID: 'country', kind: "text", placeholder: 'Country'},
+            { ID: 'phone', kind: "number", text: 'Phone' },
+            { ID: 'address', kind: "text", placeholder: 'Billing Address'} ,
+            { ID: 'city', kind: "text", placeholder: 'City' },
+            { ID: 'province', kind: "text", placeholder: 'Province/State' },
+            { ID: 'country', kind: "text", placeholder: 'Country' },
           ]
         },
         menu: [
@@ -34,6 +34,14 @@ html(lang="en")
           { url: '#preorder', text: 'Pre-order Remaster' },
         ],
         songs: ['Means to be', 'Will to Fight', 'Road To Redemption', 'Solemn Angel Eyes', 'Riding the bullet']
+      }
+      const header = {
+        icons: [
+          { path: 'img/svg/facebook.svg', alt: 'Hidden Eras Facebook' },
+          { path: 'img/svg/instagram.svg', alt: 'Hidden Eras Instagram' },
+          { path: 'img/svg/youtube.svg', alt: 'Hidden Eras Youtube' },
+          { path: 'img/svg/snapchat.svg', alt: 'Hidden Eras Snapchat' },
+        ]
       }
       const dates = {
         avgPrice: '$10, $5 with canned good donation',
@@ -88,6 +96,9 @@ html(lang="en")
     mixin navInputs(identifier, kind, text)
       input(id= identifier type=kind placeholder=text)
 
+    mixin headerIcons(path, alt)
+      img(src=path alt=alt)
+
     mixin datesListing(venue, show, date, price)
       tr.dates__table__row
         td.dates__table__venue= venue
@@ -95,7 +106,7 @@ html(lang="en")
         td.dates__table__date= date
         td.dates__table__price= price
         td.dates__table__cta
-          a.dates__table__btn Tickets Avaiable
+          a.dates__table__btn Add To Cart
 
     mixin aboutUsProfile(name, img, laughLine, text)
       figure.aboutUs__figure
@@ -106,8 +117,6 @@ html(lang="en")
           h6.aboutUs__laughLine= laughLine
           p.aboutUs__text= text
 
-    //- HTML
-    header.header
 
       nav.nav
         .nav__menu
@@ -136,6 +145,12 @@ html(lang="en")
                 +navInputs(i.ID, i.kind, i.placeholder)
               label(for="promo") Answer a skill testing Question to save 5%
                 input#promo(type="text")
+
+    header.header
+      .header__logo
+      .header__icons
+        each i in header.icons
+          +headerIcons(i.path, i.alt)
 
     main.main
 
