@@ -61,31 +61,36 @@ html(lang="en")
             name: 'Patrick McLennan',
             img: 'img/aboutUs/pat.jpg',
             laughLine: '6 strings of fury',
-            text: 'The song-writing tornado behind such classics as "Will To Fight", Patrick is year after year hailed as a tour-de-force in the Grade 10 Burlington Central High School rock scene.  You can find Pat forcing band members to load $5k worth of guitar amps that he "doesn\'t need."'
+            text: 'The song-writing tornado behind such classics as "Will To Fight", Patrick is year after year hailed as a tour-de-force in the Grade 10 Burlington Central High School rock scene.  You can find Pat forcing band members to load $5k worth of guitar amps that he "doesn\'t need."',
+            equipment: ['img/aboutUs/epiphone.png', 'img/aboutUs/marshall.png']
           },
           {
             name: 'Tom Duff',
             img: 'img/aboutUs/tom.jpg',
             laughLine: 'Lock up your daughters',
-            text: 'Hidden Era is an Equal Oppurtunity Employer.'
+            text: 'Hidden Era is an Equal Oppurtunity Employer.',
+            equipment: ['img/aboutUs/pearl.png']
           },
           {
             name: 'John Duff',
             img: 'img/aboutUs/john.jpg',
             laughLine: 'Dreamer.  Visionary.  Driver.',
-            text: 'The steady hand of the group, Johns natural ability to gain a G2 earned him immediate acceptance into the band.  Quiet and composed, John can be found obsessing over Swedish pop-star Robyn or patenting his yet-to-be-seen "Live Fade-Out" technique.'
+            text: 'The steady hand of the group, Johns natural ability to gain a G2 earned him immediate acceptance into the band.  Quiet and composed, John can be found obsessing over Swedish pop-star Robyn or patenting his yet-to-be-seen "Live Fade-Out" technique.',
+            equipment: ['img/aboutUs/godin.png', 'img/aboutUs/fender.png']
           },
           {
             name: 'Blake Hutton',
             img: 'img/aboutUs/blake.jpg',
             laughLine: '6 strings of fury',
-            text: 'Blakes quirky personality is a lot like his bass playing -- off-beat and timeless.  Excited for the upcoming shows, Blake has only 2 dislikes in this world -- Wheat and Injustice, which he often claims go hand in hand.'
+            text: 'Blakes quirky personality is a lot like his bass playing -- off-beat and timeless.  Excited for the upcoming shows, Blake has only 2 dislikes in this world -- Wheat and Injustice, which he often claims go hand in hand.',
+            equipment: ['img/aboutUs/musicMan.png', 'img/aboutUs/ampeg.png']
           },
           {
             name: 'Marc Decaire',
             img: 'img/aboutUs/marc.jpeg',
             laughLine: 'Regional Man of Mystery',
-            text: 'Voted Best Looking member of Hidden Era, unanimously, everytime, Marc Decaire redefined what a vocalist for a High School rock band should be.  If you see Marc in the wild, please tell him to call one of us.'
+            text: 'Voted Best Looking member of Hidden Era, unanimously, everytime, Marc Decaire redefined what a vocalist for a High School rock band should be.  If you see Marc in the wild, please tell him to call one of us.',
+            equipment: []
           },
         ]
       }
@@ -110,7 +115,7 @@ html(lang="en")
         td.dates__table__cta
           a.dates__table__btn Add To Cart
 
-    mixin aboutUsProfile(name, img, laughLine, text)
+    mixin aboutUsProfile(name, img, laughLine, text, equipment)
       figure.aboutUs__figure
         .aboutUs__picBox
           img.aboutUs__pic(src= img alt= name)
@@ -118,6 +123,9 @@ html(lang="en")
         figcaption.aboutUs__figcaption
           h6.aboutUs__laughLine= laughLine
           p.aboutUs__text= text
+        each i in equipment
+          .aboutUs__equipment
+            img.aboutUs__gear(src=i alt=`${name}'s equipment`)
 
 
     nav.nav
@@ -164,6 +172,7 @@ html(lang="en")
             .home__links
               a.home__btn(href="#dates") Pre-Order Tickets
               a.home__btn(href="#preorder") Pre-Order Best-Of Blu-Ray
+        .home__award
 
       section.dates
         h3.dates__header.section__header Tickets are going fast -- pre-order yours now!
@@ -177,7 +186,7 @@ html(lang="en")
       section.aboutUs
         h3.aboutUs__header.section__header We haven't aged a day
         each i in aboutUs.members
-          +aboutUsProfile(i.name, i.img, i.laughLine, i.text)
+          +aboutUsProfile(i.name, i.img, i.laughLine, i.text, i.equipment)
 
       section.preorder
         h4.preorder__header.section__header You've heard the classics -- Now you can own them
