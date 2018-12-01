@@ -50,31 +50,31 @@ html(lang="en")
         members: [
           {
             name: 'Patrick McLennan',
-            img: 'https://www.google.ca/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwiP8qvho_reAhWjnOAKHSNyAmUQjRx6BAgBEAU&url=https%3A%2F%2Fwww.cbc.ca%2Fkidscbc2%2Fthe-feed%2F9-unsinkable-rubber-duckie-facts&psig=AOvVaw16XgHLVYIV6c7Wo2PUXmqC&ust=1543604165628472',
+            img: 'img/aboutUs/pat.jpg',
             laughLine: '6 strings of fury',
             text: 'The song-writing tornado behind such classics as "Will To Fight", Patrick is year after year hailed as a tour-de-force in the Grade 10 Burlington Central High School rock scene.  You can find Pat forcing band members to load $5k worth of guitar amps that he "doesn\'t need."'
           },
           {
             name: 'Tom Duff',
-            img: 'https://www.google.ca/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwiP8qvho_reAhWjnOAKHSNyAmUQjRx6BAgBEAU&url=https%3A%2F%2Fwww.cbc.ca%2Fkidscbc2%2Fthe-feed%2F9-unsinkable-rubber-duckie-facts&psig=AOvVaw16XgHLVYIV6c7Wo2PUXmqC&ust=1543604165628472',
+            img: 'img/aboutUs/tom.jpg',
             laughLine: 'Lock up your daughters',
             text: 'Hidden Era is an Equal Oppurtunity Employer.'
           },
           {
             name: 'John Duff',
-            img: 'https://www.google.ca/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwiP8qvho_reAhWjnOAKHSNyAmUQjRx6BAgBEAU&url=https%3A%2F%2Fwww.cbc.ca%2Fkidscbc2%2Fthe-feed%2F9-unsinkable-rubber-duckie-facts&psig=AOvVaw16XgHLVYIV6c7Wo2PUXmqC&ust=1543604165628472',
+            img: 'img/aboutUs/john.jpg',
             laughLine: 'Dreamer.  Visionary.  Driver.',
             text: 'The steady hand of the group, Johns natural ability to gain a G2 earned him immediate acceptance into the band.  Quiet and composed, John can be found obsessing over Swedish pop-star Robyn or patenting his yet-to-be-seen "Live Fade-Out" technique.'
           },
           {
             name: 'Blake Hutton',
-            img: 'https://www.google.ca/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwiP8qvho_reAhWjnOAKHSNyAmUQjRx6BAgBEAU&url=https%3A%2F%2Fwww.cbc.ca%2Fkidscbc2%2Fthe-feed%2F9-unsinkable-rubber-duckie-facts&psig=AOvVaw16XgHLVYIV6c7Wo2PUXmqC&ust=1543604165628472',
+            img: 'img/aboutUs/blake.jpg',
             laughLine: '6 strings of fury',
             text: 'Blakes quirky personality is a lot like his bass playing -- off-beat and timeless.  Excited for the upcoming shows, Blake has only 2 dislikes in this world -- Wheat and Injustice, which he often claims go hand in hand.'
           },
           {
             name: 'Marc Decaire',
-            img: 'https://www.google.ca/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwiP8qvho_reAhWjnOAKHSNyAmUQjRx6BAgBEAU&url=https%3A%2F%2Fwww.cbc.ca%2Fkidscbc2%2Fthe-feed%2F9-unsinkable-rubber-duckie-facts&psig=AOvVaw16XgHLVYIV6c7Wo2PUXmqC&ust=1543604165628472',
+            img: 'img/aboutUs/marc.jpeg',
             laughLine: 'Regional Man of Mystery',
             text: 'Voted Best Looking member of Hidden Era, unanimously, everytime, Marc Decaire redefined what a vocalist for a High School rock band should be.  If you see Marc in the wild, please tell him to call one of us.'
           },
@@ -100,7 +100,7 @@ html(lang="en")
     mixin aboutUsProfile(name, img, laughLine, text)
       figure.aboutUs__figure
         .aboutUs__picBox
-          img.aboutUs__pic(url= img alt= name)
+          img.aboutUs__pic(src= img alt= name)
           h5.aboutUs__name= name
         figcaption.aboutUs__figcaption
           h6.aboutUs__laughLine= laughLine
@@ -141,7 +141,7 @@ html(lang="en")
 
       section.home
         figure.home__figure
-          img.home__pic(src="https://a2-images.myspacecdn.com/images02/148/aedc3b7b1b8146b49d869b8a39f896a3/full.jpg" alt="Hidden Era Money Shot")
+          img.home__pic(src="img/home/showcase.jpg" alt="Hidden Era Money Shot")
           figcaption.home__caption
             h1.home__header Hidden Era
             h2.home__tag Reunion Tour 2019
