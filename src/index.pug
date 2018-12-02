@@ -112,13 +112,12 @@ html(lang="en")
         ]
       }
       const dates = {
-        avgPrice: '$10, $5 with canned good donation',
         headings: ['img/svg/home.svg', 'img/svg/tv.svg', 'img/svg/calendar.svg', 'img/svg/coin-dollar.svg', 'img/svg/ticket.svg'],
         listings: [
           { venue: 'Holiday Inn, Burlington ON', show: 'Burlington International Games (B.I.G) Kick-off', date: 'August 2nd, 2019', price: '/' },
-          { venue: 'Burlington Central High School', show: 'Fall Talent Show', date: 'October 12th, 2019 (2nd Period)', price: avgPrice },
-          { venue: 'Burlington Central High School', show: 'Christmas Talent Show', date: 'December 21st, 2019 (5th period)', price: avgPrice },
-          { venue: 'Burlington Central High School', show: 'Spring Talent Show', date: 'March 15th, 2019 (2nd period)', price: avgPrice },
+          { venue: 'Burlington Central High School', show: 'Fall Talent Show', date: 'October 12th, 2019 (2nd Period)', price: '$10, $5 with canned good donation' },
+          { venue: 'Burlington Central High School', show: 'Christmas Talent Show', date: 'December 21st, 2019 (5th period)', price: '$10, $5 with canned good donation' },
+          { venue: 'Burlington Central High School', show: 'Spring Talent Show', date: 'March 15th, 2019 (2nd period)', price: '$10, $5 with canned good donation' },
           { venue: 'T.B.A', show: 'Bobs No-Frills Employee Party', date: 'July 1st, 2019', price: '/' },
         ]
       }
@@ -230,15 +229,18 @@ html(lang="en")
     //- HTML
     nav.nav
       .nav__menu.menu
+        img.menu__icon(src="img/svg/menu.svg")
         ul.menu__list
           each i in nav.menu
             +navMenu(i.url, i.text)
       .nav__player.player
+        img.player__icon(src="img/svg/play.svg")
         ul.player__songList
           each i in nav.songs
             li.player__song
               button.player__button= i
       .nav__cart.cart
+        img.cart__icon(src="img/svg/cart.svg")
         h5.cart__itemCount You have #[span 0] items in your Cart
         form.cart__form
           h6.cart__ItemsHeader= nav.cart.inCart
