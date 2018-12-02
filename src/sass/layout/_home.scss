@@ -20,24 +20,26 @@
 
   &__header {
     flex: 1 1 33.33333%;
+    margin: 1vh 0;
   }
 
   &__tag {
     flex: 1 1 33.33333%;
+    margin: 1vh 0;
   }
 
   &__links {
-    @include flexin(space-between, center);
-    flex: 1 1 33.33333%;
+    @include flexin(space-around, center);
+    flex: 0 0 33.33333%;
   }
 
   &__link {
     @include flexin(center, center, column);
-    flex: 1 1 50%;
+    flex: 1 1 auto;
   }
 
   &__picBox {
-    flex: 1 1 20%;
+    flex: 0 0 75%;
   }
 
   &__linkPic {
@@ -45,7 +47,7 @@
   }
 
   &__linkCaption {
-    flex: 1 1 80%;
+    flex: 0 0 25%;
   }
 
   &__btn {

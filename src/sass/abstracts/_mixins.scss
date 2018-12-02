@@ -8,7 +8,7 @@
 }
 
 // ELEMENTS
-@mixin picFit($height:100%, $width:100%, $objFit:cover) {
+@mixin picFit($height:auto, $width:100%, $objFit:cover) {
   height: $height;
   width: $width;
   object-fit: $objFit;
