@@ -1,15 +1,21 @@
 
 // LAYOUT
-@mixin flexin($content, $align, $direction:row) {
+@mixin flexin($content:center, $align:center, $direction:row) {
   display: flex;
   justify-content: $content;
   align-items: $align;
   flex-direction: $direction;
 }
 
+// ELEMENTS
+@mixin picFit($height:100%, $width:100%, $objFit:cover) {
+  height: $height;
+  width: $width;
+  object-fit: $objFit;
+}
+
 
 //ANIMATIONS
-  // BASE
 @mixin hoverSwell {
   transition: var(--transition-swell);
   &:hover {

@@ -268,18 +268,22 @@ html(lang="en")
       section.home#home
         figure.home__hero
           .home__heroImg
-            img.home__pic(src="img/home/showcase.jpg" alt="Hidden Era Money Shot")
+            img.home__showcase(src="img/home/showcase.jpg" alt="Hidden Era Money Shot")
           figcaption.home__caption
             h1.home__header Hidden Era
             h2.home__tag Reunion Tour 2019
-            each i in home.links
-              +linkFigure(i.pic, i.alt, i.link, i.text)
+            .home__links
+              each i in home.links
+                +linkFigure(i.pic, i.alt, i.link, i.text)
         figure.home__botb
           .home__botbImg
             img.home__trophy(src="img/svg/trophy.svg" alt="Trophy")
           figcaption.home__botbCaption
             h4.home__botbHeader 2 time BCHS Battle of The Bands Runner Up
-        .home__awards
+        .home__awardsLeft
+          each i in home.awards
+            +awardFigure(i.pic, i.alt, i.rating, i.quote, i.company)
+        .home__awardsRight
           each i in home.awards
             +awardFigure(i.pic, i.alt, i.rating, i.quote, i.company)
 
@@ -311,7 +315,7 @@ html(lang="en")
 
     footer.footer#footer
       .footer__copy
-        p Copyright Hidden Era music.  All music, logos and goofy haircuts are protected by privacy laws and anybody seeking to replicate them must take a long hard look in the mirror and ask why.
+        p Copyright Hidden Era music.  All music, logos and goofy haircuts are protected by privacy laws and anybody seeking to replicate them really shouldn't.
         p Management by Jake Rivers Media
       .footer__links
         each i in header.icons

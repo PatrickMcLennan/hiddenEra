@@ -1,0 +1,67 @@
+.home {
+  margin: 10vh 0;
+
+  &__hero {
+    @include flexin;
+  }
+
+  &__heroImg {
+    flex: 1 1 auto;
+  }
+
+  &__showcase {
+    @include picFit;
+  }
+
+  &__caption {
+    @include flexin(center, center, column);
+    flex: 1 1 auto;
+  }
+
+  &__header {
+    flex: 1 1 33.33333%;
+  }
+
+  &__tag {
+    flex: 1 1 33.33333%;
+  }
+
+  &__links {
+    @include flexin(space-between, center);
+    flex: 1 1 33.33333%;
+  }
+
+  &__link {
+    @include flexin(center, center, column);
+    flex: 1 1 50%;
+  }
+
+  &__picBox {
+    flex: 1 1 20%;
+  }
+
+  &__linkPic {
+    @include picFit;
+  }
+
+  &__linkCaption {
+    flex: 1 1 80%;
+  }
+
+  &__btn {
+    flex: 1 1 auto;
+  }
+
+  &__botb {
+    @include flexin (space-around);
+    padding: 2vh 5vw;
+  }
+
+  &__awardsLeft,
+  &__awardsRight {
+    @include flexin(center, center, column);
+    max-height: 10vh;
+    max-width: 5vw;
+    display: none;
+  }
+}
