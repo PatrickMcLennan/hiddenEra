@@ -95,11 +95,25 @@ html(lang="en")
             quote: '...best rock band of the Burlington High School Music scene...',
             company: ' -- Variety'
           },
+        ],
+        links: [
+          {
+            pic: 'img/svg/ticket.svg',
+            alt: 'Ticket SVG',
+            text: 'Pre-order Tickets now',
+            link: '#dates'
+          },
+          {
+            pic: 'img/bluray.png',
+            alt: 'Blu-Ray Cover',
+            text: 'Pre-order "The Lost Years" on Blu-ray',
+            link: '#preorder'
+          }
         ]
       }
       const dates = {
         avgPrice: '$10, $5 with canned good donation',
-        headings: ['Venue', 'Show', 'Date', 'Price'],
+        headings: ['img/svg/home.svg', 'img/svg/tv.svg', 'img/svg/calendar.svg', 'img/svg/coin-dollar.svg', 'img/svg/ticket.svg'],
         listings: [
           { venue: 'Holiday Inn, Burlington ON', show: 'Burlington International Games (B.I.G) Kick-off', date: 'August 2nd, 2019', price: '/' },
           { venue: 'Burlington Central High School', show: 'Fall Talent Show', date: 'October 12th, 2019 (2nd Period)', price: avgPrice },
@@ -179,6 +193,13 @@ html(lang="en")
           q.award__quote= quote
           h6.award__company= company
 
+    mixin linkFigure(pic, alt, link, text)
+      figure.home__link
+        .home__picBox
+          img.home__linkPic(src=pic alt=alt)
+        figcaption.home__linkCaption
+          a.home__btn(href=link)= text
+
     mixin datesListing(venue, show, date, price)
       tr.dates__table__row
         td.dates__table__venue= venue
@@ -242,16 +263,15 @@ html(lang="en")
 
     main.main
 
-      section.home
+      section.home#home
         figure.home__hero
           .home__heroImg
             img.home__pic(src="img/home/showcase.jpg" alt="Hidden Era Money Shot")
           figcaption.home__caption
             h1.home__header Hidden Era
             h2.home__tag Reunion Tour 2019
-            .home__links
-              a.home__btn(href="#dates") Pre-Order Tickets
-              a.home__btn(href="#preorder") Pre-Order Best-Of Blu-Ray
+            each i in home.links
+              +linkFigure(i.pic, i.alt, i.link, i.text)
         figure.home__botb
           .home__botbImg
             img.home__trophy(src="img/svg/trophy.svg" alt="Trophy")
@@ -261,23 +281,24 @@ html(lang="en")
           each i in home.awards
             +awardFigure(i.pic, i.alt, i.rating, i.quote, i.company)
 
-      section.dates
+      section.dates#dates
         h3.dates__header.section__header Tickets are going fast -- pre-order yours now!
         table.dates__table
           tr.dates__table__row
             each i in dates.headings
-              th.dates__table__heading= i
+              th.dates__table__heading
+                img(src=i)
           each i in dates.listings
             +datesListing(i.venue, i.show, i.date, i.price)
 
-      section.aboutUs
+      section.aboutUs#aboutUs
         h3.aboutUs__header.section__header We haven't aged a day
         each i in aboutUs.members
           button.aboutUs__selector= i.name
         each i in aboutUs.members
           +aboutUsProfile(i.name, i.img, i.laughLine, i.text, i.equipment)
 
-      section.preorder
+      section.preorder#preorder
         h4.preorder__header.section__header You've heard the classics -- Now you can own them
         figure.preorder__figure
           .preorder__collage
@@ -286,7 +307,7 @@ html(lang="en")
             img(src="img/bluray.png")
 
 
-    footer.footer
+    footer.footer#footer
       .footer__copy
         p Copyright Hidden Era music.  All music, logos and goofy haircuts are protected by privacy laws and anybody seeking to replicate them must take a long hard look in the mirror and ask why.
         p Management by Jake Rivers Media
