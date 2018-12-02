@@ -1,0 +1,26 @@
+@import "nav/cart";
+@import "nav/menu";
+@import "nav/player";
+
+.nav {
+  @include flexin(center, center);
+  position: fixed;
+  transform-origin: 100%;
+  top: 2.5%;
+  right: 2.5%;
+  border-radius: var(--border-radius);
+
+  & > * {
+    @include flexin(center, center, column);
+    flex: 1 1 33.33333%;
+    position: relative;
+    border: 1px solid black;
+    cursor: pointer;
+  }
+
+  & img {
+    @include hoverSwell;
+    padding: 1vh 2vw;
+    transform: scale(1);
+  }
+}

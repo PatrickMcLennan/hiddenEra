@@ -1,0 +1,11 @@
+.player {
+
+  &__songList {
+    @include navIcon;
+  }
+
+  &:hover .player__songList,
+  .player__songList & > *:hover {
+    @include flexin(center, center, column);
+  }
+}

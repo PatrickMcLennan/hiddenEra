@@ -238,7 +238,7 @@ html(lang="en")
         ul.player__songList
           each i in nav.songs
             li.player__song
-              button.player__button= i
+              button.player__btn= i
       .nav__cart.cart
         img.cart__icon(src="img/svg/cart.svg")
         h5.cart__itemCount You have #[span 0] items in your Cart
@@ -259,7 +259,7 @@ html(lang="en")
               input#promo(type="text")
 
     header.header
-      .header__icons
+      .social
         each i in header.icons
           +socialIcons(i.path, i.alt)
 

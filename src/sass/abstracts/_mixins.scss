@@ -6,3 +6,21 @@
   align-items: $align;
   flex-direction: $direction;
 }
+
+
+//ANIMATIONS
+  // BASE
+@mixin hoverSwell {
+  transition: var(--transition-swell);
+  &:hover {
+    transform: scale(1.105);
+  }
+}
+  // NAV
+@mixin navIcon {
+  display: none;
+  transform: scale(1);
+  position: absolute;
+  top: 100%;
+}
+

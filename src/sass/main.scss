@@ -7,10 +7,12 @@
 @import "base/typography";
 @import "base/utilities";
 
+@import "components/socialIcons";
+
 @import "layout/footer";
 @import "layout/home";
 @import "layout/grid";
 @import "layout/header";
-@import "layout/navigation";
+@import "layout/nav";
 
 @import "pages/home";

@@ -1,0 +1,11 @@
+.menu {
+
+  &__list {
+    @include navIcon;
+  }
+
+  &:hover .menu__list,
+  .menu__list & > *:hover {
+    @include flexin(center, flex-start, column);
+  }
+}
