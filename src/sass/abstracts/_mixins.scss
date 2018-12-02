@@ -8,12 +8,15 @@
 }
 
 // ELEMENTS
-@mixin picFit($height:auto, $width:100%, $objFit:cover) {
+@mixin picFit($objFit:contain, $height:auto, $width:100%) {
   height: $height;
   width: $width;
   object-fit: $objFit;
 }
-
+@mixin picBox {
+  height: auto;
+  width: 100%;
+}
 
 //ANIMATIONS
 @mixin hoverSwell {

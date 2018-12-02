@@ -2,7 +2,8 @@
   margin: 10vh 0;
 
   &__hero {
-    @include flexin;
+    @include flexin(center, center);
+    padding: 2.5vh 2.5vw;
   }
 
   &__heroImg {
@@ -19,27 +20,28 @@
   }
 
   &__header {
-    flex: 1 1 33.33333%;
+    flex: 1 0 33.33333%;
     margin: 1vh 0;
   }
 
   &__tag {
-    flex: 1 1 33.33333%;
+    flex: 1 0 33.33333%;
     margin: 1vh 0;
   }
 
   &__links {
     @include flexin(space-around, center);
-    flex: 0 0 33.33333%;
+    flex: 0 0 33%;
   }
 
   &__link {
     @include flexin(center, center, column);
-    flex: 1 1 auto;
+    flex: 0 0 20%;
   }
 
   &__picBox {
-    flex: 0 0 75%;
+    flex: 1 1 auto;
+    @include picBox;
   }
 
   &__linkPic {
