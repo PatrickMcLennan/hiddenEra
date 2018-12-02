@@ -44,6 +44,59 @@ html(lang="en")
           { path: 'img/svg/snapchat.svg', alt: 'Hidden Eras Snapchat' },
         ]
       }
+      const home = {
+        awards: [
+          {
+            pic: 'img/home/altPress.png',
+            alt: 'Alternative Press\'s Logo',
+            rating: ['img/svg/star-full.svg', 'img/svg/star-full.svg', 'img/svg/star-full.svg', 'img/svg/star-half.svg', 'img/svg/star-empty.svg'],
+            quote: '...haunting vocals...',
+            company: ' -- Alternative Press'
+          },
+          {
+            pic: 'img/home/pitchfork.png',
+            alt: 'Pitchforks Logo',
+            rating: ['img/svg/star-half.svg', 'img/svg/star-empty.svg', 'img/svg/star-empty.svg', 'img/svg/star-empty.svg', 'img/svg/star-empty.svg'],
+            quote: 'lol',
+            company: ' -- Pitchfork'
+          },
+          {
+            pic: 'img/home/rollingStone.png',
+            alt: 'Rolling Stones Logo',
+            rating: ['img/svg/star-full.svg', 'img/svg/star-full.svg', 'img/svg/star-empty.svg', 'img/svg/star-empty.svg', 'img/svg/star-empty.svg'],
+            quote: '...by god, they\'re really trying...',
+            company: ' -- Rolling Stone'
+          },
+          {
+            pic: 'img/home/time.png',
+            alt: 'Time Magazines Logo',
+            rating: ['img/svg/star-full.svg', 'img/svg/star-full.svg', 'img/svg/star-full.svg', 'img/svg/star-full.svg', 'img/svg/star-empty.svg'],
+            quote: '...there\'s worse out there...',
+            company: ' -- Time Magazine'
+          },
+          {
+            pic: 'img/home/billboard.png',
+            alt: 'Billboards Logo',
+            rating: ['img/svg/star-empty.svg', 'img/svg/star-empty.svg', 'img/svg/star-empty.svg', 'img/svg/star-empty.svg', 'img/svg/star-empty.svg'],
+            quote: '...don\'t even have the will to finish this...',
+            company: ' -- Billboard'
+          },
+          {
+            pic: 'img/home/entertainment.png',
+            alt: 'Entertainment Weekly Logo',
+            rating: ['img/svg/star-full.svg', 'img/svg/star-half.svg', 'img/svg/star-empty.svg', 'img/svg/star-empty.svg', 'img/svg/star-empty.svg'],
+            quote: '...it\'s been a slow week...',
+            company: ' -- Entertainment Weekly'
+          },
+          {
+            pic: 'img/home/variety.png',
+            alt: 'Variety magazines Logo',
+            rating: ['img/svg/star-full.svg', 'img/svg/star-full.svg', 'img/svg/star-full.svg', 'img/svg/star-full.svg', 'img/svg/star-full.svg'],
+            quote: '...best rock band of the Burlington High School Music scene...',
+            company: ' -- Variety'
+          },
+        ]
+      }
       const dates = {
         avgPrice: '$10, $5 with canned good donation',
         headings: ['Venue', 'Show', 'Date', 'Price'],
@@ -112,6 +165,17 @@ html(lang="en")
       a.social__link
         img(src=path alt=alt class="social__svg")
 
+    mixin awards(pic, alt, rating, quote, company)
+      figure.award
+        .award__compImg
+          img(src=pic, alt=alt)
+          .awardRating
+            each i in rating
+              img.award__star(src=i alt="Rating Star")
+        figcation.award__caption
+          q.award__quote= quote
+          h6.award__company= company
+
     mixin datesListing(venue, show, date, price)
       tr.dates__table__row
         td.dates__table__venue= venue
@@ -138,6 +202,8 @@ html(lang="en")
         a.myLogo__link(href=url target="_blank")
           img(src=path, alt=alt)
 
+
+    //- HTML
     nav.nav
       .nav__menu.menu
         ul.menu__list
@@ -182,7 +248,9 @@ html(lang="en")
             .home__links
               a.home__btn(href="#dates") Pre-Order Tickets
               a.home__btn(href="#preorder") Pre-Order Best-Of Blu-Ray
-        .home__award
+        .home__awards
+          each i in home.awards
+            +awards(i.pic, i.alt, i.rating, i.quote, i.company)
 
       section.dates
         h3.dates__header.section__header Tickets are going fast -- pre-order yours now!
@@ -196,7 +264,7 @@ html(lang="en")
       section.aboutUs
         h3.aboutUs__header.section__header We haven't aged a day
         each i in aboutUs.members
-          button.aboutUs__selector `${i.name}`
+          button.aboutUs__selector= i.name
         each i in aboutUs.members
           +aboutUsProfile(i.name, i.img, i.laughLine, i.text, i.equipment)
 
