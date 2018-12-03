@@ -74,5 +74,14 @@
   &__reviewsLeft,
   &__reviewsRight {
     @include flexin(center, center, column);
+    flex: 0 0 50%;
+    overflow: hidden;
+
+    & > *:not(:first-child) {
+      display: none;
+    }
+  }
+  &__reviewsRight {
+    @include flexin(center, center, column-reverse);
   }
 }

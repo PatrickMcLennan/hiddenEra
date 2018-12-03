@@ -38,10 +38,10 @@ html(lang="en")
       }
       const header = {
         icons: [
-          { path: 'img/svg/facebook.svg', alt: 'Hidden Eras Facebook' },
-          { path: 'img/svg/instagram.svg', alt: 'Hidden Eras Instagram' },
-          { path: 'img/svg/youtube.svg', alt: 'Hidden Eras Youtube' },
-          { path: 'img/svg/snapchat.svg', alt: 'Hidden Eras Snapchat' },
+          { path: 'img/svg/facebook.svg', alt: 'Hidden Eras Facebook', ID:"facebook" },
+          { path: 'img/svg/instagram.svg', alt: 'Hidden Eras Instagram', ID:"instagram" },
+          { path: 'img/svg/youtube.svg', alt: 'Hidden Eras Youtube', ID: "youtube" },
+          { path: 'img/svg/snapchat.svg', alt: 'Hidden Eras Snapchat', ID: "snapchat" },
         ]
       }
       const home = {
@@ -82,7 +82,7 @@ html(lang="en")
             company: ' -- Billboard'
           },
           {
-            pic: 'img/home/entertainment.png',
+            pic: 'img/home/entertaintment.png',
             alt: 'Entertainment Weekly Logo',
             rating: ['img/svg/star-full.svg', 'img/svg/star-half.svg', 'img/svg/star-empty.svg', 'img/svg/star-empty.svg', 'img/svg/star-empty.svg'],
             quote: '...it\'s been a slow week...',
@@ -92,7 +92,7 @@ html(lang="en")
             pic: 'img/home/variety.png',
             alt: 'Variety magazines Logo',
             rating: ['img/svg/star-full.svg', 'img/svg/star-full.svg', 'img/svg/star-full.svg', 'img/svg/star-full.svg', 'img/svg/star-full.svg'],
-            quote: '...best rock band of the Burlington High School Music scene...',
+            quote: '...[best] rock band of the Burlington High School Music scene...',
             company: ' -- Variety'
           },
         ],
@@ -177,9 +177,9 @@ html(lang="en")
     mixin navInputs(identifier, kind, text)
       input(id= identifier type=kind placeholder=text)
 
-    mixin socialIcons(path, alt)
+    mixin socialIcons(path, alt, ID)
       a.social__link
-        img(src=path alt=alt class="social__svg")
+        img(src=path alt=alt class="social__svg" id=ID)
 
     mixin reviewFigure(pic, alt, rating, quote, company)
       figure.review
@@ -261,7 +261,7 @@ html(lang="en")
     header.header
       .social
         each i in header.icons
-          +socialIcons(i.path, i.alt)
+          +socialIcons(i.path, i.alt, i.ID)
 
     main.main
 
@@ -285,8 +285,10 @@ html(lang="en")
             each i in home.reviews
               +reviewFigure(i.pic, i.alt, i.rating, i.quote, i.company)
           .home__reviewsRight
-            each i in home.reviews
-              +reviewFigure(i.pic, i.alt, i.rating, i.quote, i.company)
+            while i <= 7
+              each i in home.reviews
+                +reviewFigure(home.reviews[i].pic, home.reviews[i].alt, home.reviews[i].rating, home.reviews[i].quote, home.reviews[i].company)
+              -i--
 
       section.dates#dates
         h3.dates__header.section__header Tickets are going fast -- pre-order yours now!
