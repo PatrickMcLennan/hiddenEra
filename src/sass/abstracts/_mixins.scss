@@ -6,6 +6,19 @@
   align-items: $align;
   flex-direction: $direction;
 }
+@mixin standardPadding {
+  padding: var(--padding-standard);
+}
+
+// TYPO
+@mixin plainText {
+  text-decoration: none;
+  color: inherit;
+  font-weight: inherit;
+}
+@mixin alignText($align:center) {
+  text-align: $align;
+}
 
 // ELEMENTS
 @mixin picFit($objFit:contain, $height:auto, $width:100%) {

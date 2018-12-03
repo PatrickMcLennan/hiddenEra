@@ -1,9 +1,9 @@
 .home {
-  margin: 10vh 0;
+  border: 1px solid black;
+  @include standardPadding;
 
   &__hero {
     @include flexin(center, center);
-    padding: 2.5vh 2.5vw;
   }
 
   &__heroImg {
@@ -12,35 +12,41 @@
 
   &__showcase {
     @include picFit;
+    flex: 1 1 auto;
   }
 
   &__caption {
     @include flexin(center, center, column);
     flex: 1 1 auto;
+
+    & > * {
+      @include standardPadding;
+    }
   }
 
   &__header {
-    flex: 1 0 33.33333%;
-    margin: 1vh 0;
+    flex: 1 1 40%;
+    @include alignText;
   }
 
   &__tag {
-    flex: 1 0 33.33333%;
-    margin: 1vh 0;
+    flex: 1 1 40%;
+    @include alignText;
   }
 
   &__links {
-    @include flexin(space-around, center);
-    flex: 0 0 33%;
+    @include flexin(space-evenly, center);
+    flex: 0 0 20%;
   }
 
   &__link {
     @include flexin(center, center, column);
+    @include standardPadding;
     flex: 0 0 20%;
   }
 
   &__picBox {
-    flex: 1 1 auto;
+    flex: 0 0 80%;
     @include picBox;
   }
 
@@ -49,23 +55,24 @@
   }
 
   &__linkCaption {
-    flex: 0 0 25%;
-  }
-
-  &__btn {
-    flex: 1 1 auto;
+    @include alignText;
   }
 
   &__botb {
-    @include flexin (space-around);
-    padding: 2vh 5vw;
+    @include flexin;
+    @include standardPadding;
+
+    & > * {
+      @include standardPadding;
+    }
   }
 
-  &__awardsLeft,
-  &__awardsRight {
+  &__reviews {
+    @include flexin(space-evenly);
+  }
+
+  &__reviewsLeft,
+  &__reviewsRight {
     @include flexin(center, center, column);
-    max-height: 10vh;
-    max-width: 5vw;
-    display: none;
   }
 }

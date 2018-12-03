@@ -45,12 +45,12 @@ html(lang="en")
         ]
       }
       const home = {
-        awards: [
+        reviews: [
           {
             pic: 'img/home/altPress.png',
             alt: 'Alternative Press\'s Logo',
             rating: ['img/svg/star-full.svg', 'img/svg/star-full.svg', 'img/svg/star-full.svg', 'img/svg/star-half.svg', 'img/svg/star-empty.svg'],
-            quote: '...haunting vocals...',
+            quote: '...haunting vocals...literally, haunting...',
             company: ' -- Alternative Press'
           },
           {
@@ -181,23 +181,23 @@ html(lang="en")
       a.social__link
         img(src=path alt=alt class="social__svg")
 
-    mixin awardFigure(pic, alt, rating, quote, company)
-      figure.award
-        .award__compImg
+    mixin reviewFigure(pic, alt, rating, quote, company)
+      figure.review
+        .review__compImg
           img(src=pic, alt=alt)
-          .awardRating
+          .review__rating
             each i in rating
-              img.award__star(src=i alt="Rating Star")
-        figcation.award__caption
-          q.award__quote= quote
-          h6.award__company= company
+              img.review__star(src=i alt="Rating Star")
+        figcation.review__caption
+          q.review__quote= quote
+          h6.review__company= company
 
     mixin linkFigure(pic, alt, link, text)
       figure.home__link
         .home__picBox
           img.home__linkPic(src=pic alt=alt)
         figcaption.home__linkCaption
-          a.home__btn(href=link)= text
+          a.home__cta(href=link)= text
 
     mixin datesListing(venue, show, date, price)
       tr.dates__table__row
@@ -280,12 +280,13 @@ html(lang="en")
             img.home__trophy(src="img/svg/trophy.svg" alt="Trophy")
           figcaption.home__botbCaption
             h4.home__botbHeader 2 time BCHS Battle of The Bands Runner Up
-        .home__awardsLeft
-          each i in home.awards
-            +awardFigure(i.pic, i.alt, i.rating, i.quote, i.company)
-        .home__awardsRight
-          each i in home.awards
-            +awardFigure(i.pic, i.alt, i.rating, i.quote, i.company)
+        .home__reviews
+          .home__reviewsLeft
+            each i in home.reviews
+              +reviewFigure(i.pic, i.alt, i.rating, i.quote, i.company)
+          .home__reviewsRight
+            each i in home.reviews
+              +reviewFigure(i.pic, i.alt, i.rating, i.quote, i.company)
 
       section.dates#dates
         h3.dates__header.section__header Tickets are going fast -- pre-order yours now!

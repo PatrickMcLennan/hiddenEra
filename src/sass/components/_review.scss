@@ -1,0 +1,34 @@
+.review {
+  @include flexin;
+  border: 1px solid black;
+
+  & > * {
+    @include standardPadding;
+  }
+
+  &__compImg {
+    @include flexin(center, center, column);
+    flex: 0 0 70%;
+  }
+
+  & img {
+    @include picFit;
+  }
+
+  &__rating {
+    @include flexin(space-evenly, center);
+  }
+
+  &__caption {
+    @include flexin(space-evenly, center, column);
+    flex: 1;
+  }
+
+  &__quote {
+    align-self: flex-start;
+  }
+
+  &__company {
+    align-self: flex-end;
+  }
+}
