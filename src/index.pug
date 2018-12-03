@@ -189,6 +189,7 @@ html(lang="en")
 
     mixin reviewFigure(pic, alt, rating, quote, company)
       figure.review
+        +borders
         .review__compImg
           img(src=pic, alt=alt)
           .review__rating
@@ -235,17 +236,20 @@ html(lang="en")
     //- HTML
     nav.nav
       .nav__menu.menu
+        +borders
         img.menu__icon(src="img/svg/menu.svg")
         ul.menu__list
           each i in nav.menu
             +navMenu(i.url, i.text)
       .nav__player.player
+        +borders
         img.player__icon(src="img/svg/play.svg")
         ul.player__songList
           each i in nav.songs
             li.player__song
               button.player__btn= i
       .nav__cart.cart
+        +borders
         img.cart__icon(src="img/svg/cart.svg")
         h5.cart__itemCount You have #[span 0] items in your Cart
         form.cart__form

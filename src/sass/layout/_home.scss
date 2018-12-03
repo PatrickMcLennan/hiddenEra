@@ -1,5 +1,6 @@
 .home {
   @include standardPadding;
+  position: relative;
 
   &__hero {
     @include flexin(center, center);
