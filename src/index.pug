@@ -170,6 +170,12 @@ html(lang="en")
         ]
       }
 
+    mixin borders
+      span.border.border__left
+      span.border.border__top
+      span.border.border__right
+      span.border.border__bottom
+
     mixin navMenu(url, text)
       li.menu__item
         a.menu__link(src=url)= text
@@ -266,6 +272,7 @@ html(lang="en")
     main.main
 
       section.home#home
+        +borders
         figure.home__hero
           .home__heroImg
             img.home__showcase(src="img/home/showcase.jpg" alt="Hidden Era Money Shot")

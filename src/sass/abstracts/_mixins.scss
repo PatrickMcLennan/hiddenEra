@@ -10,6 +10,27 @@
   padding: var(--padding-standard);
 }
 
+// COLORS
+@mixin border($direction) {
+  @if $direction == v {
+    background-image: linear-gradient(#ecf0f1, darken(#ecf0f1, 10%));
+    height: 95%;
+    width: 3px;
+  } @else if $direction == h {
+    background-image: linear-gradient(#ecf0f1, darken(#ecf0f1, 10%));
+    width: 95%;
+    height: 3px;
+  } @else if $direction == v-reverse {
+    background-image: linear-gradient(darken(#ecf0f1, 10%), #ecf0f1);
+    height: 95%;
+    width: 3px;
+  } @else if $direction == h-reverse {
+    background-image: linear-gradient(darken(#ecf0f1, 10%), #ecf0f1);
+    width: 95%;
+    height: 3px;
+  }
+}
+
 // TYPOGRAPHY
 @mixin plainText {
   text-decoration: none;

@@ -12,6 +12,10 @@ html {
 body {
   position: relative;
   padding: 0 2.5vw;
-  background-image: linear-gradient(to right bottom, #ff0000, #db1518, #b62022, #902627, #6b2828);
-  color: var(--main-grey);
+  background-image: linear-gradient(to right, #11998e, #38ef7d);
+  color: #ecf0f1;
+  overflow-x: hidden;
+}
+section {
+  position: relative;
 }

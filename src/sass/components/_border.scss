@@ -1,0 +1,25 @@
+.border {
+  position: absolute;
+
+  &__left {
+    @include border(v);
+    top: 0;
+    left: 0;
+  }
+
+  &__top {
+    @include border(h);
+    top: 0;
+    left: 5%;
+  }
+  &__right {
+    @include border(v-reverse);
+    top: 5%;
+    right: 0;
+  }
+  &__bottom {
+    @include border(h-reverse);
+    bottom: 0;
+    right: 5%;
+  }
+}
