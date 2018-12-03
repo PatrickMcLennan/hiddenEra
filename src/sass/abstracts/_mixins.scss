@@ -10,7 +10,7 @@
   padding: var(--padding-standard);
 }
 
-// TYPO
+// TYPOGRAPHY
 @mixin plainText {
   text-decoration: none;
   color: inherit;
@@ -20,7 +20,7 @@
   text-align: $align;
 }
 
-// ELEMENTS
+// IMAGES
 @mixin picFit($objFit:contain, $height:auto, $width:100%) {
   height: $height;
   width: $width;
@@ -31,14 +31,14 @@
   width: 100%;
 }
 
-//ANIMATIONS
+// ANIMATIONS
 @mixin hoverSwell {
   transition: var(--transition-swell);
   &:hover {
     transform: scale(1.105);
   }
 }
-  // NAV
+// NAV
 @mixin navIcon {
   display: none;
   transform: scale(1);
