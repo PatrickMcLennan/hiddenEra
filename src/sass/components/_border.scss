@@ -3,33 +3,33 @@
 
   &__left {
     background-image: linear-gradient(#ecf0f1, darken(#ecf0f1, 10%));
-    top: -2%;
+    top: var(--border-indent);
     left: 0;
     width: 1px;
-    height: 95%;
+    height: var(--border-height);
   }
 
   &__top {
     background-image: linear-gradient(#ecf0f1, darken(#ecf0f1, 10%));
     top: 0;
-    right: -2%;
+    right: var(--border-indent);
     height: 1px;
-    width: 95%;
+    width: var(--border-width);
   }
 
   &__right {
     background-image: linear-gradient(#ecf0f1, darken(#ecf0f1, 10%));
-    bottom: -2%;
+    bottom: var(--border-indent);
     right: 0;
     width: 1px;
-    height: 95%;
+    height: var(--border-height);
   }
 
   &__bottom {
     background-image: linear-gradient(#ecf0f1, darken(#ecf0f1, 10%));
     bottom: 0;
-    left: -2%;
+    left: var(--border-indent);
     height: 1px;
-    width: 95%;
+    width: var(--border-width);
   }
 }
