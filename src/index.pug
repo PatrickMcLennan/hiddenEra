@@ -285,10 +285,8 @@ html(lang="en")
             each i in home.reviews
               +reviewFigure(i.pic, i.alt, i.rating, i.quote, i.company)
           .home__reviewsRight
-            while i <= 7
-              each i in home.reviews
-                +reviewFigure(home.reviews[i].pic, home.reviews[i].alt, home.reviews[i].rating, home.reviews[i].quote, home.reviews[i].company)
-              -i--
+            each i in home.reviews
+              +reviewFigure(i.pic, i.alt, i.rating, i.quote, i.company)
 
       section.dates#dates
         h3.dates__header.section__header Tickets are going fast -- pre-order yours now!

@@ -12,5 +12,6 @@ html {
 body {
   position: relative;
   padding: 0 2.5vw;
-
+  background-image: linear-gradient(to right bottom, #ff0000, #db1518, #b62022, #902627, #6b2828);
+  color: var(--main-grey);
 }
