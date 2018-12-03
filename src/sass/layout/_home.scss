@@ -68,13 +68,13 @@
   }
 
   &__reviews {
-    @include flexin(space-evenly);
+    @include flexin(space-around);
   }
 
   &__reviewsLeft,
   &__reviewsRight {
     @include flexin(center, center, column);
-    flex: 0 0 50%;
+    flex: 0 0 40%;
     overflow: hidden;
 
     & > *:not(:first-child) {

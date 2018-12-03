@@ -2,7 +2,7 @@
   @include flexin;
   position: relative;
 
-  & > * {
+  & > *:not(.border) {
     @include standardPadding;
   }
 

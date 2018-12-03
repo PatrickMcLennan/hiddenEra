@@ -20,6 +20,14 @@
   text-align: $align;
 }
 
+// NAV
+@mixin navIcon {
+  display: none;
+  transform: scale(1);
+  position: absolute;
+  top: 100%;
+}
+
 // IMAGES
 @mixin picFit($objFit:contain, $height:auto, $width:100%) {
   height: $height;
@@ -37,12 +45,5 @@
   &:hover {
     transform: scale(1.105);
   }
-}
-// NAV
-@mixin navIcon {
-  display: none;
-  transform: scale(1);
-  position: absolute;
-  top: 100%;
 }
 
