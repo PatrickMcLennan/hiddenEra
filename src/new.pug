@@ -1,0 +1,115 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    title Document
+  body
+  //-  JS
+- const header = {
+    logo: { text: "Hidden Era", type: "h1", class: "header__logo" },
+    socialIcons: [
+      {
+        path: 'img/svg/facebook.svg',
+        alt: 'Hidden Eras Facebook',
+        class: 'icon icon__social'
+      },
+      {
+        path: 'img/svg/instagram.svg',
+        alt: 'Hidden Eras Instagram',
+        class: 'icon icon__social'
+      },
+      {
+        path: 'img/svg/youtube.svg',
+        alt: 'Hidden Eras Youtube',
+        class: 'icon icon__social'
+      },
+      {
+        path: 'img/svg/snapchat.svg',
+        alt: 'Hidden Eras Snapchat',
+        class: 'icon icon__social'
+      }
+    ],
+    menu: [
+      { url: '#home', text: 'Home' },
+      { url: '#dates', text: 'Dates' },
+      { url: '#aboutUs', text: 'About Us' },
+      { url: '#cart', text: 'Cart' },
+    ]
+  }
+- const home = {
+    headingPrimary: { text: "Reuniuon Tour", type: "h2", class: "home__heading__primary" },
+    span: { type: "span", class: "home__span" },
+    headingSecondary: { text: "2019", type: "h2", class: "home__heading__secondary" },
+    links: [
+      { text: 'Get Tickets', link: '#dates' },
+      { text: 'Get "The Lost Years" on Blu-Ray', link: '#cart' }
+    ],
+    award: {
+      path: 'img/svg/trophy.svg',
+      alt: 'Trophy SVG',
+      text: '2 time BCHS Battle of the Bands Runner-Up'
+    },
+    reviews: [
+      {
+        path: 'img/home/altPress.png',
+        alt: 'Alternative Press\'s Logo',
+        rating: ['img/svg/star-full.svg', 'img/svg/star-full.svg', 'img/svg/star-full.svg', 'img/svg/star-half.svg', 'img/svg/star-empty.svg'],
+        quote: '...haunting vocals...literally, haunting...',
+        company: ' -- Alternative Press'
+      },
+      {
+        path: 'img/home/pitchfork.png',
+        alt: 'Pitchforks Logo',
+        rating: ['img/svg/star-half.svg', 'img/svg/star-empty.svg', 'img/svg/star-empty.svg', 'img/svg/star-empty.svg', 'img/svg/star-empty.svg'],
+        quote: 'lol',
+        company: ' -- Pitchfork'
+      },
+      {
+        path: 'img/home/rollingStone.png',
+        alt: 'Rolling Stones Logo',
+        rating: ['img/svg/star-full.svg', 'img/svg/star-full.svg', 'img/svg/star-empty.svg', 'img/svg/star-empty.svg', 'img/svg/star-empty.svg'],
+        quote: '...by god, they\'re really trying...',
+        company: ' -- Rolling Stone'
+      },
+      {
+        path: 'img/home/time.png',
+        alt: 'Time Magazines Logo',
+        rating: ['img/svg/star-full.svg', 'img/svg/star-full.svg', 'img/svg/star-full.svg', 'img/svg/star-full.svg', 'img/svg/star-empty.svg'],
+        quote: '...there\'s worse out there...',
+        company: ' -- Time Magazine'
+      },
+      {
+        path: 'img/home/billboard.png',
+        alt: 'Billboards Logo',
+        rating: ['img/svg/star-empty.svg', 'img/svg/star-empty.svg', 'img/svg/star-empty.svg', 'img/svg/star-empty.svg', 'img/svg/star-empty.svg'],
+        quote: '...don\'t even have the will to finish this...',
+        company: ' -- Billboard'
+      },
+      {
+        path: 'img/home/entertaintment.png',
+        alt: 'Entertainment Weekly Logo',
+        rating: ['img/svg/star-full.svg', 'img/svg/star-half.svg', 'img/svg/star-empty.svg', 'img/svg/star-empty.svg', 'img/svg/star-empty.svg'],
+        quote: '...it\'s been a slow week...',
+        company: ' -- Entertainment Weekly'
+      },
+      {
+        path: 'img/home/variety.png',
+        alt: 'Variety magazines Logo',
+        rating: ['img/svg/star-full.svg', 'img/svg/star-full.svg', 'img/svg/star-full.svg', 'img/svg/star-full.svg', 'img/svg/star-full.svg'],
+        quote: '...[best] rock band of the Burlington High School Music scene...',
+        company: ' -- Variety'
+      },
+    ],
+  }
+- const dates = {
+
+  }
+
+  mixin builder(tag, class)
+    tag(class= class)
+  mixin textBuilder(tag, text, class)
+    tag(class= class)= text
+  mixin imgBuilder(path, alt, class)
+    img(src= path alt= alt class= class)
