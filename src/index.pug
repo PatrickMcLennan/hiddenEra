@@ -4,337 +4,279 @@ html(lang="en")
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
-    link(rel="stylesheet", href="style.css")
-    title hiddenEra
+    title Document
   body
-    //- LOGIC
-    -
-      const nav = {
-        cart: {
-          inCart: 'Your Cart',
-          subTotal: 'Sub Total',
-          tax: 'HST',
-          total: 'Total',
-          promo: 'LIMITED TIME OFFER - Answer this skill testing question and save 5%!',
-          form: [
-            { ID: 'firstName', kind: "text", placeholder: 'First Name' },
-            { ID: 'lastName', kind: "text", placeholder: 'Last Name' },
-            { ID: 'email', kind: "email", text: 'Email' },
-            { ID: 'phone', kind: "number", text: 'Phone' },
-            { ID: 'address', kind: "text", placeholder: 'Billing Address'} ,
-            { ID: 'city', kind: "text", placeholder: 'City' },
-            { ID: 'province', kind: "text", placeholder: 'Province/State' },
-            { ID: 'country', kind: "text", placeholder: 'Country' },
-          ]
+  //-  JS
+- const header = {
+    logo: { text: "Hidden Era", type: "h1", class: "header__logo" },
+    socialIcons: [
+      {
+        path: 'img/svg/facebook.svg',
+        alt: 'Hidden Eras Facebook',
+        class: 'icon icon__social'
+      },
+      {
+        path: 'img/svg/instagram.svg',
+        alt: 'Hidden Eras Instagram',
+        class: 'icon icon__social'
+      },
+      {
+        path: 'img/svg/youtube.svg',
+        alt: 'Hidden Eras Youtube',
+        class: 'icon icon__social'
+      },
+      {
+        path: 'img/svg/snapchat.svg',
+        alt: 'Hidden Eras Snapchat',
+        class: 'icon icon__social'
+      }
+    ],
+    menu: [
+      { url: '#home', text: 'Home' },
+      { url: '#dates', text: 'Dates' },
+      { url: '#aboutUs', text: 'About Us' },
+      { url: '#cart', text: 'Cart' },
+    ]
+  }
+- const home = {
+    headingPrimary: { text: "Reuniuon Tour", type: "h2", class: "home__heading__primary" },
+    span: { type: "span", class: "home__span" },
+    headingSecondary: { text: "2019", type: "h2", class: "home__heading__secondary" },
+    links: [
+      { text: 'Get Tickets', link: '#dates' },
+      { text: 'Get "The Lost Years" on Blu-Ray', link: '#cart' }
+    ],
+    award: {
+      path: 'img/svg/trophy.svg',
+      alt: 'Trophy SVG',
+      text: '2 time BCHS Battle of the Bands Runner-Up'
+    },
+    reviews: [
+      {
+        path: 'img/home/altPress.png',
+        alt: 'Alternative Press\'s Logo',
+        rating: ['img/svg/star-full.svg', 'img/svg/star-full.svg', 'img/svg/star-full.svg', 'img/svg/star-half.svg', 'img/svg/star-empty.svg'],
+        quote: '...haunting vocals...literally, haunting...',
+        company: ' -- Alternative Press'
+      },
+      {
+        path: 'img/home/pitchfork.png',
+        alt: 'Pitchforks Logo',
+        rating: ['img/svg/star-half.svg', 'img/svg/star-empty.svg', 'img/svg/star-empty.svg', 'img/svg/star-empty.svg', 'img/svg/star-empty.svg'],
+        quote: 'lol',
+        company: ' -- Pitchfork'
+      },
+      {
+        path: 'img/home/rollingStone.png',
+        alt: 'Rolling Stones Logo',
+        rating: ['img/svg/star-full.svg', 'img/svg/star-full.svg', 'img/svg/star-empty.svg', 'img/svg/star-empty.svg', 'img/svg/star-empty.svg'],
+        quote: '...by god, they\'re really trying...',
+        company: ' -- Rolling Stone'
+      },
+      {
+        path: 'img/home/time.png',
+        alt: 'Time Magazines Logo',
+        rating: ['img/svg/star-full.svg', 'img/svg/star-full.svg', 'img/svg/star-full.svg', 'img/svg/star-full.svg', 'img/svg/star-empty.svg'],
+        quote: '...there\'s worse out there...',
+        company: ' -- Time Magazine'
+      },
+      {
+        path: 'img/home/billboard.png',
+        alt: 'Billboards Logo',
+        rating: ['img/svg/star-empty.svg', 'img/svg/star-empty.svg', 'img/svg/star-empty.svg', 'img/svg/star-empty.svg', 'img/svg/star-empty.svg'],
+        quote: '...don\'t even have the will to finish this...',
+        company: ' -- Billboard'
+      },
+      {
+        path: 'img/home/entertaintment.png',
+        alt: 'Entertainment Weekly Logo',
+        rating: ['img/svg/star-full.svg', 'img/svg/star-half.svg', 'img/svg/star-empty.svg', 'img/svg/star-empty.svg', 'img/svg/star-empty.svg'],
+        quote: '...it\'s been a slow week...',
+        company: ' -- Entertainment Weekly'
+      },
+      {
+        path: 'img/home/variety.png',
+        alt: 'Variety magazines Logo',
+        rating: ['img/svg/star-full.svg', 'img/svg/star-full.svg', 'img/svg/star-full.svg', 'img/svg/star-full.svg', 'img/svg/star-full.svg'],
+        quote: '...[best] rock band of the Burlington High School Music scene...',
+        company: ' -- Variety'
+      },
+    ],
+  }
+- const dates = {
+    table: {
+      headings: [
+        {
+          path: 'img/svg/home.svg',
+          alt: 'Show Location'
         },
-        menu: [
-          { url: '#home', text: 'Home' },
-          { url: '#dates', text: 'Dates' },
-          { url: '#aboutUs', text: 'About Us' },
-          { url: '#preorder', text: 'Pre-order Remaster' },
-        ],
-        songs: ['Means to be', 'Will to Fight', 'Road To Redemption', 'Solemn Angel Eyes', 'Riding the bullet']
-      }
-      const header = {
-        icons: [
-          { path: 'img/svg/facebook.svg', alt: 'Hidden Eras Facebook', ID:"facebook" },
-          { path: 'img/svg/instagram.svg', alt: 'Hidden Eras Instagram', ID:"instagram" },
-          { path: 'img/svg/youtube.svg', alt: 'Hidden Eras Youtube', ID: "youtube" },
-          { path: 'img/svg/snapchat.svg', alt: 'Hidden Eras Snapchat', ID: "snapchat" },
-        ]
-      }
-      const home = {
-        reviews: [
-          {
-            pic: 'img/home/altPress.png',
-            alt: 'Alternative Press\'s Logo',
-            rating: ['img/svg/star-full.svg', 'img/svg/star-full.svg', 'img/svg/star-full.svg', 'img/svg/star-half.svg', 'img/svg/star-empty.svg'],
-            quote: '...haunting vocals...literally, haunting...',
-            company: ' -- Alternative Press'
-          },
-          {
-            pic: 'img/home/pitchfork.png',
-            alt: 'Pitchforks Logo',
-            rating: ['img/svg/star-half.svg', 'img/svg/star-empty.svg', 'img/svg/star-empty.svg', 'img/svg/star-empty.svg', 'img/svg/star-empty.svg'],
-            quote: 'lol',
-            company: ' -- Pitchfork'
-          },
-          {
-            pic: 'img/home/rollingStone.png',
-            alt: 'Rolling Stones Logo',
-            rating: ['img/svg/star-full.svg', 'img/svg/star-full.svg', 'img/svg/star-empty.svg', 'img/svg/star-empty.svg', 'img/svg/star-empty.svg'],
-            quote: '...by god, they\'re really trying...',
-            company: ' -- Rolling Stone'
-          },
-          {
-            pic: 'img/home/time.png',
-            alt: 'Time Magazines Logo',
-            rating: ['img/svg/star-full.svg', 'img/svg/star-full.svg', 'img/svg/star-full.svg', 'img/svg/star-full.svg', 'img/svg/star-empty.svg'],
-            quote: '...there\'s worse out there...',
-            company: ' -- Time Magazine'
-          },
-          {
-            pic: 'img/home/billboard.png',
-            alt: 'Billboards Logo',
-            rating: ['img/svg/star-empty.svg', 'img/svg/star-empty.svg', 'img/svg/star-empty.svg', 'img/svg/star-empty.svg', 'img/svg/star-empty.svg'],
-            quote: '...don\'t even have the will to finish this...',
-            company: ' -- Billboard'
-          },
-          {
-            pic: 'img/home/entertaintment.png',
-            alt: 'Entertainment Weekly Logo',
-            rating: ['img/svg/star-full.svg', 'img/svg/star-half.svg', 'img/svg/star-empty.svg', 'img/svg/star-empty.svg', 'img/svg/star-empty.svg'],
-            quote: '...it\'s been a slow week...',
-            company: ' -- Entertainment Weekly'
-          },
-          {
-            pic: 'img/home/variety.png',
-            alt: 'Variety magazines Logo',
-            rating: ['img/svg/star-full.svg', 'img/svg/star-full.svg', 'img/svg/star-full.svg', 'img/svg/star-full.svg', 'img/svg/star-full.svg'],
-            quote: '...[best] rock band of the Burlington High School Music scene...',
-            company: ' -- Variety'
-          },
-        ],
-        links: [
-          {
-            pic: 'img/svg/ticket.svg',
-            alt: 'Ticket SVG',
-            text: 'Pre-order Tickets now',
-            link: '#dates'
-          },
-          {
-            pic: 'img/bluray.png',
-            alt: 'Blu-Ray Cover',
-            text: 'Pre-order "The Lost Years" on Blu-ray',
-            link: '#preorder'
-          }
-        ]
-      }
-      const dates = {
-        headings: ['img/svg/home.svg', 'img/svg/tv.svg', 'img/svg/calendar.svg', 'img/svg/coin-dollar.svg', 'img/svg/ticket.svg'],
-        listings: [
-          { venue: 'Holiday Inn, Burlington ON', show: 'Burlington International Games (B.I.G) Kick-off', date: 'August 2nd, 2019', price: '/' },
-          { venue: 'Burlington Central High School', show: 'Fall Talent Show', date: 'October 12th, 2019 (2nd Period)', price: '$10, $5 with canned good donation' },
-          { venue: 'Burlington Central High School', show: 'Christmas Talent Show', date: 'December 21st, 2019 (5th period)', price: '$10, $5 with canned good donation' },
-          { venue: 'Burlington Central High School', show: 'Spring Talent Show', date: 'March 15th, 2019 (2nd period)', price: '$10, $5 with canned good donation' },
-          { venue: 'T.B.A', show: 'Bobs No-Frills Employee Party', date: 'July 1st, 2019', price: '/' },
-        ]
-      }
-      const aboutUs = {
-        members: [
-          {
-            name: 'Patrick McLennan',
-            img: 'img/aboutUs/pat.jpg',
-            laughLine: '6 strings of fury',
-            text: 'The song-writing tornado behind such classics as "Will To Fight", Patrick is year after year hailed as a tour-de-force in the Grade 10 Burlington Central High School rock scene.  You can find Pat forcing band members to load $5k worth of guitar amps that he "doesn\'t need."',
-            equipment: ['img/aboutUs/epiphone.png', 'img/aboutUs/marshall.png']
-          },
-          {
-            name: 'Tom Duff',
-            img: 'img/aboutUs/tom.jpg',
-            laughLine: 'Lock up your daughters',
-            text: 'Hidden Era is an Equal Oppurtunity Employer.',
-            equipment: ['img/aboutUs/pearl.png']
-          },
-          {
-            name: 'John Duff',
-            img: 'img/aboutUs/john.jpg',
-            laughLine: 'Dreamer.  Visionary.  Driver.',
-            text: 'The steady hand of the group, Johns natural ability to gain a G2 earned him immediate acceptance into the band.  Quiet and composed, John can be found obsessing over Swedish pop-star Robyn or patenting his yet-to-be-seen "Live Fade-Out" technique.',
-            equipment: ['img/aboutUs/godin.png', 'img/aboutUs/fender.png']
-          },
-          {
-            name: 'Blake Hutton',
-            img: 'img/aboutUs/blake.jpg',
-            laughLine: '6 strings of fury',
-            text: 'Blakes quirky personality is a lot like his bass playing -- off-beat and timeless.  Excited for the upcoming shows, Blake has only 2 dislikes in this world -- Wheat and Injustice, which he often claims go hand in hand.',
-            equipment: ['img/aboutUs/musicMan.png', 'img/aboutUs/ampeg.png']
-          },
-          {
-            name: 'Marc Decaire',
-            img: 'img/aboutUs/marc.jpeg',
-            laughLine: 'Regional Man of Mystery',
-            text: 'Voted Best Looking member of Hidden Era, unanimously, everytime, Marc Decaire redefined what a vocalist for a High School rock band should be.  If you see Marc in the wild, please tell him to call one of us.',
-            equipment: []
-          },
-        ]
-      }
-      const preorder = {
-        imgs: ['img/preorder/livePic1.jpg', 'img/preorder/livePic2.jpg', 'img/preorder/livePic3.jpg', 'img/preorder/livePic4.jpg']
-      }
-      const footer = {
-        logo: [
-          { url: "https://github.com/PatrickMcLennan", path: "img/svg/github.svg", alt: "Patrick McLennans Github" },
-          { url: "https://www.linkedin.com/in/patrick-mclennan-42002a172/", path: "img/svg/linkedin.svg", alt: "Patrick McLennans LinkedIn" }
-        ]
-      }
-
-    mixin borders
-      span.border.border__left
-      span.border.border__top
-      span.border.border__right
-      span.border.border__bottom
-
-    mixin navMenu(url, text)
-      li.menu__item
-        a.menu__link(src=url)= text
-
-    mixin navInputs(identifier, kind, text)
-      input(id= identifier type=kind placeholder=text)
-
-    mixin socialIcons(path, alt, ID)
-      a.social__link
-        img(src=path alt=alt class="social__svg" id=ID)
-
-    mixin reviewFigure(pic, alt, rating, quote, company)
-      figure.review
-        +borders
-        .review__compImg
-          img(src=pic, alt=alt)
-          .review__rating
-            each i in rating
-              img.review__star(src=i alt="Rating Star")
-        figcation.review__caption
-          q.review__quote= quote
-          h6.review__company= company
-
-    mixin linkFigure(pic, alt, link, text)
-      figure.home__link
-        .home__picBox
-          img.home__linkPic(src=pic alt=alt)
-        figcaption.home__linkCaption
-          a.home__cta(href=link)= text
-
-    mixin datesListing(venue, show, date, price)
-      tr.dates__table__row
-        td.dates__table__venue= venue
-        td.dates__table__shows= show
-        td.dates__table__date= date
-        td.dates__table__price= price
-        td.dates__table__cta
-          a.dates__table__btn Add To Cart
-
-    mixin aboutUsProfile(name, img, laughLine, text, equipment)
-      figure.aboutUs__figure
-        .aboutUs__picBox
-          img.aboutUs__pic(src= img alt= name)
-          h5.aboutUs__name= name
-        figcaption.aboutUs__figcaption
-          h6.aboutUs__laughLine= laughLine
-          p.aboutUs__text= text
-        each i in equipment
-          .aboutUs__equipment
-            img.aboutUs__gear(src=i alt=`${name}'s equipment`)
-
-    mixin logoItem(url, path, alt)
-      li.myLogo__item
-        a.myLogo__link(href=url target="_blank")
-          img(src=path, alt=alt)
-
-
-    //- HTML
-    nav.nav
-      .nav__menu.menu
-        +borders
-        img.menu__icon(src="img/svg/menu.svg")
-        ul.menu__list
-          each i in nav.menu
-            +navMenu(i.url, i.text)
-      .nav__player.player
-        +borders
-        img.player__icon(src="img/svg/play.svg")
-        ul.player__songList
-          each i in nav.songs
-            li.player__song
-              button.player__btn= i
-      .nav__cart.cart
-        +borders
-        img.cart__icon(src="img/svg/cart.svg")
-        h5.cart__itemCount You have #[span 0] items in your Cart
-        form.cart__form
-          h6.cart__ItemsHeader= nav.cart.inCart
-          ul.cart__ItemsList
-            li.cart__Item Remastered DVD
-          h6.cart__subTotal= nav.cart.subTotal
-            span $25.00
-          h6.cart__tax= nav.cart.tax
-            span $2.50
-          h6.cart__total= nav.cart.total
-            span $27.50
-          .cart__customerInfo
-            each i in nav.cart.form
-              +navInputs(i.ID, i.kind, i.placeholder)
-            label(for="promo") Answer a skill testing Question to save 5%
-              input#promo(type="text")
-
-    header.header
-      .social
-        each i in header.icons
-          +socialIcons(i.path, i.alt, i.ID)
-
-    main.main
-
-      section.home#home
-        +borders
-        figure.home__hero
-          .home__heroImg
-            img.home__showcase(src="img/home/showcase.jpg" alt="Hidden Era Money Shot")
-          figcaption.home__caption
-            h1.home__header Hidden Era
-            h2.home__tag Reunion Tour 2019
-            .home__links
-              each i in home.links
-                +linkFigure(i.pic, i.alt, i.link, i.text)
-        figure.home__botb
-          .home__botbImg
-            img.home__trophy(src="img/svg/trophy.svg" alt="Trophy")
-          figcaption.home__botbCaption
-            h4.home__botbHeader 2 time BCHS Battle of The Bands Runner Up
-        .home__reviews
-          .home__reviewsLeft
-            each i in home.reviews
-              +reviewFigure(i.pic, i.alt, i.rating, i.quote, i.company)
-          .home__reviewsRight
-            each i in home.reviews
-              +reviewFigure(i.pic, i.alt, i.rating, i.quote, i.company)
-
-      section.dates#dates
-        h3.dates__header.section__header Tickets are going fast -- pre-order yours now!
-        table.dates__table
-          tr.dates__table__row
-            each i in dates.headings
-              th.dates__table__heading
-                img(src=i)
-          each i in dates.listings
-            +datesListing(i.venue, i.show, i.date, i.price)
-
-      section.aboutUs#aboutUs
-        h3.aboutUs__header.section__header We haven't aged a day
-        each i in aboutUs.members
-          button.aboutUs__selector= i.name
-        each i in aboutUs.members
-          +aboutUsProfile(i.name, i.img, i.laughLine, i.text, i.equipment)
-
-      section.preorder#preorder
-        h4.preorder__header.section__header You've heard the classics -- Now you can own them
-        figure.preorder__figure
-          .preorder__collage
-            each i in preorder.imgs
-              img(src=i alt="Live Photo of Hidden Era")
-            img(src="img/bluray.png")
-
-
-    footer.footer#footer
-      .footer__copy
-        p Copyright Hidden Era music.  All music, logos and goofy haircuts are protected by privacy laws and anybody seeking to replicate them really shouldn't.
-        p Management by Jake Rivers Media
-      .footer__links
-        each i in header.icons
-          +socialIcons(i.path, i.alt)
-      .footer__myLogo.myLogo
-        .myLogo__letters
-          h6.logo__p P
-          h6.logo__m M
-        ul.myLogo__list
-          each i in footer.logo
-            +logoItem(i.url, i.path, i.alt)
+        {
+          path: 'img/svg/tv.svg',
+          alt: 'Show Name'
+        },
+        {
+          path: 'img/svg/calendar.svg',
+          alt: 'Show Date'
+        },
+        {
+          path: 'img/svg/coin-dollar.svg',
+          alt: 'Show Cost'
+        },
+        {
+          path: 'img/svg/ticket.svg',
+          alt: 'Get Tickets'
+        }
+      ],
+      listings: [
+        {
+          venue: 'Holiday Inn',
+          show: 'Burlington International Games (B.I.G) kick-Off',
+          date: 'August 2nd, 2019',
+          price: ' / '
+        },
+        {
+          venue: 'Burlington Central High School',
+          show: 'Fall Talent Show',
+          date: 'October 12th, 2019 (2nd period)',
+          price: '10$, 5$ with canned good donation'
+        },
+        {
+          venue: 'Burlington Central High School',
+          show: 'Christmas Talent Show',
+          date: 'December 21st, 2019 (5h period)',
+          price: '10$, 5$ with canned good donation'
+        },
+        {
+          venue: 'Burlington Central High School',
+          show: 'Spring Talent Show',
+          date: 'March 15th, 2019 (2nd period)',
+          price: '10$, 5$ with canned good donation'
+        },
+        {
+          venue: 'Burlington Central High School',
+          show: 'Battle of the Bands',
+          date: 'May 10th, 2019',
+          price: '10$, 5$ with canned good donation'
+        },
+        {
+          venue: 'Holiday Inn',
+          show: 'Burlington International Games (B.I.G) kick-Off',
+          date: 'August 2nd, 2019',
+          price: ' / '
+        },
+        {
+          venue: 'T.B.A',
+          show: 'Bobs No-Frills Employee Party',
+          date: 'July 1st, 2019',
+          price: ' / '
+        }
+      ]
+    },
+    collage: [
+      {
+        path: 'img/dates/group1.jpg',
+        alt: 'Hidden Era Group Shot'
+      },
+      {
+        path: 'img/dates/group2.jpg',
+        alt: 'Hidden Era Group Shot'
+      },
+      {
+        path: 'img/dates/group3.jpg',
+        alt: 'Hidden Era Group Shot'
+      },
+      {
+        path: 'img/dates/group4.jpg',
+        alt: 'Hidden Era Group Shot'
+      },
+      {
+        path: 'img/dates/group5.jpg',
+        alt: 'Hidden Era Group Shot'
+      },
+      {
+        path: 'img/dates/group6.jpg',
+        alt: 'Hidden Era Group Shot'
+      },
+    ],
+  }
+}
+- const aboutUs = {
+  figures: [
+    {
+      path: 'img/aboutUs/pat.jpg',
+      name: 'Patrick McLennan'
+    },
+    {
+      path: 'img/aboutUs/marc.jpg',
+      name: 'Marc Decaire'
+    },
+    {
+      path: 'img/aboutUs/john.jpg',
+      name: 'John Duff'
+    },
+    {
+      path: 'img/aboutUs/tom.jpg',
+      name: 'Tom Duff'
+    },
+    {
+      path: 'img/aboutUs/blake.jpg',
+      name: 'Blake Hutton'
+    }
+  ],
+  members: [
+    {
+      name: 'Patrick McLennan',
+      img: 'img/aboutUs/pat.jpg',
+      laughLine: '6 strings of fury',
+      text: 'The song-writing tornado behind such classics as "Will To Fight", Patrick is year after year hailed as a tour-de-force in the Grade 10 Burlington Central High School rock scene.  You can find Pat forcing band members to load $5k worth of guitar amps that he "doesn\'t need."',
+      equipment: ['img/aboutUs/epiphone.png', 'img/aboutUs/marshall.png']
+    },
+    {
+      name: 'Tom Duff',
+      img: 'img/aboutUs/tom.jpg',
+      laughLine: 'Lock up your daughters',
+      text: 'Hidden Era is an Equal Oppurtunity Employer.',
+      equipment: ['img/aboutUs/pearl.png']
+    },
+    {
+      name: 'John Duff',
+      img: 'img/aboutUs/john.jpg',
+      laughLine: 'Dreamer.  Visionary.  Driver.',
+      text: 'The steady hand of the group, Johns natural ability to gain a G2 earned him immediate acceptance into the band.  Quiet and composed, John can be found obsessing over Swedish pop-star Robyn or patenting his yet-to-be-seen "Live Fade-Out" technique.',
+      equipment: ['img/aboutUs/godin.png', 'img/aboutUs/fender.png']
+    },
+    {
+      name: 'Blake Hutton',
+      img: 'img/aboutUs/blake.jpg',
+      laughLine: '6 strings of fury',
+      text: 'Blakes quirky personality is a lot like his bass playing -- off-beat and timeless.  Excited for the upcoming shows, Blake has only 2 dislikes in this world -- Wheat and Injustice, which he often claims go hand in hand.',
+      equipment: ['img/aboutUs/musicMan.png', 'img/aboutUs/ampeg.png']
+    },
+    {
+      name: 'Marc Decaire',
+      img: 'img/aboutUs/marc.jpeg',
+      laughLine: 'Regional Man of Mystery',
+      text: 'Voted Best Looking member of Hidden Era, unanimously, everytime, Marc Decaire redefined what a vocalist for a High School rock band should be.  If you see Marc in the wild, please tell him to call one of us.',
+      equipment: []
+    },
+  ]
+}
+-const cart = {
+  form: {
+    address : [
+      { id: 'firstName', type: 'text', placeholder: 'First Name'},
+      { id: 'lastName', type: 'text', placeholder: 'Last Name'},
+      { id: 'email', type: 'email', placeholder: 'Email Address'},
+      { id: 'phone', type: 'number', placeholder: 'Phone #'},
+      { id: 'address', type: 'text', placeholder: 'Street Address'},
+      { id: 'city', type: 'text', placeholder: 'City'},
+      { id: 'province', type: 'text', placeholder: 'Province/State'},
+      { id: 'Country', type: 'text', placeholder: 'Country'},
+    ],
+    billing: [
+      { id: 'creditCardNumber', type: 'number', placeholder: 'Credit Card #'},
+      { id: 'cvv', type: 'number', placeholder: 'CVV'},
+      { id: 'creditCardName', type: 'text', placeholder: 'Name on Credit Card'},
+    ]
+  },
+}
