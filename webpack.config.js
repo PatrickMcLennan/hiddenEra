@@ -58,7 +58,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       inject: false,
       hash: false,
-      template: './src/index.pug',
+      template: './src/pug/index.pug',
       filename: 'index.html',
       minify: {
         removeAttributeQuotes: true,
