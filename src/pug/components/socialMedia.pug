@@ -1,3 +1,5 @@
+include ./../components/mixins
+
 -
   const socialIcons = [
       { path: 'img/svg/facebook.svg', alt: 'Hidden Eras Facebook', class: 'icon icon__social' },
@@ -5,10 +7,5 @@
       { path: 'img/svg/youtube.svg', alt: 'Hidden Eras Youtube', class: 'icon icon__social' },
       { path: 'img/svg/snapchat.svg', alt: 'Hidden Eras Snapchat', class: 'icon icon__social' }
   ]
-
-mixin socialMedia(array)
-  each icon in array
-    a(href="http://www.google.com" target="_blank")
-      img(class= icon.class src= icon.path alt= icon.alt)
 
 +socialMedia(socialIcons)

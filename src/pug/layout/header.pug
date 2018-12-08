@@ -1,6 +1,7 @@
+
+include ./../components/mixins
 -
   const header = {
-    logo: { text: "Hidden Era", type: "h1", class: "header__logo" },
     menu: [
       { url: '#home', text: 'Home' },
       { url: '#dates', text: 'Dates' },
@@ -13,4 +14,6 @@
   h1 Hidden Era
 .header__icons.social__icons
   include ../components/socialMedia
-nav.header__nav
+nav.header__nav.nav
+  ul.nav__menu
+    +makeMenu(header.menu)

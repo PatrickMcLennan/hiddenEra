@@ -1,0 +1,35 @@
+//- COMPONENTS
+mixin socialMedia(array)
+  each icon in array
+    a(href="http://www.google.com" target="_blank")
+      img(class= icon.class src= icon.path alt= icon.alt)
+
+mixin figure(figClass, imgPath, imgAlt, capClass,capTextClass, capText)
+  figure(class=figClass)
+    img(src= imgPath alt= imgAlt)
+    figcaption(class= capClass)
+      h6(class= capTextClass)= capText
+
+mixin review(array)
+  each review in reviews
+    figure.review
+      .review__imgs
+        img.review__logo(src=review.path, alt=review.alt)
+        .review__rating
+          each i in review.rating
+            img(src="i")
+      figcaption.review__caption
+        h6.review__quote= review.quote
+        h5.review__company= review.company
+
+
+//- HEADER
+mixin makeMenu(array)
+  each i in array
+    li.nav__item
+      a.nav__link(src=i.url)= i.text
+
+//- HOME
+mixin headings(array)
+  each letter in array
+    span=letter
