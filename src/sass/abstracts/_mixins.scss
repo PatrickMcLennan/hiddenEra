@@ -18,14 +18,17 @@
 }
 
 // NAV
-@mixin navIcon {
-  display: none;
-  transform: scale(1);
-  position: absolute;
-  top: 100%;
-}
 
 // IMAGES
+@mixin icon {
+  padding: var(--padding-icon);
+  transition: all .35s ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
 @mixin picFit($objFit:contain, $height:auto, $width:100%) {
   height: $height;
   width: $width;

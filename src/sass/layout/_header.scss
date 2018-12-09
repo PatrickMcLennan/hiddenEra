@@ -1,4 +1,14 @@
 .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   @include flexin(space-between);
   padding: var(--padding-header);
+}
+
+.header,
+.header > * {
+  z-index: 9999;
+  flex: 1 1 33.33333%
 }

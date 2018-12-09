@@ -1,19 +1,32 @@
 .nav {
-  position: relative;
-  @include flexin(space-evenly, flex-end, column);
+  @include flexin(center, flex-end, column);
 
-  &__span {
-    height: 1px;
-    width: 10px;
-    background-color: black;
+  &__button {
+    height: 100%;
+    @include flexin(space-evenly, center, column);
+    position: relative;
+  }
+
+  &__svg {
+    @include icon;
   }
 
   &__ul {
     position: absolute;
     top: 100%;
+    right: -50%;
+    text-align: right;
   }
 
   &__item {
-    padding: var(--padding-li);
+    transition: all .3s ease-in-out;
+    padding: 1.5vh 2vw;
+    transform: translateX(200%);
+    opacity: 0;
   }
+}
+
+.nav__button:hover .nav__item {
+  transform: translateX(0);
+  opacity: 1;
 }

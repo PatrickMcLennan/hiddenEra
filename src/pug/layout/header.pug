@@ -17,8 +17,7 @@ include ../components/mixins
 .social
   include ../components/socialMedia
 nav.nav
-  span.nav__span
-  span.nav__span
-  span.nav__span
-  ul.nav__ul
-    +makeMenu(menu)
+  nav.nav__button
+    img.nav__svg.icon(src="img/svg/menu.svg")
+    ul.nav__ul
+      +makeMenu(menu)
