@@ -1,10 +1,11 @@
 
 // LAYOUT
-@mixin flexin($content:center, $align:center, $direction:row) {
+@mixin flexin($content:center, $align:center, $direction:row, $align-content:space-evenly) {
   display: flex;
   justify-content: $content;
   align-items: $align;
   flex-direction: $direction;
+  align-content: $align-content;
 }
 
 // TYPOGRAPHY

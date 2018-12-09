@@ -1,0 +1,23 @@
+.aboutUs {
+
+  &__memberIcons {
+    @include flexin;
+    max-width: 50vw;
+    flex-wrap: wrap;
+  }
+
+  &__figure {
+    flex: 0 .5 20vh;
+    @include flexin(center, center, column);
+    overflow: hidden;
+  }
+
+  &__img {
+    object-fit: center;
+    flex: 0 1 7.5vh;
+  }
+
+  &__caption {
+    transform: translateY(100%);
+  }
+}
