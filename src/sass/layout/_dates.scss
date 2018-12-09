@@ -1,0 +1,37 @@
+.dates {
+  @include flexin;
+  overflow: hidden;
+
+  & > * {
+    flex: 0 0 50%;
+  }
+
+  &__left__col {
+    @include flexin;
+    padding: 30vh 0 30vh 5vw;
+  }
+
+
+  &__right__col {
+    @include flexin(space-evenly, center, column);
+    padding: 10vh 5vw;
+
+  }
+
+  &__heading {
+    margin-bottom: 10vh;
+    margin-left: auto;
+  }
+
+  &__collage {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+  }
+
+  &__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}

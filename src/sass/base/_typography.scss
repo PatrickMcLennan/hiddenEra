@@ -16,3 +16,11 @@
     font-size: 2rem;
   }
 }
+
+.dates {
+
+  &__heading {
+    @include sectionHeader(right);
+  }
+
+}

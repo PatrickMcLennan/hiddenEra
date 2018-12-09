@@ -16,6 +16,10 @@
 @mixin alignText($align:center) {
   text-align: $align;
 }
+@mixin sectionHeader($side:left) {
+  text-align: $side;
+  font-size: 3rem;
+}
 
 // NAV
 
