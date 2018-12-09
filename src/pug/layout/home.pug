@@ -24,7 +24,7 @@ include ./../components/mixins
 
 section.home
 
-  .home__headings
+  .home__heading
     h1.home__heading__primary
       +headings(home.headingPrimary)
     .home__span__box
@@ -33,10 +33,10 @@ section.home
       +headings(home.headingSecondary)
 
   .home__award
-    +figure(home__award__figure, award.path, award.alt, home__award__caption, home__text, award.text)
+    +figure('home__award__figure', award.path, award.alt, 'home__award__caption', 'home__text', award.text)
 
-  .home__reviews
-    .home__review
-      +review(reviews)
-    .home__review
-      +review(reviews.reverse())
+  //- .home__reviews
+  //-   .home__review
+  //-     +review(reviews)
+  //-   .home__review
+  //-     +review(reviews.reverse())

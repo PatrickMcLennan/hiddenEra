@@ -1,0 +1,32 @@
+.home {
+  @include flexin(space-evenly, center, column);
+  flex: 1;
+
+  &__heading {
+    padding-top: 40vh;
+    text-align: center;
+
+    &__secondary {
+      @include flexin(space-evenly, center)
+    }
+  }
+
+  &__span__box {
+    width: 100%;
+    height: 5px;
+    border: 1px solid black;
+    margin: 2.5vh auto;
+  }
+
+  &__award {
+    margin: 5vh 0;
+
+    &__figure {
+      @include flexin(space-evenly);
+    }
+
+    &__caption {
+      margin-left: var(--margin-figcaption);
+    }
+  }
+}

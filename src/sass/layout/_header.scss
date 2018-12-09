@@ -5,6 +5,7 @@
   right: 0;
   @include flexin(space-between);
   padding: var(--padding-header);
+  border-bottom: 1px solid black;
 }
 
 .header,
