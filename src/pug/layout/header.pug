@@ -1,5 +1,5 @@
 
-include ./../components/mixins
+include ../components/mixins
 -
   const header = {
     menu: [
@@ -10,10 +10,12 @@ include ./../components/mixins
     ]
   }
 
+- const { menu } = header
+
 .header__logo
   h1 Hidden Era
 .header__icons.social__icons
   include ../components/socialMedia
 nav.header__nav.nav
   ul.nav__menu
-    +makeMenu(header.menu)
+    +makeMenu(menu)
