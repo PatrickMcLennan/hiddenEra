@@ -6,9 +6,6 @@
   align-items: $align;
   flex-direction: $direction;
 }
-@mixin standardPadding {
-  padding: var(--padding-standard);
-}
 
 // TYPOGRAPHY
 @mixin plainText {

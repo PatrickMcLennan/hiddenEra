@@ -1,7 +1,6 @@
 .social {
 
-    &__link {
-      margin: 0 4vw;
-    }
-
+  &__icon {
+    margin: var(--margin-icons);
+  }
 }

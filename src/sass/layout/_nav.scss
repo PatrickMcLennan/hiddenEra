@@ -1,0 +1,19 @@
+.nav {
+  position: relative;
+  @include flexin(space-evenly, flex-end, column);
+
+  &__span {
+    height: 1px;
+    width: 10px;
+    background-color: black;
+  }
+
+  &__ul {
+    position: absolute;
+    top: 100%;
+  }
+
+  &__item {
+    padding: var(--padding-li);
+  }
+}

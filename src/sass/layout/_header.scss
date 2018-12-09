@@ -1,3 +1,4 @@
 .header {
-  @include flexin;
+  @include flexin(space-between);
+  padding: var(--padding-header);
 }
