@@ -17,7 +17,7 @@ mixin review(array)
         img.review__logo(src=review.path, alt=review.alt)
         .review__rating
           each i in review.rating
-            img(src="i")
+            img(src=i)
       figcaption.review__caption
         h6.review__quote= review.quote
         h5.review__company= review.company

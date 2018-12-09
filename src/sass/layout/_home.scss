@@ -29,4 +29,12 @@
       margin-left: var(--margin-figcaption);
     }
   }
+
+  &__reviews {
+    @include flexin(space-evenly, center);
+    border: 1px solid black;
+    max-height: 200px;
+    width: 100%;
+    overflow: hidden;
+  }
 }
