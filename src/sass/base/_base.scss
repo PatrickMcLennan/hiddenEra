@@ -1,20 +1,16 @@
 *,
 *::before,
 *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
 }
 html {
-    font-size: 62.5%;
-    box-sizing: border-box;
+  font-size: 62.5%;
+  box-sizing: border-box;
 }
 body {
   position: relative;
-  padding: 0 2.5vw;
-  background-image: linear-gradient(to right, #11998e, #38ef7d);
-  color: #ecf0f1;
-  overflow-x: hidden;
 }
 section {
   position: relative;

@@ -119,18 +119,6 @@ eval("\n/**\n * When source maps are enabled, `style-loader` uses a link element
 
 /***/ }),
 
-/***/ "./src/js/dom.js":
-/*!***********************!*\
-  !*** ./src/js/dom.js ***!
-  \***********************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\ndom = {\n  socialIcon: {\n    facebook: document.querySelector('#facebook'),\n    instagram: document.querySelector('#instagram'),\n    youtube: document.querySelector('#youtube'),\n    snapchat: document.querySelector('#snapchat')\n  },\n  home: {\n    section: document.querySelector('.home'),\n    header: document.querySelector('.home__header'),\n    reviewsRow: document.querySelector('.home__reviews'),\n    reviewsLeft: document.querySelector('.home__reviewsLeft'),\n    reviewsRight: document.querySelector('.home__reviewsRight')\n  }\n};\n/* harmony default export */ __webpack_exports__[\"default\"] = (dom);\n\n//# sourceURL=webpack:///./src/js/dom.js?");
-
-/***/ }),
-
 /***/ "./src/js/index.js":
 /*!*************************!*\
   !*** ./src/js/index.js ***!
@@ -139,7 +127,7 @@ eval("__webpack_require__.r(__webpack_exports__);\ndom = {\n  socialIcon: {\n   
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _sass_main_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../sass/main.scss */ \"./src/sass/main.scss\");\n/* harmony import */ var _sass_main_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_sass_main_scss__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _dom_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./dom.js */ \"./src/js/dom.js\");\n\n\n\nvar hello = function hello() {\n  return _dom_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"].home.header.innerText = 'hello?';\n};\n\nhello();\n\n//# sourceURL=webpack:///./src/js/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _sass_main_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../sass/main.scss */ \"./src/sass/main.scss\");\n/* harmony import */ var _sass_main_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_sass_main_scss__WEBPACK_IMPORTED_MODULE_0__);\n\n\n//# sourceURL=webpack:///./src/js/index.js?");
 
 /***/ }),
 
