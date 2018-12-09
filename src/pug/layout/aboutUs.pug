@@ -1,17 +1,23 @@
+include ../components/mixins
+
 -
   const aboutUs = {
-    figures: [
-      { path: 'img/aboutUs/pat.jpg', name: 'Patrick McLennan' },
-      { path: 'img/aboutUs/marc.jpg', name: 'Marc Decaire' },
-      { path: 'img/aboutUs/john.jpg', name: 'John Duff' },
-      { path: 'img/aboutUs/tom.jpg', name: 'Tom Duff' },
-      { path: 'img/aboutUs/blake.jpg', name: 'Blake Hutton' }
-    ],
     members: [
       { name: 'Patrick McLennan', img: 'img/aboutUs/pat.jpg', laughLine: '6 strings of fury', text: 'The song-writing tornado behind such classics as "Will To Fight", Patrick is year after year hailed as a tour-de-force in the Grade 10 Burlington Central High School rock scene.  You can find Pat forcing band members to load $5k worth of guitar amps that he "doesn\'t need."', equipment: ['img/aboutUs/epiphone.png', 'img/aboutUs/marshall.png'] },
       { name: 'Tom Duff', img: 'img/aboutUs/tom.jpg', laughLine: 'Lock up your daughters', text: 'Hidden Era is an Equal Oppurtunity Employer.', equipment: ['img/aboutUs/pearl.png'] },
       { name: 'John Duff', img: 'img/aboutUs/john.jpg', laughLine: 'Dreamer.  Visionary.  Driver.', text: 'The steady hand of the group, Johns natural ability to gain a G2 earned him immediate acceptance into the band.  Quiet and composed, John can be found obsessing over Swedish pop-star Robyn or patenting his yet-to-be-seen "Live Fade-Out" technique.', equipment: ['img/aboutUs/godin.png', 'img/aboutUs/fender.png'] },
       { name: 'Blake Hutton', img: 'img/aboutUs/blake.jpg', laughLine: '6 strings of fury', text: 'Blakes quirky personality is a lot like his bass playing -- off-beat and timeless.  Excited for the upcoming shows, Blake has only 2 dislikes in this world -- Wheat and Injustice, which he often claims go hand in hand.', equipment: ['img/aboutUs/musicMan.png', 'img/aboutUs/ampeg.png'] },
-      { name: 'Marc Decaire', img: 'img/aboutUs/marc.jpeg', laughLine: 'Regional Man of Mystery', text: 'Voted Best Looking member of Hidden Era, unanimously, everytime, Marc Decaire redefined what a vocalist for a High School rock band should be.  If you see Marc in the wild, please tell him to call one of us.', equipment: [] },
+      { name: 'Marc Decaire', img: 'img/aboutUs/marc.jpeg', laughLine: 'Regional Man of Mystery', text: 'Voted Best Looking member of Hidden Era, unanimously, everytime, Marc Decaire redefined what a vocalist for a High School rock band should be.  If you see Marc in the wild, please tell him to call one of us.', equipment: [] }
     ]
   }
+
+- const { members } = aboutUs
+
+section.aboutUs
+  +sectionHeading('aboutUs', "We haven't aged a day")
+  .aboutUs__figures
+    each figure in members
+      figure.aboutUs__figure
+        img(src= figure.img alt= figure.name)
+        figcaption.aboutUs__caption
+          h6.aboutUs__caption__text= figure.name

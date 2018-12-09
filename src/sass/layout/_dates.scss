@@ -1,6 +1,5 @@
 .dates {
   @include flexin;
-  overflow: hidden;
 
   & > * {
     flex: 0 0 50%;
