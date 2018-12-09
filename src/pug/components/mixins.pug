@@ -22,6 +22,9 @@ mixin review(array)
         h6.review__quote= review.quote
         h5.review__company= review.company
 
+mixin sectionHeading(name, text)
+  h4(class= name + '__heading')= text
+
 
 //- HEADER
 mixin makeMenu(array)
@@ -30,6 +33,24 @@ mixin makeMenu(array)
       a.nav__link(src=i.url)= i.text
 
 //- HOME
-mixin headings(array)
+mixin homeHeading(array)
   each letter in array
     span=letter
+
+//- DATES
+mixin tableHeadings(array)
+  each icon in array
+    th.icon.dates__table__heading
+      img(src= icon.path alt= icon.alt)
+mixin tableListings(array)
+  each listing in array
+    tr.dates__table__row
+      td.dates__table__venue= listing.venue
+      td.dates__table__show= listing.show
+      td.dates__table__date= listing.date
+      td.dates__table__price= listing.price
+      td.dates__table__btn
+        button.dates__table__cta= 'Add to cart'
+mixin collagePic(array)
+  each img in array
+    img(class= "dates__collage__img" src= img.path alt= img.alt)

@@ -1,8 +1,25 @@
-include ../components/listingsTable
-
-
+include ../components/mixins
 -
   const dates = {
+    table : {
+      headings: [
+        { path: 'img/svg/home.svg', alt: 'Show Location' },
+        { path: 'img/svg/tv.svg', alt: 'Show Name' },
+        { path: 'img/svg/calendar.svg', alt: 'Show Date' },
+        { path: 'img/svg/coin-dollar.svg', alt: 'Show Cost' },
+        { path: 'img/svg/ticket.svg', alt: 'Get Tickets' }
+      ],
+      listings: [
+        { venue: 'Holiday Inn', show: 'Burlington International Games (B.I.G) kick-Off', date: 'August 2nd, 2019', price: ' / ' },
+        { venue: 'Burlington Central High School', show: 'Fall Talent Show', date: 'October 12th, 2019 (2nd period)', price: '10$, 5$ with canned good donation' },
+        { venue: 'Burlington Central High School', show: 'Christmas Talent Show', date: 'December 21st, 2019 (5h period)', price: '10$, 5$ with canned good donation' },
+        { venue: 'Burlington Central High School', show: 'Spring Talent Show', date: 'March 15th, 2019 (2nd period)', price: '10$, 5$ with canned good donation' },
+        { venue: 'Burlington Central High School', show: 'Battle of the Bands', date: 'May 10th, 2019', price: '10$, 5$ with canned good donation' },
+        { venue: 'Holiday Inn', show: 'Burlington International Games (B.I.G) kick-Off', date: 'August 2nd, 2019', price: ' / ' },
+        { venue: 'T.B.A', show: 'Bobs No-Frills Employee Party', date: 'July 1st, 2019', price: ' / ' },
+        { venue: 'Hutton Residence', show: 'Blakes Birthday Show (Rain or Shine)', date: 'Oct 15th, 2019', price: ' / ' }
+      ]
+    },
     collage: [
       { path: 'img/dates/group1.jpg', alt: 'Hidden Era Group Shot' },
       { path: 'img/dates/group2.jpg', alt: 'Hidden Era Group Shot' },
@@ -12,4 +29,20 @@ include ../components/listingsTable
       { path: 'img/dates/group6.jpg', alt: 'Hidden Era Group Shot' }
     ],
   }
+
+- const { table, collage } = dates
+- const { headings, listings } = table
+
+section.dates
+  .dates__left__col
+    table.dates__table
+      thead.dates__table__headings
+        +tableHeadings(headings)
+      tbody.dates__table__body
+        +tableListings(listings)
+
+  .dates__right__col
+    +sectionHeading('dates', 'Get Tickets Today')
+    .dates__collage
+      +collagePic(collage)
 
