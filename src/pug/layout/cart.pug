@@ -1,1 +1,34 @@
-include ../components/form
+include ../components/mixins
+
+-
+  const cart = {
+    heading: 'Your Cart',
+    form: {
+      address: [
+        { id: 'firstName', type: 'text', placeholder: 'First Name' },
+        { id: 'lastName', type: 'text', placeholder: 'Last Name' },
+        { id: 'email', type: 'email', placeholder: 'Email Address' },
+        { id: 'phone', type: 'number', placeholder: 'Phone #' },
+        { id: 'address', type: 'text', placeholder: 'Street Address' },
+        { id: 'city', type: 'text', placeholder: 'City' },
+        { id: 'province', type: 'text', placeholder: 'Province/State' },
+        { id: 'Country', type: 'text', placeholder: 'Country' }
+      ],
+      billing: [
+        { id: 'creditCardNumber', type: 'number', placeholder: 'Credit Card #' },
+        { id: 'cvv', type: 'number', placeholder: 'CVV' },
+        { id: 'creditCardName', type: 'text', placeholder: 'Name on Credit Card' }
+      ]
+    },
+    bluRay: {
+      headingPrimary: 'Pre-order now!  "The Lost Years"',
+      headingSecondary: 'Available Christmas 2019',
+      price: '$49.99',
+      text: 'Take a behind the scenes look at Hidden Era from the comfort of your own home.  Through years of compiled footage, you\'ll see just how much Pizza Pizza one band can consume',
+      cta: 'Add to Cart',
+      img: {
+        path: 'img/cart/bluray.png',
+        alt: 'Hidden Era\'s "The Lost Years" Blu-ray cover'
+      }
+    }
+  }
