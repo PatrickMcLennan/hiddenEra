@@ -32,3 +32,14 @@ include ../components/mixins
       }
     }
   }
+
+- const { heading, form, bluRay } = cart
+- const { address, billing } = form
+
+section.cart
+  .cart__heading
+    +sectionHeading('cart')= heading
+
+  .cart__body
+    form.cart__form
+      h6.cart__form__heading You have #[span 0] items in your Cart
