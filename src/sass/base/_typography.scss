@@ -24,3 +24,17 @@
   }
 
 }
+
+.aboutUs {
+
+  &__member{
+
+    &__laughLine {
+      font-size: 3rem;
+    }
+
+    &__text {
+      padding: 5vh 7.5vw;
+    }
+  }
+}
