@@ -41,5 +41,25 @@ section.cart
     +sectionHeading('cart')= heading
 
   .cart__body
-    form.cart__form
-      h6.cart__form__heading You have #[span 0] items in your Cart
+
+    form.cart__form.form
+      .form__splash
+        h6.form__heading You have #[span.form__splash__total 0] items in your Cart
+        button.form__splash__button.form__next__button  Begin Checkout
+      .form__customerInfo
+        +formInputs(address, 'Proceed to Billing')
+      .form__billing
+        +formInputs(billing, 'Finalize')
+      .form__finalize
+        button.form__back__button Back
+        h6.form__heading Name:
+        - const pat = ['Patrick McLennan', 'judoman_07@hotmail.com', '905-320-0730', '781 Main St E', 'Hamilton', 'Ontario', 'Canada']
+          each i in pat
+            p i
+          -const patbill = ['492732932028472', '654', 'Patrick McLennan']
+          each i in patbill
+            p i
+        button.form__next__button Complete Payment
+      .form__success
+        h6.form__heading Success!  We have your money.  Thanks, idiot.
+

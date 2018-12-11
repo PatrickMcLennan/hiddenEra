@@ -54,3 +54,11 @@ mixin tableListings(array)
 mixin collagePic(array)
   each img in array
     img(class= "dates__img" src= img.path alt= img.alt)
+
+//- FORM
+mixin formInputs(array, btnText)
+  button.form__back__button Back
+  each input in array
+    label(for= input.id class='form__label')= input.placeholder
+      input(class='form__input' id= input.id type=input.type)
+  button.form__next__button= btnText
