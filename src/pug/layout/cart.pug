@@ -63,3 +63,16 @@ section.cart
       .form__success
         h6.form__heading Success!  We have your money.  Thanks, idiot.
 
+- const { headingPrimary, headingSecondary, price, text, cta, img } = bluRay
+
+    .cart__bluRay
+      h6.bluRay__header= headingPrimary
+      p.bluRay__text= text
+      fiure.bluRay__figure
+        .bluRay__media
+          img.bluRay__img(src= img.path alt= img.alt)
+        .bluRay__figcaption
+          h6.bluRay__ficaption__text= price
+      h6.bluRay__price= headingSecondary
+      button.bluRay__cta= cta
+
