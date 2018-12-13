@@ -14,8 +14,10 @@
   color: inherit;
   font-weight: inherit;
 }
-@mixin alignText($align:center) {
-  text-align: $align;
+@mixin whiteText($weight: 100) {
+  color: var(--color-white);
+  font-weight: $weight;
+  font-family: 'Lato';
 }
 @mixin sectionHeader($side:left) {
   text-align: $side;

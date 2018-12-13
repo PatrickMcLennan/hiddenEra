@@ -4,12 +4,6 @@
   left: 0;
   right: 0;
   @include flexin(space-between);
-  padding: var(--padding-header);
   border-bottom: 1px solid black;
-}
-
-.header,
-.header > * {
-  z-index: 9999;
-  flex: 1 1 33.33333%
+  background-color: var(--color-black);
 }
