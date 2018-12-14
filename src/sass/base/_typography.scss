@@ -1,50 +1,10 @@
 .header {
 
   &__logo {
-    @include whiteText;
-    font-size: 2.5rem;
-  }
-}
-
-
-
-.home {
-
-  &__heading {
-
-    &__primary {
-      font-size: 5rem;
-      letter-spacing: var(--ls-heading-primary);
-    }
-
-    &__secondary {
-      font-size: 7.5rem;
-    }
-  }
-
-  &__text {
+    @include whiteText(100);
+    text-transform: uppercase;
     font-size: 2rem;
-  }
-}
-
-.dates {
-
-  &__heading {
-    @include sectionHeader(right);
-  }
-
-}
-
-.aboutUs {
-
-  &__member{
-
-    &__laughLine {
-      font-size: 3rem;
-    }
-
-    &__text {
-      padding: 5vh 7.5vw;
-    }
+    text-align: right;
+    letter-spacing: .5rem;
   }
 }

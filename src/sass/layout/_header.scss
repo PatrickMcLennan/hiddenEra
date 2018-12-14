@@ -4,6 +4,6 @@
   left: 0;
   right: 0;
   @include flexin(space-between);
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid white;
   background-color: var(--color-black);
 }
