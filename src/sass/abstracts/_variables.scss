@@ -6,8 +6,10 @@
   --padding-header-v: 1vh;
   --padding-header-h: 2vh;
 
+  --header-height: calc(var(--fs-logo) + (var(--padding-header-v) * 2));
+
   // HOME
-  --padding-home-top: 40vh;
+  --padding-home-top: 30vh;
   --span-box-height: 5px;
   --span-element-height: 1px;
 

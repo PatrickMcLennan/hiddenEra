@@ -2,13 +2,13 @@
 
 @keyframes homeSpan {
   0% {
-    transform: rotate(5deg) translate(calc((var(--span-box-height) / 2) + var(--span-element-height)));
+    transform: rotate(45deg) translate(calc((var(--span-box-height) / 2) + var(--span-element-height)));
   }
   1% {
-    transform: rotate(5deg) translate(0);
+    transform: rotate(45deg) translate(0);
   }
   60% {
-    transform: rotate(-2.5deg) translate(0);
+    transform: rotate(-45deg) translate(0);
   }
   100% {
     transform: rotate(0) translate(0)
