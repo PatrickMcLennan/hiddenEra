@@ -1,10 +1,14 @@
 :root {
   // LAYOUT
+
+  // HEADER
   --padding-header-v: 1.5vh;
   --padding-header-h: 2vh;
-  --padding-standard: 2.5vh 2.5vw;
-  --padding-li: 1vh 1vw;
-  --padding-icon: 1vh 1vw;
+
+  // HOME
+  --padding-home-top: 40vh;
+  --span-box-height: 5px;
+  --span-element-height: 1px;
 
   // COLORS
   --color-black: #000;

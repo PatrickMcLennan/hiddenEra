@@ -1,5 +1,39 @@
 .home {
-  height: 50vh;
   @include flexin(center, center, column);
-  background-image: url('./img/home/background.jpg');
+  background-image: url('/Users/patrickmclennan/Documents/Websites/hiddenEra/dist/img/home/background.jpg');
+  padding-top: calc(var(--fs-logo) + (var(--padding-header-v) * 2) + var(--padding-home-top));
+
+  &__heading {
+    text-align: center;
+    padding: 1.5vh;
+
+    &__primary,
+    &__secondary {
+      @include flexin(space-evenly);
+    }
+
+    &__primary span {
+      padding: 0 .5rem;
+    }
+
+    &__secondary {
+      padding: 0 1vw;
+    }
+  }
+
+  &__span {
+    height: var(--span-box-height);
+    margin: 1.5vh 0;
+    @include flexin;
+    // overflow: hidden;
+    border: 1px solid black;
+
+    &__element {
+      height: 1px;
+      width: 90%;
+      background-color: var(--color-red-primary);
+      transform-origin: 0% 0%;
+      transform: rotate(90deg) translateX(calc((var(--span-box-height) / 2) + var(--span-element-height)));
+    }
+  }
 }

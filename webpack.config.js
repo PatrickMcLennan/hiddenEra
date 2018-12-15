@@ -49,7 +49,7 @@ module.exports = {
         test: /\.svg$/,
         loader: 'svg-url-loader',
         options: {
-          limit: 10 * 1024, // doesn't inline anything over 10kb,
+          limit: 100000,
           noquotes: true,
         }
       }

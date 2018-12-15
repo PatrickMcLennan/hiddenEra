@@ -20,6 +20,7 @@
     "css-loader": "latest",
     "cssnano": "latest",
     "html-webpack-plugin": "latest",
+    "image-webpack-loader": "^4.6.0",
     "mini-css-extract-plugin": "latest",
     "node-sass": "latest",
     "postcss-loader": "latest",

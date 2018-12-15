@@ -25,12 +25,12 @@ section.home
   .home__heading
     h1.home__heading__primary
       +homeHeading(home.headingPrimary)
-    .home__span__box
-      span.home__span
+    .home__span
+      span.home__span__element
     h2.home__heading__secondary
       +homeHeading(home.headingSecondary)
 
-  .home__award
+  //- .home__award
     +figure('home__award__figure', home.award.path, home.award.alt, 'home__award__caption', 'home__text', home.award.text)
 
   //- .home__reviews

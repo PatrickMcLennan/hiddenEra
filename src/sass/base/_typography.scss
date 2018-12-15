@@ -8,3 +8,16 @@
     letter-spacing: .5rem;
   }
 }
+
+.home {
+
+  &__heading__primary {
+    font-size: 5rem;
+    letter-spacing: .5rem;
+  }
+
+  &__heading__secondary {
+    font-size: 5rem;
+    letter-spacing: 1.25rem;
+  }
+}
