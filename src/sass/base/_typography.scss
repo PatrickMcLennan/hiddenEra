@@ -3,7 +3,7 @@
   &__logo {
     @include whiteText(100);
     text-transform: uppercase;
-    font-size: 2rem;
+    font-size: var(--fs-logo);
     text-align: right;
     letter-spacing: .5rem;
   }

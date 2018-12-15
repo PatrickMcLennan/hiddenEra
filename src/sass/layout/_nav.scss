@@ -1,0 +1,25 @@
+.nav {
+  @include flexin(space-evenly, flex-end, column);
+  position: relative;
+  flex: 0 0 5vw;
+  border: 1px solid red;
+
+  &__span {
+    background-color: red;
+    height: 2px;
+    width: 80%;
+    margin: .75vh 0;
+  }
+
+  &__ul {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    display: none;
+  }
+}
+
+.nav:hover .nav__ul,
+.nav__ul:hover {
+  @include flexin(flex-end, center, column);
+}
