@@ -15,9 +15,14 @@
   &__collage {
     padding: 2.5vw;
     position: relative;
+    height: 30vh;
+  }
 
-    &__media {
-      position: absolute;
+  &__img {
+    position: absolute;
+
+    &:nth-child(1) {
+      transform: translateX(2rem);
     }
   }
 }

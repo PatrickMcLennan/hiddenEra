@@ -49,8 +49,7 @@ mixin tableListings(array)
         button.dates__table__cta= 'Add to cart'
 mixin collagePic(array)
   each img in array
-    .dates__collage__media
-      img(class= "dates__img" src= img.path alt= img.alt)
+    img(class= "dates__img" src= img.path alt= img.alt)
 
 //- FORM
 mixin formInputs(array, btnText)
