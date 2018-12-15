@@ -13,8 +13,7 @@
 
   &__heading__primary,
   &__heading__secondary {
-    @include latoWhite;
-    text-shadow: 1px 1px var(--color-white);
+    @include latoWhite(300);
   }
 
   &__heading__primary {

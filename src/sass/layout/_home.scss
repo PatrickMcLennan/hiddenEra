@@ -1,6 +1,10 @@
 .home {
   @include flexin(center, center, column);
-  background-image: url('http://phishthoughts.com/wp-content/uploads/2012/08/DSC00256-copy-1.jpg');
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.4) 0%,
+    rgba(0, 0, 0, 0.8) 100%),
+    url('http://phishthoughts.com/wp-content/uploads/2012/08/DSC00256-copy-1.jpg');
   background-size: cover;
   background-position: center;
   padding-top: calc(var(--fs-logo) + (var(--padding-header-v) * 2) + var(--padding-home-top));
