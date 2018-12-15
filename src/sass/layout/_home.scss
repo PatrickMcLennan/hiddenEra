@@ -60,13 +60,15 @@
     margin-bottom: 5vh;
     overflow: hidden;
     width: 100%;
-    border: 1px solid white;
 
     &__col {
       @include flexin(center, center, column);
-      flex: 0 0 33.33333%;
-      border: 1px solid red;
+      flex: 1;
       height: var(--review-height);
+    }
+
+    &__col > * {
+      transform: translateY(300%);
     }
   }
 }

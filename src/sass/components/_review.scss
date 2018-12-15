@@ -1,7 +1,7 @@
 .review {
   @include flexin(flex-start);
   min-height: var(--review-height);
-  display: none;
+  padding: 0 5vw;
 
   &__imgs {
     @include flexin(flex-start, flex-start, column);
@@ -22,5 +22,23 @@
     max-height: 4vh;
     @include flexin(space-evenly);
     height: var(--review-rating-height)
+  }
+
+  &__star {
+    height: 100%;
+    width: 5vw;
+  }
+
+  &__caption {
+    text-align: center;
+    @include flexin(space-evenly, center, column);
+  }
+
+  &__quote {
+    margin-bottom: 1.5vh;
+  }
+
+  &__company {
+    align-self: flex-end;
   }
 }

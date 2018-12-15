@@ -1,3 +1,7 @@
+body > * {
+  @include latoWhite;
+}
+
 .header {
 
   &__logo {
@@ -30,5 +34,22 @@
     @include latoWhite;
     font-size: 3rem;
     text-align: center;
+  }
+}
+
+.review {
+  color: var(--color-white);
+
+  &__quote {
+    font-weight: 300;
+    font-style: italic;
+    font-size: 3rem;
+    letter-spacing: .15rem;
+  }
+
+  &__company {
+    font-size: 1.75rem;
+    text-transform: uppercase;
+    letter-spacing: .25rem;
   }
 }
