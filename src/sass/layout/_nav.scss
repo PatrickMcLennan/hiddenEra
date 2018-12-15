@@ -10,7 +10,6 @@
     background-color: var(--color-red-primary);
     height: 2px;
     width: 3rem;
-    transition: var(--transition-swell);
 
     &:not(:first-child) {
       margin-top: 1rem;

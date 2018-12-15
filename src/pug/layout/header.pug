@@ -1,5 +1,4 @@
 
-include ../components/mixins
 -
   const header = {
     menu: [
@@ -10,8 +9,6 @@ include ../components/mixins
     ]
   }
 
-- const { menu } = header
-
 .header__logo
   h1 Hidden Era
 nav.nav
@@ -19,4 +16,6 @@ nav.nav
   span.nav__span
   span.nav__span
   ul.nav__ul
-    +makeMenu(menu)
+    each i in header.menu
+      li.nav__item
+        a.nav__link(src=i.url)= i.text

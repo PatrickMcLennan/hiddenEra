@@ -11,31 +11,27 @@ mixin figure(figClass, imgPath, imgAlt, capClass,capTextClass, capText)
       h6(class= capTextClass)= capText
 
 mixin review(array)
-  each review in reviews
+  each review in array
     figure.review
       .review__imgs
-        img.review__logo(src=review.path, alt=review.alt)
+        .review__media
+          img.review__logo(src= review.path, alt= review.alt)
         .review__rating
           each i in review.rating
-            img(src=i)
+            svg.review__star
+              use(href= i)
       figcaption.review__caption
-        h6.review__quote= review.quote
+        q.review__quote= review.quote
         h5.review__company= review.company
 
 mixin sectionHeading(name, text)
   h4(class= name + '__heading')= text
 
 
-//- HEADER
-mixin makeMenu(array)
-  each i in array
-    li.nav__item
-      a.nav__link(src=i.url)= i.text
-
 //- HOME
 mixin homeHeading(array)
   each letter in array
-    span=letter
+    span= letter
 
 //- DATES
 mixin tableHeadings(array)

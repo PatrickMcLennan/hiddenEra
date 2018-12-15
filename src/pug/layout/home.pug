@@ -20,8 +20,6 @@ include ./../components/mixins
     ]
   }
 
-- const { award, reviews } = home
-
 section.home
 
   .home__heading
@@ -33,10 +31,10 @@ section.home
       +homeHeading(home.headingSecondary)
 
   .home__award
-    +figure('home__award__figure', award.path, award.alt, 'home__award__caption', 'home__text', award.text)
+    +figure('home__award__figure', home.award.path, home.award.alt, 'home__award__caption', 'home__text', home.award.text)
 
-  .home__reviews
+  //- .home__reviews
     .home__review
-      +review(reviews)
+      +review(home.reviews)
     .home__review
-      +review(reviews.reverse())
+      +review(home.reviews.reverse())
