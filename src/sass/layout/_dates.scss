@@ -1,1 +1,23 @@
+.dates {
+  background-image: linear-gradient(to right bottom, rgba(21, 21, 21, 1), lighten(rgba(21, 21, 21, 1), 5%));
 
+  &__table {
+    text-align: center;
+    width: calc(100% - 2.5vw);
+    margin-bottom: 5vh;
+
+    & th,
+    td {
+      padding: .5vh;
+    }
+  }
+
+  &__collage {
+    padding: 2.5vw;
+    position: relative;
+
+    &__media {
+      position: absolute;
+    }
+  }
+}

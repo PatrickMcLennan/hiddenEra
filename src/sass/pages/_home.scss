@@ -1,0 +1,10 @@
+.section {
+
+  &__header {
+    padding: var(--padding-section-header);
+
+    &:nth-child(odd) {
+      text-align: right;
+    }
+  }
+}

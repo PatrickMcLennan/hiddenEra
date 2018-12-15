@@ -2,10 +2,12 @@
   //ANIMATIONS
   --animation-duration: 3.5s;
 
+  // BASE
+  --padding-section-header: 3vh 4vh;
+
   // HEADER
   --padding-header-v: 1vh;
   --padding-header-h: 2vh;
-
   --header-height: calc(var(--fs-logo) + (var(--padding-header-v) * 2));
 
   // HOME
@@ -21,13 +23,11 @@
   // COLORS
   --color-black: #000;
   --color-white: #fff;
-
   --color-red-primary: red;
 
   // TYPOGRAPHY
   --fs-logo: 2rem;
-
-  --ls-heading-primary: .75rem;
+  --fs-section-header: 5.5rem;
 
 
   //NAV
