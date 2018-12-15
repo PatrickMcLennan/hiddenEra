@@ -1,0 +1,26 @@
+.review {
+  @include flexin(flex-start);
+  min-height: var(--review-height);
+  display: none;
+
+  &__imgs {
+    @include flexin(flex-start, flex-start, column);
+    max-height: var(--review-height);
+  }
+
+  &__media {
+    max-width: 15vw;
+    max-height: var(--review-media-height);
+
+    &__logo {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__rating {
+    max-height: 4vh;
+    @include flexin(space-evenly);
+    height: var(--review-rating-height)
+  }
+}

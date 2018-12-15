@@ -15,7 +15,7 @@ mixin review(array)
     figure.review
       .review__imgs
         .review__media
-          img.review__logo(src= review.path, alt= review.alt)
+          img.review__media__logo(src= review.path, alt= review.alt)
         .review__rating
           each i in review.rating
             svg.review__star

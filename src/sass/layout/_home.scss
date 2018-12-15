@@ -54,4 +54,19 @@
       @include flexin;
     }
   }
+
+  &__reviews {
+    @include flexin(space-evenly);
+    margin-bottom: 5vh;
+    overflow: hidden;
+    width: 100%;
+    border: 1px solid white;
+
+    &__col {
+      @include flexin(center, center, column);
+      flex: 0 0 33.33333%;
+      border: 1px solid red;
+      height: var(--review-height);
+    }
+  }
 }
