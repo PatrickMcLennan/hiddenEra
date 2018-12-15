@@ -1,6 +1,7 @@
 :root {
   // LAYOUT
-  --padding-header: 3vh 3.5vw;
+  --padding-header-v: 1.5vh;
+  --padding-header-h: 2vh;
   --padding-standard: 2.5vh 2.5vw;
   --padding-li: 1vh 1vw;
   --padding-icon: 1vh 1vw;
@@ -11,14 +12,12 @@
   --color-black: #000;
   --color-white: #fff;
 
+  --color-red-primary: red;
+
   // TYPOGRAPHY
   --fs-logo: 2rem;
 
   --ls-heading-primary: .75rem;
-
-  --fw-lato-100: 100;
-  --fw-lato-300: 100;
-  --fw-lato-400: 100;
 
 
   //NAV

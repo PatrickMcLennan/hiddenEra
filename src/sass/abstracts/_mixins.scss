@@ -14,7 +14,7 @@
   color: inherit;
   font-weight: inherit;
 }
-@mixin whiteText($weight: 100) {
+@mixin latoWhite($weight: 100) {
   color: var(--color-white);
   font-weight: $weight;
   font-family: 'Lato';

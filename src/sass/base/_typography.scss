@@ -1,7 +1,7 @@
 .header {
 
   &__logo {
-    @include whiteText(100);
+    @include latoWhite(100);
     text-transform: uppercase;
     font-size: var(--fs-logo);
     text-align: right;

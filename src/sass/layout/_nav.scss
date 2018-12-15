@@ -1,19 +1,25 @@
 .nav {
-  @include flexin(space-evenly, flex-end, column);
+  @include flexin(space-evenly, center, column);
   position: relative;
   flex: 0 0 5vw;
+  cursor: pointer;
+  padding: 1.5vh 1.5vh;
   border: 1px solid red;
 
   &__span {
-    background-color: red;
+    background-color: var(--color-red-primary);
     height: 2px;
-    width: 80%;
-    margin: .75vh 0;
+    width: 3rem;
+    transition: var(--transition-swell);
+
+    &:not(:first-child) {
+      margin-top: 1rem;
+    }
   }
 
   &__ul {
     position: absolute;
-    top: 100%;
+    top: calc(100% + var(--padding-header-v));
     right: 0;
     display: none;
   }
