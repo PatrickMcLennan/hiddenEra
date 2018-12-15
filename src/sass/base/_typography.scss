@@ -1,7 +1,7 @@
 .header {
 
   &__logo {
-    @include latoWhite(100);
+    @include latoWhite;
     text-transform: uppercase;
     font-size: var(--fs-logo);
     text-align: right;
@@ -10,6 +10,12 @@
 }
 
 .home {
+
+  &__heading__primary,
+  &__heading__secondary {
+    @include latoWhite;
+    text-shadow: 1px 1px var(--color-white);
+  }
 
   &__heading__primary {
     font-size: 5rem;

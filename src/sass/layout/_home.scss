@@ -1,6 +1,8 @@
 .home {
   @include flexin(center, center, column);
-  background-image: url('/Users/patrickmclennan/Documents/Websites/hiddenEra/dist/img/home/background.jpg');
+  background-image: url('http://phishthoughts.com/wp-content/uploads/2012/08/DSC00256-copy-1.jpg');
+  background-size: cover;
+  background-position: center;
   padding-top: calc(var(--fs-logo) + (var(--padding-header-v) * 2) + var(--padding-home-top));
 
   &__heading {
@@ -25,15 +27,14 @@
     height: var(--span-box-height);
     margin: 1.5vh 0;
     @include flexin;
-    // overflow: hidden;
-    border: 1px solid black;
+    overflow: hidden;
 
     &__element {
       height: 1px;
       width: 90%;
       background-color: var(--color-red-primary);
       transform-origin: 0% 0%;
-      transform: rotate(90deg) translateX(calc((var(--span-box-height) / 2) + var(--span-element-height)));
+      animation: var(--animation-duration) ease-in-out forwards homeSpan;
     }
   }
 }

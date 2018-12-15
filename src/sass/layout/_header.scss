@@ -8,3 +8,8 @@
   background-color: var(--color-black);
   padding: var(--padding-header-v) var(--padding-header-h);
 }
+
+.header,
+.header > * {
+  z-index: 9999;
+}

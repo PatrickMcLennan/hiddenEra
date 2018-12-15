@@ -19,8 +19,9 @@
 
   &__ul {
     position: absolute;
-    top: calc(100% + var(--padding-header-v));
+    top: 100%;
     right: 0;
+    padding: var(--padding-header-v) 0;
     display: none;
   }
 }
