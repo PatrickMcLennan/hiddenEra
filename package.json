@@ -27,6 +27,7 @@
     "pug-loader": "latest",
     "sass-loader": "latest",
     "style-loader": "latest",
+    "url-loader": "^1.1.2",
     "webpack": "latest",
     "webpack-cli": "latest",
     "webpack-dev-server": "latest"

@@ -36,7 +36,8 @@ module.exports = {
         test: /\.(jpe?g|png|gif)$/,
         loader: 'url-loader',
         options: {
-            limit: 10 * 1024 // doesn't inline anything over 10kb
+          limit: 100000,
+          fallback: 'file-loader',
         }
       },
       {
