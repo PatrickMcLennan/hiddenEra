@@ -1,10 +1,11 @@
 
 // LAYOUT
-@mixin flexin($content:center, $align:center, $direction:row, $align-content:space-evenly) {
+@mixin flexin($content:center, $align:center, $direction:row, $wrap: wrap, $align-content:space-evenly) {
   display: flex;
   justify-content: $content;
   align-items: $align;
   flex-direction: $direction;
+  flex-wrap: $wrap;
   align-content: $align-content;
 }
 

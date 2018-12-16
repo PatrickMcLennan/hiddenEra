@@ -1,4 +1,49 @@
 .aboutUs {
+  @include flexin;
   @include sectionGlow(top);
-  background: purple;
+  background-color: rgba(0, 0, 0, .9);
+
+  &__memberIcons {
+    @include flexin(space-evenly);
+  }
+
+  &__figure {
+    @include flexin(space-evenly, center, column, nowrap);
+    position: relative;
+    margin: 2.5vh;
+    outline-offset: .5vh;
+    overflow: hidden;
+    transition: var(--img-outline);
+
+    &__media {
+      height: 20rem;
+      width: 20rem;
+      cursor: pointer;
+    }
+
+    &__img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      border: 1px solid var(--color-white);
+    }
+
+    &__caption {
+      position: absolute;
+      bottom: 0;
+      right: -50%;
+      opacity: 0;
+      transition: var(--img-outline);
+    }
+
+    &:hover {
+      outline: 1rem solid var(--color-red-primary);
+      transform: scale(1.05);
+    }
+
+    &:hover .aboutUs__figure__caption {
+      right: 10%;
+      opacity: 1;
+    }
+  }
 }

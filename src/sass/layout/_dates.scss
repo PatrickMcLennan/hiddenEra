@@ -13,7 +13,6 @@
     }
 
     &__row {
-      overflow: hidden;
       opacity: 0;
       animation: var(--animation-duration) ease-in-out forwards tablesRow;
     }
@@ -35,7 +34,7 @@
     object-fit: cover;
     border: 1px solid var(--color-white);
     cursor: pointer;
-    transition: all .5s ease-in-out;
+    transition: var(--img-outline);
     outline-offset: .5vh;
     z-index: 1;
 

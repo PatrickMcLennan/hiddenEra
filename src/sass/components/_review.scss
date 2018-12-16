@@ -1,5 +1,5 @@
 .review {
-  @include flexin(flex-start);
+  @include flexin(flex-start, center, row, nowrap);
   min-height: var(--review-height);
   padding: 0 5vw;
 
