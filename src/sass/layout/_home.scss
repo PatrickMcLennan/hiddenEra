@@ -19,6 +19,7 @@
     &__primary,
     &__secondary {
       @include flexin(space-evenly);
+      overflow: hidden;
     }
 
     &__secondary {
@@ -72,11 +73,15 @@
   }
 }
 
-$primarySpanCount: 12;
+$primarySpanDelay: .125s;
+$primarySpanOffset: 5%;
 
-@for $span from 1 through $primarySpanCount {
+@for $span from 1 through 19 {
   .home__heading__primary span:nth-child(#{$span}) {
-    padding: 0 .8rem;
-    // transform: translateY(nth(calc($primarySpanCount, $span) * 12));
+    padding: 1rem;
+    opacity: 0;
+    transform: translateY(calc(#{$primarySpanOffset} * #{$span})) translateX(calc(#{$primarySpanOffset} * #{$span}));
+    animation: calc(var(--animation-duration) / 2) ease-in-out forwards headerSpan;
+    animation-delay: calc(#{$primarySpanDelay} * #{$span});
   }
 }

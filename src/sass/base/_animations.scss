@@ -1,5 +1,14 @@
 // HOME
-
+@keyframes headerSpan {
+  0% {
+    opacity: 0;
+    transform: inherit;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) translateX(0);
+  }
+}
 @keyframes homeSpan {
   0% {
     transform: rotate(45deg) translate(calc((var(--span-box-height) / 2) + var(--span-element-height)));
