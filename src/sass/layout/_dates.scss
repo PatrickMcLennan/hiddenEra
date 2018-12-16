@@ -14,15 +14,23 @@
 
   &__collage {
     padding: 2.5vw;
+    border: 1px solid white;
     position: relative;
-    height: 30vh;
+    height: 60rem;
   }
 
   &__img {
     position: absolute;
+    transform: scale(.9);
+  }
+}
 
-    &:nth-child(1) {
-      transform: translateX(2rem);
-    }
+$imgTops: 0% 20% 0% 20% 0% 20%;
+$imgLefts: 0% 20% 0% 20% 0% 20%;
+
+@for $position from 1 through length($imgTops) {
+  .dates__img:nth-child(#{$position}) {
+    top: nth($imgTops, $position);
+    left: nth($imgLefts, $position);
   }
 }
