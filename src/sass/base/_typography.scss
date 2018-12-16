@@ -70,3 +70,14 @@
     letter-spacing: .4rem;
   }
 }
+
+.aboutUs {
+
+  &__figure__caption {
+    @include latoWhite;
+    text-transform: uppercase;
+    letter-spacing: .45rem;
+    font-size: 2.5rem;
+    line-height: 1.2;
+  }
+}

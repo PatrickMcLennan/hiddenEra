@@ -31,9 +31,13 @@
     &__caption {
       position: absolute;
       bottom: 0;
-      right: -50%;
+      right: -100%;
       opacity: 0;
+      width: 100%;
       transition: var(--img-outline);
+      padding: 1.25vh;
+      background: rgba(0, 0, 0, .5);
+      text-align: right;
     }
 
     &:hover {
@@ -42,7 +46,7 @@
     }
 
     &:hover .aboutUs__figure__caption {
-      right: 10%;
+      right: 0%;
       opacity: 1;
     }
   }
