@@ -14,3 +14,24 @@
     transform: rotate(0) translate(0)
   }
 }
+
+@keyframes homeShadow {
+  0% {
+    box-shadow: none;
+  }
+  100% {
+    box-shadow: 0 .25rem 7.5rem 2.5rem var(--color-red-primary);
+  }
+}
+
+@keyframes tablesRow {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

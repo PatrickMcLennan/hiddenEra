@@ -8,6 +8,9 @@
   background-size: cover;
   background-position: center;
   padding-top: calc(var(--header-height) + var(--padding-home-top));
+  z-index: 10;
+  border-bottom: 1px solid white;
+  animation: calc(var(--animation-duration) / 2) ease-in-out forwards homeShadow;
 
   &__heading {
     text-align: center;
@@ -16,10 +19,6 @@
     &__primary,
     &__secondary {
       @include flexin(space-evenly);
-    }
-
-    &__primary span {
-      padding: 0 .8rem;
     }
 
     &__secondary {
@@ -70,5 +69,14 @@
     &__col > * {
       transform: translateY(300%);
     }
+  }
+}
+
+$primarySpanCount: 12;
+
+@for $span from 1 through $primarySpanCount {
+  .home__heading__primary span:nth-child(#{$span}) {
+    padding: 0 .8rem;
+    // transform: translateY(nth(calc($primarySpanCount, $span) * 12));
   }
 }

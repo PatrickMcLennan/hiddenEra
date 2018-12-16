@@ -5,32 +5,58 @@
     text-align: center;
     width: calc(100% - 2.5vw);
     margin-bottom: 5vh;
+    border-spacing: 3vh;
 
     & th,
     td {
-      padding: .5vh;
+      padding: .25vh;
+      transform-style: preserve-3d;
+    }
+
+    &__row {
+      overflow: hidden;
+      transform: translateY(100%);
+      opacity: 0;
+      animation: var(--animation-duration) ease-in-out forwards tablesRow;
     }
   }
 
   &__collage {
     padding: 2.5vw;
-    border: 1px solid white;
     position: relative;
     height: 60rem;
   }
 
   &__img {
     position: absolute;
-    transform: scale(.9);
+    transform: scale(.8);
+    object-fit: cover;
+
+    &:hover {
+      z-index: 9999;
+      border: 1px solid var(--color-red-primary);
+      transform: scale(.95);
+    }
   }
 }
 
-$imgTops: 0% 20% 0% 20% 0% 20%;
-$imgLefts: 0% 20% 0% 20% 0% 20%;
+$imgTops: 10% 45% 5% 35% 40% 20%;
+$imgLefts: 30% 25% 5% 50% 7.50% 60%;
+$imgIndexes: 9991 9992 9993 9994 9995 9996;
 
 @for $position from 1 through length($imgTops) {
   .dates__img:nth-child(#{$position}) {
     top: nth($imgTops, $position);
     left: nth($imgLefts, $position);
+    z-index: nth($imgIndexes, $position);
+  }
+}
+
+$rotateRow: -45deg -30deg -15deg 0deg 15deg 30deg 45deg 60deg;
+
+@for $rotation from 1 through length($rotateRow) {
+  .dates__table__row:nth-child(#{$rotation}) {
+    transform: rotateY(nth($rotateRow, $rotation));
+    animation-delay: calc(var(--animation-duration) / #{$rotation});
   }
 }
