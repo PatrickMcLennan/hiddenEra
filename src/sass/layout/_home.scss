@@ -21,10 +21,6 @@
       @include flexin(space-evenly);
       overflow: hidden;
     }
-
-    &__secondary {
-      padding: 0 1vw;
-    }
   }
 
   &__span {
@@ -37,7 +33,7 @@
       height: 1px;
       width: 90%;
       background-color: var(--color-red-primary);
-      transform-origin: 0% 0%;
+      transform-origin: 100%;
       animation: var(--animation-duration) ease-in-out forwards homeSpan;
     }
   }
@@ -73,15 +69,25 @@
   }
 }
 
-$primarySpanDelay: .125s;
-$primarySpanOffset: 5%;
+$headerSpanDelay: .125s;
+$headerSpanOffset: 5%;
 
 @for $span from 1 through 19 {
   .home__heading__primary span:nth-child(#{$span}) {
     padding: 1rem;
     opacity: 0;
-    transform: translateY(calc(#{$primarySpanOffset} * #{$span})) translateX(calc(#{$primarySpanOffset} * #{$span}));
+    transform: translateY(calc(#{$headerSpanOffset} * #{$span})) translateX(calc(#{$headerSpanOffset} * #{$span}));
     animation: calc(var(--animation-duration) / 2) ease-in-out forwards headerSpan;
-    animation-delay: calc(#{$primarySpanDelay} * #{$span});
+    animation-delay: calc(#{$headerSpanDelay} * #{$span});
+  }
+}
+
+@for $span from 1 through 4 {
+  .home__heading__secondary span:nth-child(#{$span}) {
+    padding: 0 1vw;
+    opacity: 0;
+    transform: translateY(calc(#{$headerSpanOffset} * #{$span})) translateX(calc(#{$headerSpanOffset} * #{$span}));
+    animation: var(--animation-duration) ease-in-out forwards headerSpan;
+    animation-delay: calc(#{$headerSpanDelay} * calc(#{$span} * 4));
   }
 }

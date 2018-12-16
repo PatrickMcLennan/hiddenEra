@@ -11,16 +11,12 @@
 }
 @keyframes homeSpan {
   0% {
-    transform: rotate(45deg) translate(calc((var(--span-box-height) / 2) + var(--span-element-height)));
-  }
-  1% {
-    transform: rotate(45deg) translate(0);
-  }
-  60% {
-    transform: rotate(-45deg) translate(0);
+    transform: scaleX(0) translateX(20%);
+    opacity: 0;
   }
   100% {
-    transform: rotate(0) translate(0)
+    transform: scaleX(1) translateX(0);
+    opacity: 1;
   }
 }
 
