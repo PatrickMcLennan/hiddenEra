@@ -3,11 +3,11 @@ include ../components/mixins
 -
   const aboutUs = {
     members: [
-      { name: 'Patrick McLennan', img: 'img/aboutUs/pat.jpg', laughLine: '6 strings of fury', text: 'The song-writing tornado behind such classics as "Will To Fight", Patrick is year after year hailed as a tour-de-force in the Grade 10 Burlington Central High School rock scene.  You can find Pat forcing band members to load $5k worth of guitar amps that he "doesn\'t need."', equipment: ['img/aboutUs/epiphone.png', 'img/aboutUs/marshall.png'] },
-      { name: 'Tom Duff', img: 'img/aboutUs/tom.jpg', laughLine: 'Lock up your daughters', text: 'Hidden Era is an Equal Oppurtunity Employer.', equipment: ['img/aboutUs/pearl.png'] },
-      { name: 'John Duff', img: 'img/aboutUs/john.jpg', laughLine: 'Dreamer.  Visionary.  Driver.', text: 'The steady hand of the group, Johns natural ability to gain a G2 earned him immediate acceptance into the band.  Quiet and composed, John can be found obsessing over Swedish pop-star Robyn or patenting his yet-to-be-seen "Live Fade-Out" technique.', equipment: ['img/aboutUs/godin.png', 'img/aboutUs/fender.png'] },
-      { name: 'Blake Hutton', img: 'img/aboutUs/blake.jpg', laughLine: '6 strings of fury', text: 'Blakes quirky personality is a lot like his bass playing -- off-beat and timeless.  Excited for the upcoming shows, Blake has only 2 dislikes in this world -- Wheat and Injustice, which he often claims go hand in hand.', equipment: ['img/aboutUs/musicMan.png', 'img/aboutUs/ampeg.png'] },
-      { name: 'Marc Decaire', img: 'img/aboutUs/marc.jpeg', laughLine: 'Regional Man of Mystery', text: 'Voted Best Looking member of Hidden Era, unanimously, everytime, Marc Decaire redefined what a vocalist for a High School rock band should be.  If you see Marc in the wild, please tell him to call one of us.', equipment: [] }
+      { name: 'Patrick McLennan', img: 'img/aboutUs/pat.jpg', instrument: 'Lead Guitar', equipment: ['img/aboutUs/epiphone.png', 'img/aboutUs/marshall.png'] },
+      { name: 'Tom Duff', img: 'img/aboutUs/tom.jpg', instrument: 'Lock up your daughters', equipment: ['img/aboutUs/pearl.png'] },
+      { name: 'John Duff', img: 'img/aboutUs/john.jpg', instrument: 'Dreamer.  Visionary.  Driver.', equipment: ['img/aboutUs/godin.png', 'img/aboutUs/fender.png'] },
+      { name: 'Blake Hutton', img: 'img/aboutUs/blake.jpg', instrument: '6 strings of fury', equipment: ['img/aboutUs/musicMan.png', 'img/aboutUs/ampeg.png'] },
+      { name: 'Marc Decaire', img: 'img/aboutUs/marc.jpeg', instrument: 'Regional Man of Mystery', equipment: [] }
     ]
   }
 
@@ -24,15 +24,14 @@ section.aboutUs
         figcaption.aboutUs__figure__caption
           h6.aboutUs__caption__text= figure.name
 
-  //- .aboutUs__memberInfo
+  .aboutUs__memberInfo
     each member in members
       figure.aboutUs__member
         .aboutUs__member__header
           img.aboutUs__member__img(src= member.img alt= member.name)
           h5.aboutUs__member__name= member.name
         figcaption.aboutUs__member__caption
-          h6.aboutUs__member__laughLine= member.laughLine
-          p.aboutUs__member__text= member.text
+          h6.aboutUs__member__instrument= member.instrument
         .aboutUs__member__equipment
           each img in member.equipment
             img.aboutUs__member__brand(src= member.equipment[img])

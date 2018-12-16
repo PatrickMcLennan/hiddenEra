@@ -39,7 +39,7 @@
     z-index: 1;
 
     &:hover {
-      outline: 1rem solid var(--color-red-primary);
+      outline: .5rem solid var(--color-red-primary);
       z-index: 2;
       transform: scale(.95);
     }

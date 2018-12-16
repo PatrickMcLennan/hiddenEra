@@ -2,9 +2,11 @@
   @include flexin;
   @include sectionGlow(top);
   background-color: rgba(0, 0, 0, .9);
+  padding: 0 2.5vw;
 
   &__memberIcons {
     @include flexin(space-evenly);
+    flex: 0 1 50%;
   }
 
   &__figure {
@@ -38,16 +40,53 @@
       padding: 1.25vh;
       background: rgba(0, 0, 0, .5);
       text-align: right;
+      cursor: pointer;
     }
 
     &:hover {
-      outline: 1rem solid var(--color-red-primary);
+      outline: .5rem solid var(--color-red-primary);
       transform: scale(1.05);
     }
 
     &:hover .aboutUs__figure__caption {
       right: 0%;
       opacity: 1;
+    }
+  }
+
+  &__memberInfo {
+    flex: 0 1 50%;
+  }
+
+  &__member {
+    @include flexin(space-evenly, center, column);
+    flex: 1;
+
+    & > * {
+      margin-bottom: 2.5vh;
+    }
+
+    &:not(:first-child) {
+      display: none;
+    }
+
+    &__header {
+      @include flexin(space-between, center, row, nowrap);
+      height: 25vh;
+      flex: 1;
+    }
+
+    &__header img {
+      height: 100%;
+      width: 40%;
+      object-fit: cover;
+      border: 1px solid var(--color-white);
+      outline-offset: .5vh;
+      outline: 1px solid var(--color-red-primary);
+    }
+
+    &__caption {
+      @include flexin(center, flex-end, column, nowrap);
     }
   }
 }
