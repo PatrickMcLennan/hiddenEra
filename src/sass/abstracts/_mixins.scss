@@ -8,6 +8,17 @@
   align-content: $align-content;
 }
 
+@mixin sectionGlow($placement) {
+  z-index: 2;
+  @if $placement == top {
+    animation: var(--animation-duration) ease-in-out forwards sectionGlowTop;
+    border-top: 1px solid white;
+  } @else if $placement == bottom {
+    animation: var(--animation-duration) ease-in-out forwards sectionGlowBottom;
+    border-bottom: 1px solid white;
+  }
+}
+
 // TYPOGRAPHY
 @mixin plainText {
   text-decoration: none;
@@ -18,39 +29,5 @@
   color: var(--color-white);
   font-weight: $weight;
   font-family: 'Lato';
-}
-@mixin sectionHeader($side:left) {
-  text-align: $side;
-  font-size: 3rem;
-}
-
-// NAV
-
-// IMAGES
-@mixin icon {
-  padding: var(--padding-icon);
-  transition: all .35s ease-in-out;
-  cursor: pointer;
-
-  &:hover {
-    transform: scale(1.05);
-  }
-}
-@mixin picFit($objFit:contain, $height:auto, $width:100%) {
-  height: $height;
-  width: $width;
-  object-fit: $objFit;
-}
-@mixin picBox {
-  height: auto;
-  width: 100%;
-}
-
-// ANIMATIONS
-@mixin hoverSwell {
-  transition: var(--transition-swell);
-  &:hover {
-    transform: scale(1.105);
-  }
 }
 

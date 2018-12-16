@@ -1,4 +1,5 @@
 .section {
+  padding-bottom: var(--padding-section-header-v);
 
   &__header {
     padding: var(--padding-section-header-v) var(--padding-section-header-h);

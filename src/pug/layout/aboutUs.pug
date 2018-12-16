@@ -14,16 +14,16 @@ include ../components/mixins
 - const { members } = aboutUs
 
 section.aboutUs
-  +sectionHeading('aboutUs', "We haven't aged a day")
+  +sectionHeading("We haven't aged a day")
 
-  .aboutUs__memberIcons
+  //- .aboutUs__memberIcons
     each figure in members
       figure.aboutUs__figure
         img(src= figure.img alt= figure.name class="aboutUs__img")
         figcaption.aboutUs__caption
           h6.aboutUs__caption__text= figure.name
 
-  .aboutUs__memberInfo
+  //- .aboutUs__memberInfo
     each member in members
       figure.aboutUs__member
         .aboutUs__member__header

@@ -4,7 +4,7 @@
     @include latoWhite;
     font-size: var(--fs-section-header);
     text-transform: uppercase;
-    letter-spacing: .5rem;
+    letter-spacing: .75rem;
   }
 }
 
@@ -67,6 +67,6 @@
     @include latoWhite(300);
     font-size: 2rem;
     text-transform: uppercase;
-
+    letter-spacing: .4rem;
   }
 }
