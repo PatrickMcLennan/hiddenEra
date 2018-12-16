@@ -90,7 +90,6 @@
       background: rgba(0,0,0,1);
       padding: .5vh;
       text-align: center;
-      margin: 0 2.5vh;
       font-size: 4rem;
     }
 
@@ -98,6 +97,7 @@
       @include latoWhite(300);
       text-transform: uppercase;
       font-size: 5rem;
+      letter-spacing: .6rem;
     }
   }
 }

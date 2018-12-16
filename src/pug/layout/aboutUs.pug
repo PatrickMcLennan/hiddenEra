@@ -33,5 +33,6 @@ section.aboutUs
         figcaption.aboutUs__member__caption
           h6.aboutUs__member__instrument= member.instrument
         .aboutUs__member__equipment
-          each img in member.equipment
-            img.aboutUs__member__brand(src= member.equipment[img])
+          if member.equipment.length >= 1
+            each img in member.equipment
+              img.aboutUs__member__brand(src= member.equipment[img])

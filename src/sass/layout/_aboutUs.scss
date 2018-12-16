@@ -1,7 +1,7 @@
 .aboutUs {
   @include flexin;
   @include sectionGlow(top);
-  background-color: rgba(0, 0, 0, .9);
+  @include bgImg(var(--bg-img-aboutUs));
   padding: 0 2.5vw;
 
   &__memberIcons {
@@ -61,6 +61,8 @@
   &__member {
     @include flexin(space-evenly, center, column);
     flex: 1;
+    top: 0;
+    left: 0;
 
     & > * {
       margin-bottom: 2.5vh;
@@ -87,6 +89,12 @@
 
     &__caption {
       @include flexin(center, flex-end, column, nowrap);
+      margin: 2.5vh 0;
+    }
+
+    &__brand {
+      position: absolute;
+      z-index: 1003;
     }
   }
 }

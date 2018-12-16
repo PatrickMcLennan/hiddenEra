@@ -8,7 +8,16 @@
   flex-wrap: $wrap;
   align-content: $align-content;
 }
-
+@mixin bgImg($url) {
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.6) 0%,
+    rgba(0, 0, 0, 0.8) 100%),
+    $url;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
 @mixin sectionGlow($placement) {
   z-index: 2;
   @if $placement == top {

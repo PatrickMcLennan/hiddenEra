@@ -6,21 +6,6 @@
   --padding-section-header-v: 5vh;
   --padding-section-header-h: 4vh;
 
-  // HEADER
-  --padding-header-v: 1vh;
-  --padding-header-h: 2vh;
-  --header-height: calc(var(--fs-logo) + (var(--padding-header-v) * 2));
-
-  // HOME
-  --padding-home-top: 30vh;
-  --span-box-height: 5px;
-  --span-element-height: 1px;
-
-  // REVIEW
-  --review-height: 17.5vh;
-  --review-media-height: 10vh;
-  --review-rating-height: 10vh;
-
   // COLORS
   --color-black: #000;
   --color-white: #fff;
@@ -32,5 +17,26 @@
 
   // ANIMATIONS / TRANSITIONS
   --img-outline: all .5s ease-in-out;
+
+
+
+  // HEADER
+  --padding-header-v: 1vh;
+  --padding-header-h: 2vh;
+  --header-height: calc(var(--fs-logo) + (var(--padding-header-v) * 2));
+
+  // HOME
+  --bg-img-home: url('http://phishthoughts.com/wp-content/uploads/2012/08/DSC00256-copy-1.jpg');
+  --padding-home-top: 30vh;
+  --span-box-height: 5px;
+  --span-element-height: 1px;
+
+  // REVIEW
+  --review-height: 17.5vh;
+  --review-media-height: 10vh;
+  --review-rating-height: 10vh;
+
+  // ABOUT US
+  --bg-img-aboutUs: url('https://static1.squarespace.com/static/54af6772e4b0b7b2a6ab6f61/5a86865dc830255b60424635/5a86865d0d929736e63e61b6/1518765663056/Roadies-2.jpg');
 
 }
