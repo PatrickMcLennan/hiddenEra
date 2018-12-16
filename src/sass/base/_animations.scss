@@ -9,9 +9,9 @@
     transform: translateY(0) translateX(0);
   }
 }
-@keyframes homeSpan {
+@keyframes spanGrow {
   0% {
-    transform: scaleX(0) translateX(20%);
+    transform: scaleX(0) translateX(100%);
     opacity: 0;
   }
   100% {
@@ -19,7 +19,6 @@
     opacity: 1;
   }
 }
-
 @keyframes homeShadow {
   0% {
     box-shadow: none;
@@ -28,13 +27,12 @@
     box-shadow: 0 .25rem 7.5rem 2.5rem var(--color-red-primary);
   }
 }
-
+// DATES
 @keyframes tablesRow {
   0% {
     transform: translateY(100%);
     opacity: 0;
   }
-
   100% {
     transform: translateY(0);
     opacity: 1;

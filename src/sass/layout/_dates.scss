@@ -4,7 +4,6 @@
   &__table {
     text-align: center;
     width: calc(100% - 2.5vw);
-    margin-bottom: 5vh;
     border-spacing: 3vh;
 
     & th,
@@ -18,6 +17,10 @@
       transform: translateY(100%);
       opacity: 0;
       animation: var(--animation-duration) ease-in-out forwards tablesRow;
+    }
+
+    &__btn {
+      border: 1px solid white;
     }
   }
 

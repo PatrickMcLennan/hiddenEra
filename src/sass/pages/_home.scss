@@ -1,10 +1,30 @@
 .section {
 
   &__header {
-    padding: var(--padding-section-header);
+    padding: var(--padding-section-header-v) var(--padding-section-header-h);
+    position: relative;
+    @include flexin;
 
-    &:nth-child(odd) {
-      text-align: right;
+    &::before,
+    &::after {
+      content: '';
+      display: block;
+      height: 1px;
+      width: 40%;
+      background-color: var(--color-red-primary);
+      position: absolute;
+      animation: var(--animation-duration) ease-in-out forwards spanGrow;
+    }
+
+    &::before {
+      top: 25%;
+      left: 15%;
+      transform-origin: 100%;
+    }
+
+    &::after {
+      bottom: 25%;
+      right: 15%;
     }
   }
 }
