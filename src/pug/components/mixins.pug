@@ -24,8 +24,8 @@ mixin review(array)
         q.review__quote= review.quote
         h6.review__company= review.company
 
-mixin sectionHeading(text)
-  h3.section__header= text
+mixin sectionHeading(id, text)
+  h3.section__header(id= id)= text
 
 
 //- HOME

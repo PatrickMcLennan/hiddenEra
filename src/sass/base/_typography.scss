@@ -20,6 +20,20 @@
   }
 }
 
+.nav {
+
+  &__ul {
+    text-align: right;
+  }
+
+  &__link {
+    @include latoWhite(300);
+    font-size: 2rem;
+    letter-spacing: .5rem;
+    text-transform: uppercase;
+  }
+}
+
 .home {
 
   &__heading__primary,

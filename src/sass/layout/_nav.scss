@@ -17,7 +17,7 @@
   }
 
   &__ul {
-    @include flexin(space-between, center, column);
+    @include flexin(space-between, flex-end, column);
     position: absolute;
     top: 100%;
     right: 0;
@@ -31,10 +31,11 @@
     padding: 1vh;
     margin: .5vh;
     border: 1px solid var(--color-white);
+    background: rgba(0,0,0,.75);
     transform: rotateY(90deg);
-    perspective: 100rem;
     transform-origin: 100%;
     transform-style: preserve-3d;
+    perspective: 100rem;
   }
 }
 
@@ -47,7 +48,11 @@ $navLiDelay: .15s;
 
 @for $navLi from 1 through 4 {
   .nav:hover .nav__item:nth-child(#{$navLi}) {
-    transition: all 1s ease-in-out calc(#{$navLi} * #{$navLiDelay});
+    transition: transform 1s ease-in-out calc(#{$navLi} * #{$navLiDelay});
     transform: rotateY(0deg);
   }
+}
+
+.nav:hover .nav__item:hover {
+  scale: 1.125;
 }
