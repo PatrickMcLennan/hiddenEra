@@ -23,7 +23,6 @@
     right: 0;
     padding: var(--padding-header-v);
     transform-origin: top;
-    transition: all 1s ease-in-out;
     visibility: hidden;
   }
 
@@ -48,7 +47,7 @@ $navLiDelay: .15s;
 
 @for $navLi from 1 through 4 {
   .nav:hover .nav__item:nth-child(#{$navLi}) {
-    transition: transform 1s ease-in-out calc(#{$navLi} * #{$navLiDelay});
+    transition: transform var(--animation-nav-duration) ease-in-out calc(#{$navLi} * #{$navLiDelay});
     transform: rotateY(0deg);
   }
 }

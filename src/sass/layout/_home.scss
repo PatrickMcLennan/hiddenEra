@@ -63,7 +63,7 @@
 }
 
 $headerSpanDelay: .125s;
-$headerSpanOffset: 5%;
+$headerSpanOffset: -5%;
 
 @for $span from 1 through 19 {
   .home__heading__primary span:nth-child(#{$span}) {
