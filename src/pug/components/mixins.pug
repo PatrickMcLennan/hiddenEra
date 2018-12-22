@@ -29,10 +29,6 @@ mixin homeHeading(array)
     span= letter
 
 //- DATES
-mixin tableHeadings(array)
-  each icon in array
-    th.icon.dates__table__heading
-      img(src= icon.path alt= icon.alt)
 mixin tableListings(array)
   each listing in array
     tr.dates__table__row

@@ -1,25 +1,16 @@
 include ../components/mixins
 -
   const dates = {
-    table : {
-      headings: [
-        { path: 'img/svg/home.svg', alt: 'Show Location' },
-        { path: 'img/svg/tv.svg', alt: 'Show Name' },
-        { path: 'img/svg/calendar.svg', alt: 'Show Date' },
-        { path: 'img/svg/coin-dollar.svg', alt: 'Show Cost' },
-        { path: 'img/svg/ticket.svg', alt: 'Get Tickets' }
-      ],
-      listings: [
-        { venue: 'Holiday Inn', show: 'Burlington International Games (B.I.G) kick-Off', date: 'August 2nd, 2019', price: ' / ' },
-        { venue: 'Burlington Central High School', show: 'Fall Talent Show', date: 'October 12th, 2019 (2nd period)', price: '10$, 5$ with canned good donation' },
-        { venue: 'Burlington Central High School', show: 'Christmas Talent Show', date: 'December 21st, 2019 (5h period)', price: '10$, 5$ with canned good donation' },
-        { venue: 'Burlington Central High School', show: 'Spring Talent Show', date: 'March 15th, 2019 (2nd period)', price: '10$, 5$ with canned good donation' },
-        { venue: 'Burlington Central High School', show: 'Battle of the Bands', date: 'May 10th, 2019', price: '10$, 5$ with canned good donation' },
-        { venue: 'Holiday Inn', show: 'Burlington International Games (B.I.G) kick-Off', date: 'August 2nd, 2019', price: ' / ' },
-        { venue: 'T.B.A', show: 'Bobs No-Frills Employee Party', date: 'July 1st, 2019', price: ' / ' },
-        { venue: '536 Bridgeman Avenue', show: 'Blakes Birthday Show (Rain or Shine)', date: 'Oct 15th, 2019', price: ' / ' }
-      ]
-    },
+    listings: [
+      { venue: 'Holiday Inn', show: 'Burlington International Games (B.I.G) kick-Off', date: 'August 2nd, 2019', price: ' / ' },
+      { venue: 'Burlington Central High School', show: 'Fall Talent Show', date: 'October 12th, 2019 (2nd period)', price: '10$' },
+      { venue: 'Burlington Central High School', show: 'Christmas Talent Show', date: 'December 21st, 2019 (5h period)', price: '10$' },
+      { venue: 'Burlington Central High School', show: 'Spring Talent Show', date: 'March 15th, 2019 (2nd period)', price: '10$' },
+      { venue: 'Burlington Central High School', show: 'Battle of the Bands', date: 'May 10th, 2019', price: '10$' },
+      { venue: 'Holiday Inn', show: 'Burlington International Games (B.I.G) kick-Off', date: 'August 2nd, 2019', price: ' / ' },
+      { venue: 'T.B.A', show: 'Bobs No-Frills Employee Party', date: 'July 1st, 2019', price: ' / ' },
+      { venue: '536 Bridgeman Avenue', show: 'Blakes Birthday Show (Rain or Shine)', date: 'Oct 15th, 2019', price: ' / ' }
+    ],
     collage: [
       { path: 'img/dates/group1.jpg', alt: 'Hidden Era Group Shot' },
       { path: 'img/dates/group2.jpg', alt: 'Hidden Era Group Shot' },
@@ -30,17 +21,18 @@ include ../components/mixins
     ],
   }
 
-- const { table, collage } = dates
-- const { headings, listings } = table
-
 section.dates
     +sectionHeading('#dates', 'Get Tickets Today')
-    table.dates__table
-      thead.dates__table__headings
-        +tableHeadings(headings)
-      tbody.dates__table__body
-        +tableListings(listings)
+    ul.dates__shows
+      each show in dates.listings
+        li.dates__show= `#[span ${show.date}] ${show.venue}`
+          ul.dates__show__info
+            li.dates__show__text= show.date
+            li.dates__show__text= show.venue
+            li.dates__show__text= show.show
+            li.dates__show__text= show.price
+            button.dates__cta(data-date= show.date data-venue= show.venue data-show= show.show data-price= show.price) Buy Ticket
 
     .dates__collage
-      +collagePic(collage)
+      +collagePic(dates.collage)
 
