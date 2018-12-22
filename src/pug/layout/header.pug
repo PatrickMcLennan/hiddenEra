@@ -5,9 +5,10 @@
       { url: '#home', text: 'Home' },
       { url: '#dates', text: 'Dates' },
       { url: '#aboutUs', text: 'About Us' },
-      { url: '#cart', text: 'Cart' }
+      { url: '#cart', text: ' < Cart' }
     ]
   }
+
 
 .header__logo
   h1 Hidden Era
@@ -19,3 +20,4 @@ nav.nav
     each i in header.menu
       li.nav__item
         a.nav__link(href=i.url)= i.text
+

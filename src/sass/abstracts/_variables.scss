@@ -1,7 +1,6 @@
 :root {
   //ANIMATIONS
   --animation-duration: 3s;
-  --animation-nav-duration: .5s;
 
   // BASE
   --padding-section-header-v: 5vh;
@@ -13,7 +12,7 @@
   --color-red-primary: red;
 
   // TYPOGRAPHY
-  --fs-logo: 2rem;
+  --fs-logo: 1.75rem;
   --fs-section-header: 5.5rem;
 
   // ANIMATIONS / TRANSITIONS
@@ -22,7 +21,7 @@
 
 
   // HEADER
-  --padding-header-v: 1vh;
+  --padding-header-v: .25vh;
   --padding-header-h: 2vh;
   --header-height: calc(var(--fs-logo) + (var(--padding-header-v) * 2));
 

@@ -1,10 +1,11 @@
 .header {
   @include flexin(space-between);
   position: fixed;
-  top: 0;
+  top: 1.5%;
   left: 0;
   right: 0;
   border-bottom: 1px solid white;
+  border-top: 1px solid white;
   background-color: rgba(0, 0, 0, .75);
   padding: var(--padding-header-v) var(--padding-header-h);
 }
@@ -12,4 +13,8 @@
 .header,
 .header > * {
   z-index: 9999;
+}
+
+#cartSVG {
+  background-color: white;
 }
