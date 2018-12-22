@@ -8,15 +8,15 @@ include ./../components/mixins
       { text: 'Get Tickets', link: '#dates' },
       { text: 'Get "The Lost Years" on Blu-Ray', link: '#cart' }
     ],
-    award: { path: 'img/svg/trophy.svg', text: '2 time BCHS Battle of the Bands Runner-Up' },
+    award: { text: '2 time B.C.H.S Battle of the Bands Runner-Up' },
     reviews: [
-      { path: 'img/home/altPress.png', alt: 'Alternative Press\'s Logo', rating: ['img/svg/star-full.svg', 'img/svg/star-full.svg', 'img/svg/star-full.svg', 'img/svg/star-half.svg', 'img/svg/star-empty.svg'], quote: '...haunting vocals...literally, haunting...', company: ' -- Alternative Press' },
-      { path: 'img/home/pitchfork.png', alt: 'Pitchforks Logo', rating: ['img/svg/star-half.svg', 'img/svg/star-empty.svg', 'img/svg/star-empty.svg', 'img/svg/star-empty.svg', 'img/svg/star-empty.svg'], quote: 'lol', company: ' -- Pitchfork' },
-      { path: 'img/home/rollingStone.png', alt: 'Rolling Stones Logo', rating: ['img/svg/star-full.svg', 'img/svg/star-full.svg', 'img/svg/star-empty.svg', 'img/svg/star-empty.svg', 'img/svg/star-empty.svg'], quote: '...by god, they\'re really trying...', company: ' -- Rolling Stone' },
-      { path: 'img/home/time.png', alt: 'Time Magazines Logo', rating: ['img/svg/star-full.svg', 'img/svg/star-full.svg', 'img/svg/star-full.svg', 'img/svg/star-full.svg', 'img/svg/star-empty.svg'], quote: '...there\'s worse out there...', company: ' -- Time Magazine' },
-      { path: 'img/home/billboard.png', alt: 'Billboards Logo', rating: ['img/svg/star-empty.svg', 'img/svg/star-empty.svg', 'img/svg/star-empty.svg', 'img/svg/star-empty.svg', 'img/svg/star-empty.svg'], quote: '...don\'t even have the will to finish this...', company: ' -- Billboard' },
-      { path: 'img/home/entertaintment.png', alt: 'Entertainment Weekly Logo', rating: ['img/svg/star-full.svg', 'img/svg/star-half.svg', 'img/svg/star-empty.svg', 'img/svg/star-empty.svg', 'img/svg/star-empty.svg'], quote: '...it\'s been a slow week...', company: ' -- Entertainment Weekly' },
-      { path: 'img/home/variety.png', alt: 'Variety magazines Logo', rating: ['img/svg/star-full.svg', 'img/svg/star-full.svg', 'img/svg/star-full.svg', 'img/svg/star-full.svg', 'img/svg/star-full.svg'], quote: '...[best] rock band of the Burlington High School Music scene...', company: ' -- Variety' }
+      { path: 'img/home/altPress.png', alt: 'Alternative Press\'s Logo', rating: ['star-full', 'star-full', 'star-full', 'star-half', 'star-empty'] },
+      { path: 'img/home/pitchfork.png', alt: 'Pitchforks Logo', rating: ['star-half', 'star-empty', 'star-empty', 'star-empty', 'star-empty'] },
+      { path: 'img/home/rollingStone.png', alt: 'Rolling Stones Logo', rating: ['star-full', 'star-full', 'star-empty', 'star-empty', 'star-empty'] },
+      { path: 'img/home/time.png', alt: 'Time Magazines Logo', rating: ['star-full', 'star-full', 'star-full', 'star-full', 'star-empty'] },
+      { path: 'img/home/billboard.png', alt: 'Billboards Logo', rating: ['star-empty', 'star-empty', 'star-empty', 'star-empty', 'star-empty'] },
+      { path: 'img/home/entertaintment.png', alt: 'Entertainment Weekly Logo', rating: ['star-full', 'star-half', 'star-empty', 'star-empty', 'star-empty'] },
+      { path: 'img/home/variety.png', alt: 'Variety magazines Logo', rating: ['star-full', 'star-full', 'star-full', 'star-full', 'star-full'] }
     ]
   }
 
@@ -31,12 +31,7 @@ section.home
       +homeHeading(home.headingSecondary)
 
   .home__award
-    figure.home__award__figure
-      .home__award__media
-        svg.home__award__svg.svg__trophy.svg
-          use(xlink:href= 'img/svg/trophy.svg'.trophy)
-      .home__award__caption
-        h6.home__award__text= home.award.text
+    h3.home__award__text= home.award.text
 
   .home__reviews
     .home__reviews__col

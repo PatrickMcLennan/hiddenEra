@@ -17,27 +17,6 @@
     font-size: var(--fs-logo);
     text-align: right;
     letter-spacing: .5rem;
-    background-clip: text;
-  //   background-image: linear-gradient(
-  //     to right bottom,
-  //     var(--color-red-primary) 10%,
-  //     var(--color-black) 11%,
-  //     var(--color-white) 12%,
-  //     var(--color-white) 88%,
-  //     var(--color-black) 89%,
-  //     var(--color-red-primary) 90%,
-  //     );
-
-  //     &:hover {
-  //       background-image: linear-gradient(
-  //         to right bottom,
-  //         var(--color-red-primary) 50%,
-  //         // var(--color-white) 12%,
-  //         // var(--color-white) 88%,
-  //         // var(--color-black) 89%,
-  //         // var(--color-red-primary) 90%,
-  //         );
-  //     }
   }
 }
 
@@ -73,8 +52,12 @@
 
   &__award__text {
     @include latoWhite(100);
-    font-size: 3rem;
+    font-size: 2.5rem;
     text-align: center;
+    text-transform: uppercase;
+    font-style: italic;
+    letter-spacing: .6rem;
+    opacity: .65;
   }
 }
 

@@ -1,44 +1,22 @@
 .review {
-  @include flexin(flex-start, center, row, nowrap);
+  @include flexin(center, center, row, nowrap);
   min-height: var(--review-height);
   padding: 0 5vw;
-
-  &__imgs {
-    @include flexin(flex-start, flex-start, column);
-    max-height: var(--review-height);
-  }
+  animation: calc(var(--animation-duration) / 2) ease-out scrollReviewUp;
 
   &__media {
-    max-width: 15vw;
-    max-height: var(--review-media-height);
+    height: 100%;
+    width: auto;
 
     &__logo {
-      width: 100%;
       height: auto;
+      width: 100%;
     }
   }
+}
 
-  &__rating {
-    max-height: 4vh;
-    @include flexin(space-evenly);
-    height: var(--review-rating-height)
-  }
-
-  &__star {
-    height: 100%;
-    width: 5vw;
-  }
-
-  &__caption {
-    text-align: center;
-    @include flexin(space-evenly, center, column);
-  }
-
-  &__quote {
-    margin-bottom: 1.5vh;
-  }
-
-  &__company {
-    align-self: flex-end;
+@for $i from 1 through 5 {
+  .review__star:nth-child(#{$i}) {
+    animation-delay: calc(var(--animation-delay) / #{$i})
   }
 }
