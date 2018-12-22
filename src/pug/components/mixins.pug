@@ -28,20 +28,6 @@ mixin homeHeading(array)
   each letter in array
     span= letter
 
-//- DATES
-mixin tableListings(array)
-  each listing in array
-    tr.dates__table__row
-      td.dates__table__venue= listing.venue
-      td.dates__table__show= listing.show
-      td.dates__table__date= listing.date
-      td.dates__table__price= listing.price
-      td.dates__table__btn
-        button.dates__table__cta= 'Buy Ticket'
-mixin collagePic(array)
-  each img in array
-    img(class= "dates__img" src= img.path alt= img.alt)
-
 //- FORM
 mixin formInputs(array, btnText)
   button.form__back__button Back

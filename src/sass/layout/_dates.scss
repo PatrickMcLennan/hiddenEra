@@ -1,31 +1,30 @@
 .dates {
   background-image: linear-gradient(to right bottom, rgba(21, 21, 21, 1), lighten(rgba(21, 21, 21, 1), 5%));
 
-  &__table {
-    text-align: center;
-    width: calc(100% - 2.5vw);
-    border-spacing: 2vh;
-
-    & th,
-    td {
-      padding: .25vh;
-      transform-style: preserve-3d;
-    }
-
-    &__row {
-      opacity: 0;
-      animation: var(--animation-duration) ease-in-out forwards tablesRow;
-    }
-
-    &__btn {
-      border: 1px solid white;
-    }
+  &__body {
+    @include flexin(space-between, stretch);
   }
 
-  &__collage {
-    padding: 2.5vw;
+  &__shows {
+    color: white;
+    @include flexin(space-evenly, flex-start, column);
+  }
+
+  &__show {
     position: relative;
-    height: calc(60rem + var(--padding-section-header-v));
+    margin: 4vh 0;
+    border: 1px solid red;
+    padding: 1vh 2vw 1vh 1vw;
+    cursor: pointer;
+  }
+
+  &__show__info {
+    display: none;
+  }
+  &__collage {
+    position: relative;
+    width: 40vw;
+    flex: 1;
   }
 
   &__img {
@@ -46,13 +45,12 @@
   }
 }
 
-$imgTops: 10% 45% 5% 35% 40% 20%;
-$imgLefts: 30% 25% 5% 50% 7.50% 60%;
+$imgTops: 0% 10% 20% 30% 40% 50%;
 
 @for $position from 1 through length($imgTops) {
   .dates__img:nth-child(#{$position}) {
     top: nth($imgTops, $position);
-    left: nth($imgLefts, $position);
+    right: 0%;
   }
 }
 

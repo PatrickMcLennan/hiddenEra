@@ -2,14 +2,13 @@ include ../components/mixins
 -
   const dates = {
     listings: [
-      { venue: 'Holiday Inn', show: 'Burlington International Games (B.I.G) kick-Off', date: 'August 2nd, 2019', price: ' / ' },
-      { venue: 'Burlington Central High School', show: 'Fall Talent Show', date: 'October 12th, 2019 (2nd period)', price: '10$' },
-      { venue: 'Burlington Central High School', show: 'Christmas Talent Show', date: 'December 21st, 2019 (5h period)', price: '10$' },
-      { venue: 'Burlington Central High School', show: 'Spring Talent Show', date: 'March 15th, 2019 (2nd period)', price: '10$' },
-      { venue: 'Burlington Central High School', show: 'Battle of the Bands', date: 'May 10th, 2019', price: '10$' },
-      { venue: 'Holiday Inn', show: 'Burlington International Games (B.I.G) kick-Off', date: 'August 2nd, 2019', price: ' / ' },
-      { venue: 'T.B.A', show: 'Bobs No-Frills Employee Party', date: 'July 1st, 2019', price: ' / ' },
-      { venue: '536 Bridgeman Avenue', show: 'Blakes Birthday Show (Rain or Shine)', date: 'Oct 15th, 2019', price: ' / ' }
+      { venue: 'Holiday Inn', show: 'Burlington International Games (B.I.G) kick-Off', date: 'August 2nd, 2019', price: '$5', mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2901.1666742420684!2d-79.8025320835326!3d43.352624079132816!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b61c76cdbbb4b%3A0x94c40464a1ccc89f!2sHoliday+Inn+Burlington+Hotel+%26+Conference+Centre!5e0!3m2!1sen!2sca!4v1545519819522" },
+      { venue: 'Burlington Central High School', show: 'Fall Talent Show', date: 'October 12th, 2019 (2nd period)', price: '10$', mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2902.317476328953!2d-79.80787738353303!3d43.32854527913368!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882c9e225ad66667%3A0x8463740275d755b!2sBurlington+Central+High+School!5e0!3m2!1sen!2sca!4v1545519688445" },
+      { venue: 'Burlington Central High School', show: 'Christmas Talent Show', date: 'December 21st, 2019 (5h period)', price: '10$', mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2902.317476328953!2d-79.80787738353303!3d43.32854527913368!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882c9e225ad66667%3A0x8463740275d755b!2sBurlington+Central+High+School!5e0!3m2!1sen!2sca!4v1545519688445" },
+      { venue: 'Burlington Central High School', show: 'Spring Talent Show', date: 'March 15th, 2019 (2nd period)', price: '10$', mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2902.317476328953!2d-79.80787738353303!3d43.32854527913368!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882c9e225ad66667%3A0x8463740275d755b!2sBurlington+Central+High+School!5e0!3m2!1sen!2sca!4v1545519688445" },
+      { venue: 'Burlington Central High School', show: 'Battle of the Bands', date: 'May 10th, 2019', price: '10$', mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2902.317476328953!2d-79.80787738353303!3d43.32854527913368!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882c9e225ad66667%3A0x8463740275d755b!2sBurlington+Central+High+School!5e0!3m2!1sen!2sca!4v1545519688445" },
+      { venue: 'T.B.A', show: 'Bobs No-Frills Employee Party', date: 'July 1st, 2019', price: '$5', mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2902.2749686462325!2d-79.80388528353303!3d43.32943487913382!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882c9e23f4434cc3%3A0x9e46d22793e77987!2s571+Brant+St%2C+Burlington%2C+ON+L7R+2G6!5e0!3m2!1sen!2sca!4v1545520146447" },
+      { venue: '536 Bridgeman Avenue', show: 'Blakes Birthday Show (Rain or Shine)', date: 'Oct 15th, 2019', price: '$5', mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1451.0372114038819!2d-79.79597391288735!3d43.3336317012666!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882c9e281727943d%3A0xc3d8e7673433d0df!2s536+Bridgman+Ave%2C+Burlington%2C+ON+L7R+2V4!5e0!3m2!1sen!2sca!4v1545519463987" }
     ],
     collage: [
       { path: 'img/dates/group1.jpg', alt: 'Hidden Era Group Shot' },
@@ -21,18 +20,22 @@ include ../components/mixins
     ],
   }
 
-section.dates
+section.dates.section
     +sectionHeading('#dates', 'Get Tickets Today')
-    ul.dates__shows
-      each show in dates.listings
-        li.dates__show= `#[span ${show.date}] ${show.venue}`
-          ul.dates__show__info
-            li.dates__show__text= show.date
-            li.dates__show__text= show.venue
-            li.dates__show__text= show.show
-            li.dates__show__text= show.price
-            button.dates__cta(data-date= show.date data-venue= show.venue data-show= show.show data-price= show.price) Buy Ticket
+    .dates__body
+      ul.dates__shows
+        each show in dates.listings
+          li.dates__show= show.venue
+            span= show.date
+            ul.dates__show__info
+              iframe(src= show.mapUrl )
+              li.dates__show__date= show.date
+              li.dates__show__venue= show.venue
+              li.dates__show__show= show.show
+              li.dates__show__price= show.price
+              button.dates__cta(data-date= show.date data-venue= show.venue data-show= show.show data-price= show.price) Buy Ticket
 
-    .dates__collage
-      +collagePic(dates.collage)
+      .dates__collage
+        each img in dates.collage
+          img(class= "dates__img" src= img.path alt= img.alt)
 
