@@ -4,54 +4,60 @@
   padding: 0 5vh;
 
   &__members {
-    @include flexin(space-evenly);
+    @include flexin;
   }
 
   &__member {
-    max-width: 25vw;
-    overflow: hidden;
     @include redOutline;
+    @include flexin(center, center, column);
+    max-width: 30vh;
+    overflow: hidden;
   }
 
   &__media {
-    height: 30vh;
-    width: 30vh;
     position: relative;
+    height: 35vh;
+    width: 30vh;
   }
 
   &__pic {
-    height: auto;
+    height: 100%;
     width: 100%;
-    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%)
+    object-fit: cover;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
   }
 
   &__name,
   &__instrument {
     position: absolute;
+    border: 1px solid var(--color-red-primary);
+    background: rgba(0,0,0,.75);
+    padding: 1vh;
   }
 
   &__name {
+    left: 2.5vh;
     top: 2.5vh;
-    right: -2.5vh;
   }
 
   &__instrument {
-    top: 5vh;
-    right: 0;
+    right: 2.5vh;
+    bottom: 5vh;
   }
 
   &__caption {
-    background-color: var(--color-white);
-    top: 0;
-    left: 30vh;
+    background-color: rgba(255, 255, 255, .4);
+    margin-top: -5.25vh;
   }
 
   &__brands {
-    @include flexin;
+    @include flexin(center, flex-end, column, nowrap);
+    height: 35vh;
+    width: 30vh;
 
     & img {
       height: 50%;
-      width: auto;
+      width: 100%;
     }
   }
 }

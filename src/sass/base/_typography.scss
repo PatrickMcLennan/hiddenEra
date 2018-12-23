@@ -100,3 +100,9 @@
   }
 }
 
+.aboutUs {
+  @include latoWhite;
+  text-transform: uppercase;
+  letter-spacing: .35rem;
+  font-size: 2rem;
+}
