@@ -68,10 +68,6 @@
       margin-bottom: 2.5vh;
     }
 
-    // &:not(:first-child) {
-    //   display: none;
-    // }
-
     &__header {
       @include flexin(space-between, center, row, nowrap);
       height: 25vh;

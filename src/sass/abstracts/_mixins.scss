@@ -28,6 +28,11 @@
     border-bottom: 1px solid white;
   }
 }
+@mixin redOutline {
+  border: 1px solid var(--color-white);
+  outline-offset: .5vh;
+  outline: 1px solid var(--color-red-primary);
+}
 
 // TYPOGRAPHY
 @mixin plainText {
