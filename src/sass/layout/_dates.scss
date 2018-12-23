@@ -8,22 +8,61 @@
   &__shows {
     color: white;
     @include flexin(space-evenly, flex-start, column);
+    padding: 0 1.5vw;
   }
 
   &__show {
     position: relative;
-    margin: 4vh 0;
+    margin: 2vh 0;
     border: 1px solid red;
-    padding: 1vh 2vw 1vh 1vw;
+    padding: 2vh 3.5vw 2vh 1vw;
     cursor: pointer;
+
+    & span {
+      position: absolute;
+      top: calc(100% + 1vh);
+      right: -10%;
+    }
+
+    &__info > * {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+
+    &:hover .dates__show__info,
+    .dates__show__info:hover{
+      @include flexin(center, center, column);
+      z-index: 3;
+    }
+
+    &:hover .dates__show__info > *  {
+      transform: translateX(0);
+      opacity: 1;
+    }
   }
 
   &__show__info {
     display: none;
+    position: absolute;
+    top: -200%;
+    left: 100%;
+    transform-origin: left;
+    border: 1px solid white;
+    padding: 2vh;
+    transition: all .5s ease-in-out;
+    background: var(--background-black);
+
+    & iframe {
+      margin-bottom: 2vh;
+    }
+
+    & > *:not(:first-child),
+    & > *:not(:last-child) {
+      margin: 1vh 0;
+    }
   }
   &__collage {
     position: relative;
-    width: 40vw;
     flex: 1;
   }
 
@@ -46,7 +85,6 @@
 }
 
 $imgTops: 0% 10% 20% 30% 40% 50%;
-
 @for $position from 1 through length($imgTops) {
   .dates__img:nth-child(#{$position}) {
     top: nth($imgTops, $position);
@@ -55,7 +93,6 @@ $imgTops: 0% 10% 20% 30% 40% 50%;
 }
 
 $rotateRow: -20deg -15deg -10deg -5deg 0deg 5deg 10deg 15deg;
-
 @for $rotation from 1 through length($rotateRow) {
   .dates__table__row:nth-child(#{$rotation}) {
     transform: rotateY(nth($rotateRow, $rotation)) translateY(100%);
