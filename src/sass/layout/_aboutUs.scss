@@ -4,20 +4,21 @@
   padding: 0 5vh;
 
   &__members {
-    @include flexin;
+    @include flexin(space-evenly, space-evenly);
   }
 
   &__member {
     @include redOutline;
     @include flexin(center, center, column);
-    max-width: 30vh;
+    display: inline-flex;
     overflow: hidden;
+    margin: 1.5vh 0;
   }
 
   &__media {
     position: relative;
-    height: 35vh;
-    width: 30vh;
+    height: 30vh;
+    width: 25vh;
   }
 
   &__pic {
@@ -46,14 +47,15 @@
   }
 
   &__caption {
-    background-color: rgba(255, 255, 255, .4);
+    background-color: rgba(255, 255, 255, .5);
     margin-top: -5.25vh;
+    padding: 2.75vh 0;
   }
 
   &__brands {
     @include flexin(center, flex-end, column, nowrap);
-    height: 35vh;
-    width: 30vh;
+    height: 20vh;
+    width: 25vh;
 
     & img {
       height: 50%;

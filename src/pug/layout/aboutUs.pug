@@ -11,12 +11,11 @@ include ../components/mixins
     ]
   }
 
-- const { members } = aboutUs
 
 section.aboutUs
   +sectionHeading('#aboutUs', "We haven't aged a day")
 
-  .aboutUS__members
+  .aboutUs__members
     each member in aboutUs.members
       figure.aboutUs__member
         .aboutUs__media
