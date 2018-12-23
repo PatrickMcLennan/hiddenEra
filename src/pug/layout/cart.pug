@@ -36,7 +36,7 @@ include ../components/mixins
 - const { heading, form, bluRay } = cart
 - const { address, billing } = form
 
-section.cart
+section.cart.section
   .cart__heading
     +sectionHeading('#cart','cart')= heading
 
@@ -44,8 +44,8 @@ section.cart
 
     form.cart__form.form
       .form__splash
-        h6.form__heading You have #[span.form__splash__total 0] items in your Cart
-        button.form__splash__button.form__next__button  Begin Checkout
+        h6.form__splash__heading You have #[span.form__splash__total 0] items in your Cart
+        button.form__splash__button.form__nextButton  Begin Checkout
       .form__customerInfo
         +formInputs(address, 'Proceed to Billing')
       .form__billing
@@ -59,20 +59,6 @@ section.cart
           -const patbill = ['492732932028472', '654', 'Patrick McLennan']
           each i in patbill
             p i
-        button.form__next__button Complete Payment
+        button.form__nextButton Complete Payment
       .form__success
         h6.form__heading Success!  We have your money.  Thanks, idiot.
-
-- const { headingPrimary, headingSecondary, price, text, cta, img } = bluRay
-
-    .cart__bluRay
-      h6.bluRay__header= headingPrimary
-      p.bluRay__text= text
-      fiure.bluRay__figure
-        .bluRay__media
-          img.bluRay__img(src= img.path alt= img.alt)
-        .bluRay__figcaption
-          h6.bluRay__ficaption__text= price
-      h6.bluRay__price= headingSecondary
-      button.bluRay__cta= cta
-

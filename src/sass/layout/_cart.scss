@@ -1,0 +1,41 @@
+.cart {
+  background-image: linear-gradient(to right bottom, rgba(21, 21, 21, 1), lighten(rgba(21, 21, 21, 1), 5%));
+
+  &__body {
+    @include flexin;
+  }
+}
+
+.form {
+  @include flexin(center, center, row, nowrap);
+  @include redOutline;
+  height: 50vh;
+  width: 75vw;
+  overflow: hidden;
+
+  &__splash,
+  &__customerInfo,
+  &__billing,
+  &__finalize,
+  &__success {
+    @include flexin(space-evenly, center, column);
+    height: 100%;
+    width: 100%;
+    flex: 0 0 100%;
+  }
+
+  & > * {
+    transform: translateX(200%);
+  }
+
+  &__nextButton {
+    @include redOutline;
+    padding: 1vh 2vh;
+  }
+
+  &__splash {
+    @include flexin(space-evenly, center, column);
+    height: 100%;
+    width: 100%;
+  }
+}

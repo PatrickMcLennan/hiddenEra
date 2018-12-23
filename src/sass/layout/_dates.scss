@@ -18,8 +18,9 @@
     padding: 2vh 3.5vw 2vh 1vw;
     cursor: pointer;
     background: var(--background-black);
-    animation: var(--animation-duration) ease-out forwards dates__shows;
+    animation: 1.25s ease-out forwards dates__shows;
     opacity: 0;
+    z-index: 10;
 
     & span {
       position: absolute;
@@ -27,11 +28,7 @@
       right: -10%;
       padding: 1.25vh 0;
     }
-
-    &:hover .dates__show__info > * {
-      transform: translateY(0);
-      opacity: 1;
-    }
+  }
 
     &::before {
       content: '';
@@ -43,7 +40,6 @@
       width: 1px;
       background-color: var(--color-white);
     }
-  }
 
   &__show__info {
     @include flexin(center, center, column);
@@ -57,6 +53,7 @@
     left: calc(100% + 2.5vw);
     opacity: 0;
     transition: all .5s ease-out;
+    z-index: 20;
 
     & > * {
       transform: translateY(-100%);
@@ -113,6 +110,11 @@
   visibility: visible;
   opacity: 1;
   left: calc(100% - 2.5vw);
+
+  & > * {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 @for $i from 1 through 6 {
@@ -120,7 +122,6 @@
     transition: all var(--animation-duration) ease-out calc(.075s * #{$i});
   }
 }
-
 
 $imgTops: 0% 15% 30% 45% 60% 75%;
 $imgRights: 0% 2.5% 5% 7.5% 10% 12.5%;

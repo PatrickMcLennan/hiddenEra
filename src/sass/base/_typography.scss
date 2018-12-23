@@ -106,3 +106,29 @@
   letter-spacing: .35rem;
   font-size: 2rem;
 }
+
+.form {
+  @include latoWhite;
+  text-transform: uppercase;
+  text-align: center;
+
+  &__nextButton {
+    @include latoWhite;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+  }
+
+  &__splash {
+
+    &__heading {
+      font-size: 3rem;
+      font-weight: 100;
+      letter-spacing: .35rem;
+    }
+
+    &__total {
+      font-weight: 300;
+    }
+  }
+}
