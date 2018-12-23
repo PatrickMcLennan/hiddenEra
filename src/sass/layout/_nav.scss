@@ -46,7 +46,7 @@ $navLiDelay: .05s;
 
 @for $navLi from 1 through 4 {
   .nav:hover .nav__item:nth-child(#{$navLi}) {
-    animation: calc(var(--animation-duration) / 6) ease-in-out forwards headerSpan;
+    animation: var(--animation-duration) ease-in-out forwards headerSpan;
     animation-delay: calc(#{$navLiDelay} * calc(#{$navLi}) * 3);
   }
 }
