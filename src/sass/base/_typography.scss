@@ -100,33 +100,3 @@
   }
 }
 
-.aboutUs {
-
-  &__caption__text {
-    @include latoWhite(300);
-    text-transform: uppercase;
-    letter-spacing: .45rem;
-    font-size: 2.5rem;
-    line-height: 1.2;
-  }
-
-  &__member {
-
-    &__name {
-      @include latoWhite;
-      text-transform: uppercase;
-      letter-spacing: .25rem;
-      background: rgba(0,0,0,1);
-      padding: .5vh;
-      text-align: center;
-      font-size: 4rem;
-    }
-
-    &__instrument {
-      @include latoWhite(300);
-      text-transform: uppercase;
-      font-size: 5rem;
-      letter-spacing: .6rem;
-    }
-  }
-}

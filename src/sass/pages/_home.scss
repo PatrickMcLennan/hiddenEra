@@ -1,5 +1,5 @@
 .section {
-  padding: calc(var(--padding-section-header-v) / 2) 0 var(--padding-section-header-v) 0;
+  padding: 0 0 var(--padding-section-header-v) 0;
 
   &__header {
     padding: var(--padding-section-header-v) var(--padding-section-header-h);
@@ -14,7 +14,7 @@
       width: 40%;
       background-color: var(--color-red-primary);
       position: absolute;
-      animation: var(--animation-duration) ease-in-out forwards spanGrow;
+      animation: var(--animation-duration-sectionHeader) ease-in-out forwards spanGrow;
     }
 
     &::before {

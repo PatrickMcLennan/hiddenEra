@@ -21,10 +21,10 @@
 @mixin sectionGlow($placement) {
   z-index: 2;
   @if $placement == top {
-    animation: var(--animation-duration) ease-in-out forwards sectionGlowTop;
+    animation: var(--animation-duration-sectionGlow) ease-in-out forwards sectionGlowTop;
     border-top: 1px solid white;
   } @else if $placement == bottom {
-    animation: var(--animation-duration) ease-in-out forwards sectionGlowBottom;
+    animation: var(--animation-duration-sectionGlow) ease-in-out forwards sectionGlowBottom;
     border-bottom: 1px solid white;
   }
 }

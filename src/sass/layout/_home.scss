@@ -27,7 +27,7 @@
       width: 90%;
       background-color: var(--color-red-primary);
       transform-origin: 100%;
-      animation: var(--animation-duration) ease-in-out forwards spanGrow;
+      animation: var(--animation-duration-home) ease-in-out forwards spanGrow;
     }
   }
 
@@ -72,7 +72,7 @@ $headerSpanDelay: .125s;
 @for $span from 1 through 19 {
   .home__heading__primary span:nth-child(#{$span}) {
     padding: 1rem;
-    animation: calc(var(--animation-duration) / 2) ease-in-out forwards headerSpan;
+    animation: calc(var(--animation-duration-home) / 2) ease-in-out forwards headerSpan;
     animation-delay: calc(#{$headerSpanDelay} * #{$span});
     @include homeText(0, -100%)
   }
@@ -81,7 +81,7 @@ $headerSpanDelay: .125s;
 @for $span from 1 through 4 {
   .home__heading__secondary span:nth-child(#{$span}) {
     @include homeText(0, 100%);
-    animation: calc(var(--animation-duration) / 2) ease-in-out forwards headerSpan;
+    animation: calc(var(--animation-duration-home) / 2) ease-in-out forwards headerSpan;
     animation-delay: calc((#{$headerSpanDelay} * #{$span}) * 4.75);
   }
 }

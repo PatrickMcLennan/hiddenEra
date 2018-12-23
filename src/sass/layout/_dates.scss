@@ -13,13 +13,13 @@
 
   &__show {
     position: relative;
-    z-index: 2;
     margin: 2vh 0;
     border: 1px solid red;
     padding: 2vh 3.5vw 2vh 1vw;
     cursor: pointer;
     background: var(--background-black);
     animation: var(--animation-duration) ease-out forwards dates__shows;
+    animation-delay: 1s;
     transform-style: preserve-3d;
     transform-origin: left;
 
@@ -28,6 +28,22 @@
       top: 100%;
       right: -10%;
       padding: 1.25vh 0;
+    }
+
+    &:hover .dates__show__info > * {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 10%;
+      left: -.5vw;
+      height: 80%;
+      width: 1px;
+      background-color: var(--color-white);
     }
   }
 
@@ -39,6 +55,15 @@
     padding: 2vh;
     background: var(--background-black);
     overflow: hidden;
+    visibility: hidden;
+    left: calc(100% + 2.5vw);
+    opacity: 0;
+    transition: all .5s ease-out;
+
+    & > * {
+      transform: translateY(-100%);
+      opacity:0;
+    }
 
     & > *:not(:first-child)::after {
       content: '';
@@ -56,9 +81,15 @@
     }
   }
 
+  &__cta {
+    border: 1px solid var(--color-white);
+    padding: .5vh 1vw 0 1vw;
+  }
+
   &__collage {
     position: relative;
     flex: 1;
+    margin: 0 1.5vw;
   }
 
   &__img {
@@ -80,28 +111,12 @@
   }
 }
 
-.dates__show__info {
-  visibility: hidden;
-  left: calc(100% + 2.5vw);
-  opacity: 0;
-  transition: all .5s ease-out;
-}
 .dates__show:hover .dates__show__info {
   visibility: visible;
   opacity: 1;
   left: calc(100% - 2.5vw);
-  z-index: 3;
 }
 
-.dates__show__info > * {
-  transform: translateY(-100%);
-  opacity:0;
-  z-index: 3;
-}
-.dates__show:hover .dates__show__info > * {
-  transform: translateY(0);
-  opacity: 1;
-}
 @for $i from 1 through 6 {
   .dates__show__info > *:nth-child(#{$i}) {
     transition: all var(--animation-duration) ease-out calc(.075s * #{$i});
@@ -109,31 +124,16 @@
 }
 
 
-$imgTops: 0% 10% 20% 30% 40% 50%;
+$imgTops: 0% 15% 30% 45% 60% 75%;
+$imgRights: 0% 2.5% 5% 7.5% 10% 12.5%;
 @for $position from 1 through length($imgTops) {
   .dates__img:nth-child(#{$position}) {
     top: nth($imgTops, $position);
-    right: 0%;
+    right: nth($imgRights, $position);
   }
 }
-@for $i from 1 through 7 {
-  .dates__show:nth-child(#{i}) {
-    animation-delay: calc(.075s * #{$i});
-  }
-}
-// $showInfoDelay: .125s;
-// @for $i from 1 through 11 {
-//   .dates__show:hover .dates__show__info:nth-child(#{i}) {
-//     transform: translateX(0) opacity(1);
-//     transition: all .75s ease-out;
-//     transition-delay: calc(#{$showInfoDelay} * #{$i});
-//   }
-// }
-
-// $rotateRow: -20deg -15deg -10deg -5deg 0deg 5deg 10deg 15deg;
-// @for $rotation from 1 through length($rotateRow) {
-//   .dates__table__row:nth-child(#{$rotation}) {
-//     transform: rotateY(nth($rotateRow, $rotation)) translateY(100%);
-//     animation-delay: calc(var(--animation-duration) / #{$rotation});
+// @for $i from 1 through 7 {
+//   .dates__show:nth-child(#{i}) {
+//     animation-delay: calc(5s * #{$i});
 //   }
 // }

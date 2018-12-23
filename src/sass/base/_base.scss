@@ -22,3 +22,11 @@ a,
 a:visited {
   text-decoration: none;
 }
+button,
+button:visited {
+  @include latoWhite;
+  border: none;
+  background: none;
+  color: inherit;
+  font-family: inherit;
+}

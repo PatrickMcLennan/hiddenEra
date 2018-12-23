@@ -16,23 +16,14 @@ include ../components/mixins
 section.aboutUs
   +sectionHeading('#aboutUs', "We haven't aged a day")
 
-  .aboutUs__memberIcons
-    each figure in members
-      figure.aboutUs__figure
-        .aboutUs__figure__media
-          img(src= figure.img alt= figure.name class="aboutUs__figure__img")
-        figcaption.aboutUs__figure__caption
-          h6.aboutUs__caption__text= figure.name
-
-  .aboutUs__memberInfo
-    each member in members
+  .aboutUS__members
+    each member in aboutUs.members
       figure.aboutUs__member
-        .aboutUs__member__header
-          img.aboutUs__member__img(src= member.img alt= member.name)
-          h5.aboutUs__member__name= member.name
-        figcaption.aboutUs__member__caption
-          h6.aboutUs__member__instrument= member.instrument
-        .aboutUs__member__equipment
-          if member.equipment.length >= 1
+        .aboutUs__media
+          img.aboutUs__pic(src= member.img alt= member.name)
+          h4.aboutUs__name= member.name
+          h6.aboutUs__instrument= member.instrument
+        .aboutUs__caption
+          .aboutUs__brands
             each img in member.equipment
-              img.aboutUs__member__brand(src= member.equipment[img])
+              img(src= img)

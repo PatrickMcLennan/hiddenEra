@@ -1,96 +1,57 @@
 .aboutUs {
-  @include flexin;
   @include sectionGlow(top);
   @include bgImg(var(--bg-img-aboutUs));
-  padding: 0 2.5vw;
+  padding: 0 5vh;
 
-  &__memberIcons {
+  &__members {
     @include flexin(space-evenly);
-    flex: 0 1 50%;
-  }
-
-  &__figure {
-    @include flexin(space-evenly, center, column, nowrap);
-    position: relative;
-    margin: 2.5vh;
-    outline-offset: .5vh;
-    overflow: hidden;
-    transition: var(--img-outline);
-
-    &__media {
-      height: 20rem;
-      width: 20rem;
-      cursor: pointer;
-    }
-
-    &__img {
-      height: 100%;
-      width: 100%;
-      object-fit: cover;
-      border: 1px solid var(--color-white);
-    }
-
-    &__caption {
-      position: absolute;
-      bottom: 0;
-      right: -100%;
-      opacity: 0;
-      width: 100%;
-      transition: var(--img-outline);
-      padding: 1.25vh;
-      background: rgba(0, 0, 0, .5);
-      text-align: right;
-      cursor: pointer;
-    }
-
-    &:hover {
-      outline: .5rem solid var(--color-red-primary);
-      transform: scale(1.05);
-    }
-
-    &:hover .aboutUs__figure__caption {
-      right: 0%;
-      opacity: 1;
-    }
-  }
-
-  &__memberInfo {
-    flex: 0 1 50%;
   }
 
   &__member {
-    @include flexin(space-evenly, center, column);
-    flex: 1;
+    max-width: 25vw;
+    overflow: hidden;
+    @include redOutline;
+  }
+
+  &__media {
+    height: 30vh;
+    width: 30vh;
+    position: relative;
+  }
+
+  &__pic {
+    height: auto;
+    width: 100%;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%)
+  }
+
+  &__name,
+  &__instrument {
+    position: absolute;
+  }
+
+  &__name {
+    top: 2.5vh;
+    right: -2.5vh;
+  }
+
+  &__instrument {
+    top: 5vh;
+    right: 0;
+  }
+
+  &__caption {
+    background-color: var(--color-white);
     top: 0;
-    left: 0;
+    left: 30vh;
+  }
 
-    & > * {
-      margin-bottom: 2.5vh;
-    }
+  &__brands {
+    @include flexin;
 
-    &__header {
-      @include flexin(space-between, center, row, nowrap);
-      height: 25vh;
-      flex: 1;
-    }
-
-    &__header img {
-      height: 100%;
-      width: 40%;
-      object-fit: cover;
-      border: 1px solid var(--color-white);
-      outline-offset: .5vh;
-      outline: 1px solid var(--color-red-primary);
-    }
-
-    &__caption {
-      @include flexin(center, flex-end, column, nowrap);
-      margin: 2.5vh 0;
-    }
-
-    &__brand {
-      position: absolute;
-      z-index: 1003;
+    & img {
+      height: 50%;
+      width: auto;
     }
   }
 }
