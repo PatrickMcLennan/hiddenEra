@@ -19,9 +19,7 @@
     cursor: pointer;
     background: var(--background-black);
     animation: var(--animation-duration) ease-out forwards dates__shows;
-    animation-delay: 1s;
-    transform-style: preserve-3d;
-    transform-origin: left;
+    opacity: 0;
 
     & span {
       position: absolute;
@@ -75,8 +73,8 @@
     }
 
     & iframe {
-      width: 100%;
       @include redOutline;
+      width: 100%;
       margin-bottom: 2vh;
     }
   }
@@ -132,8 +130,8 @@ $imgRights: 0% 2.5% 5% 7.5% 10% 12.5%;
     right: nth($imgRights, $position);
   }
 }
-// @for $i from 1 through 7 {
-//   .dates__show:nth-child(#{i}) {
-//     animation-delay: calc(5s * #{$i});
-//   }
-// }
+@for $show from 1 through 7 {
+  .dates__show:nth-child(#{$show}) {
+    animation-delay: calc(.075s * calc(7 / #{$show}));
+  }
+}

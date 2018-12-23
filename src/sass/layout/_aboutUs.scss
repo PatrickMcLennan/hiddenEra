@@ -1,5 +1,6 @@
 .aboutUs {
   @include sectionGlow(top);
+  @include sectionGlow(bottom);
   @include bgImg(var(--bg-img-aboutUs));
   padding: 0 5vh;
 
