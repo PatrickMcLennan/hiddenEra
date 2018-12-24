@@ -9,24 +9,52 @@
   }
 
   &__member {
-    @include redOutline;
     @include flexin(center, center, column);
     display: inline-flex;
-    overflow: hidden;
-    margin: 1.5vh 0;
+    margin: calc(var(--member-height) / 4) 1.5vw;
+    position: relative;
+    min-height: var(--member-height);
+    max-height: var(--member-height);
+    width: var(--member-height);
   }
 
   &__media {
-    position: relative;
-    height: 30vh;
-    width: 25vh;
+    position: absolute;
+    transition: all .5s ease-in-out;
+    z-index: 2;
+    min-width: var(--member-height);
+    min-height: var(--member-height);
+    max-height: var(--member-height);
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    &:hover .dates__caption {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    &:hover .aboutUs__name {
+      left: -2.5vh;
+    }
+    &:hover .aboutUs__instrument {
+      right: -2.5vh;
+    }
+    &:hover ~ .aboutUs__caption img:first-child {
+      top: -45%;
+    }
+    &:hover ~ .aboutUs__caption img:last-child {
+      bottom: -45%;
+      transition-delay: calc(var(--animation-duration) / 3.5);
+    }
   }
 
   &__pic {
-    height: 100%;
+    height: var(--member-height);
     width: 100%;
     object-fit: cover;
-    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    cursor: pointer;
+    z-index: 3;
   }
 
   &__name,
@@ -35,6 +63,7 @@
     border: 1px solid var(--color-red-primary);
     background: rgba(0,0,0,.75);
     padding: 1vh;
+    transition: all var(--animation-duration) ease-out;
   }
 
   &__name {
@@ -48,19 +77,30 @@
   }
 
   &__caption {
-    background-color: rgba(255, 255, 255, .5);
-    margin-top: -5.25vh;
-    padding: 2.75vh 0;
-  }
-
-  &__brands {
     @include flexin(center, flex-end, column, nowrap);
-    height: 20vh;
+    height: var(--member-height);
     width: 25vh;
+    position: relative;
 
     & img {
-      height: 50%;
-      width: 100%;
+      @include redOutline;
+      position: absolute;
+      background-image: linear-gradient(to right bottom, rgba(255, 255, 255, .5) 25%, transparent 75%, rgba(255, 255, 255, .5));
+      height: calc(var(--member-height) / 3);
+      width: var(--member-height);
+      object-fit: cover;
+      padding: 1vh;
+      left: 1.25vh;
+      transition: all var(--animation-duration) ease-in-out;
+    }
+
+    & img:first-child {
+      top: 1.25vh;
+    }
+    & img:last-child {
+      transform-origin: bottom;
+      bottom: 1.25vh;
+      transition-delay: calc(var(--animation-duration) / 5)
     }
   }
 }

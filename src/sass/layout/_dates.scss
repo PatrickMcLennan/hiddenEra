@@ -58,6 +58,7 @@
     & > * {
       transform: translateY(-100%);
       opacity:0;
+      z-index: 20;
     }
 
     & > *:not(:first-child)::after {
