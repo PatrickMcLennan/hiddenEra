@@ -8,25 +8,24 @@ include ../components/mixins
     },
     logo: {
       links: [
-        { site: "https://github.com/PatrickMcLennan", path: 'img/svg/github.svg', alt: 'Patrick McLennans GitHub' },
-        { site: "https://www.linkedin.com/in/patrick-mclennan-42002a172/", path: 'img/svg/linkedin.svg', alt: 'Patrick McLennans LinkedIn' }
+        { site: "https://github.com/PatrickMcLennan", path: 'github', alt: 'Patrick McLennans GitHub' },
+        { site: "https://www.linkedin.com/in/patrick-mclennan-42002a172/", path: 'linkedin', alt: 'Patrick McLennans LinkedIn' }
       ]
     }
   }
 
-- const { legal, logo } = footer
-
 .footer__legal
-  p.footer__copyright= legal.copyright
-  p.footer__management= legal.management
-.footer__social
-  +socialMedia(socialIcons)
+  p.footer__copyright= footer.legal.copyright
+  p.footer__management= footer.legal.management
+//- .footer__social
+//-   +socialMedia(socialIcons)
 .footer__logo
   h5.logo
     span.logo__p P
     span.logo__m M
   ul.logo__links
-    each link in logo.links
+    each link in footer.logo.links
       li.logo__li
-        a.logo__link(src= logo.site target="_blank")
-          img.logo__img(src= logo.path alt= logo.alt)
+        a(href= link.site target="_blank")
+          svg.logo__svg
+            use(xlink:href= 'img/svg/sprite.svg#' + link.path)

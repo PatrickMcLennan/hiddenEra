@@ -140,3 +140,22 @@
     }
   }
 }
+
+.footer {
+  @include latoWhite;
+
+  &__legal {
+    font-size: 2rem;
+    letter-spacing: .15rem;
+    line-height: 1.2;
+  }
+}
+
+.logo {
+  @include latoWhite;
+  font-size: 5rem;
+
+  &__p {
+    font-size: 7rem;
+  }
+}
