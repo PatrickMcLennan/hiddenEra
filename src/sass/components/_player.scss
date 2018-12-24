@@ -1,0 +1,35 @@
+.player {
+  position: relative;
+  width: 5vw;
+  height: 5vh;
+  margin-left: auto;
+  margin-right: 1.5vw;
+  cursor: pointer;
+
+  &__svg {
+    height: 5vh;
+    width: 5vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    fill: var(--color-white);
+  }
+
+  &:hover &__iframe {
+    visibility: visible;
+    top: 110%;
+    opacity: 1;
+  }
+
+  &__iframe {
+    @include redOutline;
+    visibility: hidden;
+    position: absolute;
+    transform-origin: top;
+    top: -100%;
+    right: 0;
+    opacity: 0;
+    transition: all .5s ease-in-out;
+    height: 40vh;
+  }
+}

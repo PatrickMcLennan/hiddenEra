@@ -9,7 +9,7 @@
 .form {
   @include flexin(center, center, row, nowrap);
   @include redOutline;
-  height: 50vh;
+  height: 75vh;
   width: 75vw;
   overflow: hidden;
 
@@ -72,9 +72,8 @@
   }
 
   $startingTranslate: 200%;
-
   & > * {
-    transform: translateX(calc(#{$startingTranslate} - 100%));
+    transform: translateX($startingTranslate);
   }
 
   &__splash {
@@ -84,6 +83,9 @@
   }
 
   &__customerInfo {
-    background-image: linear-gradient(to right bottom, transparent 50%, var(--color-white) 51%, url('https://a3-images.myspacecdn.com/images02/125/e7f01710859b498c89f670792a4663f8/full.jpg') 52%);
+    @include formBackground(var(--cart-bg-custInfo));
+  }
+  &__billing {
+    @include formBackground(var(--cart-bg-billing));
   }
 }

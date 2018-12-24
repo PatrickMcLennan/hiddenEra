@@ -46,3 +46,11 @@
   font-family: 'Lato';
 }
 
+// FORM
+@mixin formBackground($url) {
+  background-image: linear-gradient(to right bottom,
+  rgba(0,0,0,1) 50%,
+  transparent),
+  $url;
+  background-size: cover;
+}

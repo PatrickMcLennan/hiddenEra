@@ -6,6 +6,7 @@
 
   &__members {
     @include flexin(space-evenly, space-evenly);
+    margin: 2.5vh 0;
   }
 
   &__member {
@@ -90,7 +91,7 @@
       width: var(--member-height);
       object-fit: cover;
       padding: 1vh;
-      left: 1.25vh;
+      left: -3.75vh;
       transition: all var(--animation-duration) ease-in-out;
     }
 
