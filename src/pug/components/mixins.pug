@@ -30,8 +30,8 @@ mixin homeHeading(array)
 
 //- FORM
 mixin formInputs(array, btnText)
-  button.form__back__button Back
+  button.form__backButton.btn Back
   each input in array
     label(for= input.id class='form__label')= input.placeholder
       input(class='form__input' id= input.id type=input.type)
-  button.form__nextButton= btnText
+  button.form__nextButton.btn= btnText

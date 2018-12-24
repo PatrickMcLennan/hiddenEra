@@ -18,24 +18,72 @@
   &__billing,
   &__finalize,
   &__success {
-    @include flexin(space-evenly, center, column);
     height: 100%;
     width: 100%;
     flex: 0 0 100%;
+    padding: 1vh 2vw;
+    position: relative;
   }
+
+  &__backButton,
+  &__nextButton {
+    position: absolute;
+    transform-origin: 100%;
+    right: 2vw;
+  }
+
+  &__backButton {
+    top: 2vw;
+  }
+  &__nextButton {
+    bottom: 2vw;
+  }
+
+  &__label,
+  &__customerInfo,
+  &__billing,
+  &__finalize,
+  &__success {
+    @include flexin(space-evenly, flex-start, column, nowrap);
+  }
+
+  &__label {
+    position: relative;
+    margin-left: 2vw;
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      height: 60%;
+      width: 1px;
+      top: 20%;
+      left: -2vw;
+      background-color: var(--color-white);
+    }
+  }
+
+  &__input {
+    transform: translateX(25%);
+    margin-top: 1vh;
+    background: none;
+    border: none;
+    border-bottom: 1px solid var(--color-red-primary);
+  }
+
+  $startingTranslate: 200%;
 
   & > * {
-    transform: translateX(200%);
-  }
-
-  &__nextButton {
-    @include redOutline;
-    padding: 1vh 2vh;
+    transform: translateX(calc(#{$startingTranslate} - 100%));
   }
 
   &__splash {
     @include flexin(space-evenly, center, column);
     height: 100%;
     width: 100%;
+  }
+
+  &__customerInfo {
+    background-image: linear-gradient(to right bottom, transparent 50%, var(--color-white) 51%, url('https://a3-images.myspacecdn.com/images02/125/e7f01710859b498c89f670792a4663f8/full.jpg') 52%);
   }
 }

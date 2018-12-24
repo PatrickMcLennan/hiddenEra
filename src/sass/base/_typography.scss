@@ -8,6 +8,13 @@
   }
 }
 
+.btn {
+  @include latoWhite;
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: .2rem;
+}
+
 
 .header {
 
@@ -112,13 +119,14 @@
   text-transform: uppercase;
   text-align: center;
 
-  &__nextButton {
-    @include latoWhite;
-    font-size: 2rem;
-    text-transform: uppercase;
-    letter-spacing: .2rem;
+  &__label {
+    font-size: 1.6rem;
+    letter-spacing: .75rem;
   }
-
+  &__input {
+    @include latoWhite;
+    font-size: 2.5rem;
+  }
   &__splash {
 
     &__heading {
