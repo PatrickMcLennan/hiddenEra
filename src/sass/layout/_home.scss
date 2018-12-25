@@ -13,6 +13,14 @@
     &__secondary {
       @include flexin(space-evenly);
       overflow: hidden;
+
+      @include respond(eight) {
+        @include flexin(space-evenly, center, row, nowrap, flex-end);
+      }
+
+      @include respond(four) {
+        @include flexin(flex-end, center, row, wrap, flex-end)
+      }
     }
   }
 
@@ -58,6 +66,12 @@
 
     &__col > * {
       transform: translateY(300%);
+    }
+
+    &__col:nth-child(2) {
+      @include respond(seven) {
+        display: none;
+      }
     }
   }
 }

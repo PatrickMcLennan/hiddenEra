@@ -1,17 +1,13 @@
 .player {
+  @include flexin;
   position: relative;
-  width: 5vw;
-  height: 5vh;
   margin-left: auto;
   margin-right: 1.5vw;
   cursor: pointer;
 
   &__svg {
-    height: 5vh;
-    width: 5vw;
-    position: absolute;
-    top: 0;
-    left: 0;
+    width: 3rem;
+    height: 3rem;
     fill: var(--color-white);
   }
 

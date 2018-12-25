@@ -1,0 +1,41 @@
+/*
+ 1em = 16px
+
+ breakpoint number correlates with ____hundred px wide
+*/
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == eighteen {
+    @media only screen and (max-width: 112.5em) { @content }; //600px / 16 (1em) = 37.5...
+  }
+  @if $breakpoint == sixteen {
+    @media only screen and (max-width: 100em) { @content }; //600px / 16 (1em) = 37.5...
+  }
+  @if $breakpoint == fourteen {
+    @media only screen and (max-width: 87.5em) { @content }; //600px / 16 (1em) = 37.5...
+  }
+  @if $breakpoint == twelve {
+    @media only screen and (max-width: 75em) { @content }; //600px / 16 (1em) = 37.5...
+  }
+  @if $breakpoint == eleven {
+    @media only screen and (max-width: 68.75em) { @content }; //600px / 16 (1em) = 37.5...
+  }
+  @if $breakpoint == ten {
+    @media only screen and (max-width: 62.5em) { @content };
+  }
+  @if $breakpoint == eight {
+    @media only screen and (max-width: 50em) { @content };
+  }
+  @if $breakpoint == seven {
+    @media only screen and (max-width: 43.75em) { @content };
+  }
+  @if $breakpoint == six {
+    @media only screen and (max-width: 37.5em) { @content };
+  }
+  @if $breakpoint == five {
+    @media only screen and (max-width: 31.25em) { @content };
+  }
+  @if $breakpoint == four {
+    @media only screen and (max-width: 25em) { @content };
+  }
+}

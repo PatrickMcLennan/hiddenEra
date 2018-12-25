@@ -24,6 +24,10 @@
     font-size: var(--fs-logo);
     text-align: right;
     letter-spacing: .5rem;
+
+    @include respond(four) {
+      font-size: calc(var(--fs-logo) / 2);
+    }
   }
 }
 
@@ -50,6 +54,19 @@
 
   &__heading__primary {
     font-size: 5rem;
+
+    @include respond(ten) {
+      font-size: 4rem;
+    }
+    @include respond(seven) {
+      font-size: 2.75rem;
+    }
+    @include respond(six) {
+      font-size: 2rem;
+    }
+    @include respond(five) {
+      font-size: 1rem;
+    }
   }
 
   &__heading__secondary {
@@ -68,24 +85,6 @@
   }
 }
 
-.review {
-  color: var(--color-white);
-
-  &__quote {
-    font-weight: 300;
-    font-style: italic;
-    font-size: 3rem;
-    letter-spacing: .15rem;
-  }
-
-  &__company {
-    font-size: 1.75rem;
-    text-transform: uppercase;
-    letter-spacing: .25rem;
-    @include latoWhite;
-  }
-}
-
 .dates {
 
   &__show {
@@ -97,12 +96,23 @@
     & span {
       @include latoWhite;
       font-style: italic;
+
+      @include respond(seven) {
+        font-size: 1.25rem;
+      }
+      @include respond(four) {
+        font-size: 1rem;
+      }
     }
 
     &__info {
       font-size: 1.5rem;
       letter-spacing: .4rem;
       white-space: nowrap;
+
+      @include respond(six) {
+        white-space: wrap;
+      }
     }
   }
 }

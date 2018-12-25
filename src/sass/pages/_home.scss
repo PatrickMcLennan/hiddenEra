@@ -21,11 +21,26 @@
       top: 25%;
       left: 15%;
       transform-origin: 100%;
+
+      @include respond(five) {
+        top: 17.75%;
+      }
     }
 
     &::after {
       bottom: 25%;
       right: 15%;
+
+      @include respond(five) {
+        bottom: 17.75%;
+      }
+    }
+
+    @include respond(fourteen) {
+      padding: calc(var(--padding-section-header-v) * 2) var(--padding-section-header-h);
+    }
+    @include respond(six) {
+      text-align: center;
     }
   }
 }

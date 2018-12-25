@@ -1,5 +1,5 @@
 .review {
-  @include flexin(center, center, row, nowrap);
+  @include flexin(space-evenly, center, row, nowrap);
   min-height: var(--review-height);
   padding: 0 5vw;
   animation: calc(var(--animation-duration) / 2) ease-out scrollReviewUp;
@@ -10,7 +10,7 @@
 
     &__logo {
       height: auto;
-      width: 100%;
+      width: 60%;
     }
   }
 }
