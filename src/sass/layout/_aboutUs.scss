@@ -7,6 +7,11 @@
   &__members {
     @include flexin(space-evenly, space-evenly);
     margin: 2.5vh 0;
+    width: 100vw;
+
+    @include respond(seven) {
+      @include flexin(center, center, column);
+    }
   }
 
   &__member {
@@ -17,6 +22,10 @@
     min-height: var(--member-height);
     max-height: var(--member-height);
     width: var(--member-height);
+
+    @include respond(seven) {
+      margin: calc(var(--member-height) / 4) 0;
+    }
   }
 
   &__media {
