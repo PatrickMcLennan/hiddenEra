@@ -5,6 +5,10 @@
   padding-top: calc(var(--header-height) + var(--padding-home-top));
   border-bottom: 1px solid white;
 
+  @include respond(four) {
+    padding-top: var(--padding-home-top);
+  }
+
   &__heading {
     text-align: center;
     padding: 1.5vh;
@@ -15,9 +19,11 @@
       overflow: hidden;
 
       @include respond(eight) {
-        @include flexin(space-evenly, center, row, nowrap, flex-end);
+        @include flexin(space-evenly, center, row, wrap, flex-end);
       }
-
+      @include respond(seven) {
+        @include flexin(flex-end, center, row, wrap, flex-end);
+      }
       @include respond(four) {
         @include flexin(flex-end, center, row, wrap, flex-end)
       }

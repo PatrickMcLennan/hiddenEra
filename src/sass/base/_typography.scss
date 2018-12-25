@@ -55,17 +55,23 @@
   &__heading__primary {
     font-size: 5rem;
 
-    @include respond(ten) {
-      font-size: 4rem;
+    @include respond(nine) {
+      font-size: 4.5rem;
+    }
+    @include respond(eight) {
+      font-size: 3.5rem;
     }
     @include respond(seven) {
-      font-size: 2.75rem;
+      font-size: 5rem;
     }
     @include respond(six) {
-      font-size: 2rem;
+      font-size: 4rem;
     }
     @include respond(five) {
-      font-size: 1rem;
+      font-size: 4rem;
+    }
+    @include respond(four) {
+      font-size: 3rem;
     }
   }
 

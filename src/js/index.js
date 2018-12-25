@@ -1,4 +1,6 @@
 import "../sass/main.scss";
+import DOM from "./dom/dom.js";
+import domStuff from "./dom/eventListeners.js";
 
 
-console.log('hello?');
+console.log(window.scrollY);

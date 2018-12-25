@@ -23,6 +23,9 @@
   @if $breakpoint == ten {
     @media only screen and (max-width: 62.5em) { @content };
   }
+  @if $breakpoint == nine {
+    @media only screen and (max-width: 56.25em) { @content };
+  }
   @if $breakpoint == eight {
     @media only screen and (max-width: 50em) { @content };
   }
