@@ -2,7 +2,7 @@
   @include sectionGlow(top);
   @include sectionGlow(bottom);
   @include bgImg(var(--bg-img-aboutUs));
-  padding: 0 5vh var(--padding-section-header-v) 0;
+  padding-bottom: var(--padding-section-header-v);
 
   &__members {
     @include flexin(space-evenly, space-evenly);

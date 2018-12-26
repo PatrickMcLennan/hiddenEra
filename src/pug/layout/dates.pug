@@ -28,12 +28,15 @@ section.dates.section
           li.dates__show= show.venue
             span= show.date
             ul.dates__show__info
-              iframe(src= show.mapUrl)
-              li.dates__show__date= show.date
-              li.dates__show__venue= show.venue
-              li.dates__show__show= show.show
-              li.dates__show__price= show.price
-              button.dates__cta.btn(data-date= show.date data-venue= show.venue data-show= show.show data-price= show.price) Buy Ticket
-      each img in dates.collage
-        img(class= "dates__img" src= img.path alt= img.alt)
+                .dates__show__media
+                  iframe(src= show.mapUrl)
+                .dates__show__text
+                  li.dates__show__date= show.date
+                  li.dates__show__venue= show.venue
+                  li.dates__show__show= show.show
+                  li.dates__show__price= show.price
+                  button.dates__cta.btn(data-date= show.date data-venue= show.venue data-show= show.show data-price= show.price) Buy Ticket
+      .dates__collage
+        each img in dates.collage
+          img(class= "dates__img" src= img.path alt= img.alt)
 
