@@ -3,13 +3,14 @@
   position: relative;
   flex: 0 0 5vw;
   cursor: pointer;
-  padding: 1.5vh 1.5vh;
+  padding: 1vh 1vh;
   z-index: 9999;
 
   &__span {
     background-color: var(--color-white);
     height: 2px;
     width: 3rem;
+    padding: 1px;
 
     &:not(:first-child) {
       margin-top: 1rem;

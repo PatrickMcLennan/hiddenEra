@@ -1,22 +1,17 @@
 .review {
   @include flexin(space-evenly, center, row, nowrap);
   min-height: var(--review-height);
+  max-height: var(--review-height);
   padding: 0 5vw;
-  animation: calc(var(--animation-duration) / 2) ease-out scrollReviewUp;
+  transition: all 3.25s ease-in-out;
 
-  &__media {
+  &__logo {
     height: 100%;
-    width: auto;
-
-    &__logo {
-      height: auto;
-      width: 60%;
-    }
+    width: 50%;
+    margin-right: 1vw;
   }
-}
-
-@for $i from 1 through 5 {
-  .review__star:nth-child(#{$i}) {
-    animation-delay: calc(var(--animation-delay) / #{$i})
+  &__star {
+    width: 3.5rem;
+    fill: white;
   }
 }

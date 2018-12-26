@@ -33,9 +33,7 @@ section.dates.section
               li.dates__show__venue= show.venue
               li.dates__show__show= show.show
               li.dates__show__price= show.price
-              button.dates__cta(data-date= show.date data-venue= show.venue data-show= show.show data-price= show.price) Buy Ticket
-
-      .dates__collage
-        each img in dates.collage
-          img(class= "dates__img" src= img.path alt= img.alt)
+              button.dates__cta.btn(data-date= show.date data-venue= show.venue data-show= show.show data-price= show.price) Buy Ticket
+      each img in dates.collage
+        img(class= "dates__img" src= img.path alt= img.alt)
 

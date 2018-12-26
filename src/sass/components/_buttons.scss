@@ -1,4 +1,13 @@
 .btn {
   @include redOutline;
   padding: 1vh 2vh;
+  transition: all .25s ease-in-out;
+
+  &:hover {
+    background: var(--color-white);
+    color: var(--color-black);
+  }
+  &:active {
+    transform: scale(.95);
+  }
 }

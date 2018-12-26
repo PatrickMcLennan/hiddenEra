@@ -65,13 +65,9 @@
     width: 100%;
 
     &__col {
-      @include flexin(center, center, column, nowrap);
+      @include flexin(flex-start, center, column, nowrap);
       flex: 1;
       height: var(--review-height);
-    }
-
-    &__col > * {
-      transform: translateY(300%);
     }
 
     &__col:nth-child(2) {

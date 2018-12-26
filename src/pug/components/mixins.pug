@@ -13,8 +13,7 @@ mixin figure(figClass, imgPath, imgAlt, capClass,capTextClass, capText)
 mixin review(array)
   each review in array
     .review
-      .review__media
-        img(class= "review__media__logo" src= review.path, alt= review.alt)
+      img(class= "review__logo" src= review.path, alt= review.alt)
       each i in review.rating
         svg.review__star
           use(xlink:href= 'img/svg/sprite.svg#' + i)
