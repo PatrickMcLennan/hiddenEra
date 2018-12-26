@@ -20,3 +20,5 @@ const scrollingReviews = (array, count, dirArray) => {
 
 scrollingReviews(DOM.home.reviewsL, 0, directionL);
 setTimeout(() => scrollingReviews(DOM.home.reviewsR, 0, directionR), reviewTime / 2);
+
+export default scrollingReviews;

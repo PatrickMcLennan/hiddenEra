@@ -8,7 +8,10 @@ const DOM = {
   dates: {
     section: document.querySelector('.dates'),
     sectionHeading: document.querySelector('#dates'),
-    addCartBtn: document.querySelectorAll('.dates__cta')
+    addCartBtns: [...document.querySelectorAll('.dates__cta')]
+  },
+  cart: {
+    cartCount: document.querySelector('.cartCount')
   }
 }
 

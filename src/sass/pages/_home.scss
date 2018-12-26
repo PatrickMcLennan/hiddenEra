@@ -1,5 +1,5 @@
 .section {
-  padding: 0 0 calc(var(--padding-section-header-v) * 2) 0;
+  padding: 0 0 var(--padding-section-header-v) 0;
 
   &__header {
     padding: var(--padding-section-header-v) var(--padding-section-header-h);

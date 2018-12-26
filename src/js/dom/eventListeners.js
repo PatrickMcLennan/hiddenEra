@@ -1,5 +1,3 @@
 import DOM from './dom.js';
+import cart from './../cart/cart.js';
 
-const windowBottom = window.scrollY + window.innerHeight;
-
-console.log(windowBottom);

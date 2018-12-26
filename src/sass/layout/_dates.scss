@@ -20,33 +20,33 @@
   }
 
   &__show {
-    flex: 0 1 50%;
+    flex: .25 0 60rem;
     position: relative;
     border: 1px solid red;
     padding: 2vh 3.5vw 2vh 1vw;
-    cursor: pointer;
     background: rgba(0,0,0,.75);
     animation: 1.25s ease-out forwards dates__shows;
     opacity: 0;
     z-index: 2;
-    margin-bottom: 20vh;
+    margin-bottom: 22vh;
 
     & span {
       position: absolute;
-      top: 45%;
+      top: 50%;
       right: 2.5%;
       padding: 1.25vh 0;
       white-space: nowrap;
     }
 
     &__info {
-      @include flexin(space-around, center, row);
+      @include flexin(space-around, center, row, nowrap);
       position: absolute;
       padding: 0 1vw;
       width: 95%;
       height: calc(20vh - 20%);
       top: 110%;
-      left: 2.5%;
+      transform-origin: 100%;
+      right: 0%;
       border: 1px solid white;
       background: rgba(0,0,0,.75);
       overflow: hidden;
@@ -54,20 +54,19 @@
     }
 
     &__media {
-      flex: 0 1 33.33333%;
+      @include flexin(space-evenly, center, column);
       margin-right: 1vw;
 
 
       & iframe {
         @include redOutline;
-        height: 100%;
-        margin: 2.5vh 0;
       }
     }
 
     &__text {
       @include flexin(space-evenly, center, column);
       max-width: 66.6666%;
+      text-align: center;
 
       & > *:not(:last-child)::after {
         content: '';
@@ -80,7 +79,21 @@
     }
   }
 
+  &__cta {
+    margin-top: 2.5vh;
+  }
+
   &__collage {
-    @include flexin(space-evenly)
+    @include flexin(center, center, row, wrap, center);
+    padding-right: 9vw;
+    padding-top: 9vh;
+
+    &__img {
+      object-fit: cover;
+      transform: scale(.9);
+      border: 1px solid var(--color-white);
+      margin-right: -9vw;
+      margin-top: -9vh;
+    }
   }
 }
