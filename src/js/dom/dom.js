@@ -12,6 +12,11 @@ const DOM = {
   },
   cart: {
     cartCount: [...document.querySelectorAll('.cartCount')]
+  },
+  form: {
+    splashTotal: document.querySelector('.form__splash__total'),
+    nextButtons: [...document.querySelectorAll('.form__nextButton')],
+    backButtons: [...document.querySelectorAll('.form__backButton')],
   }
 }
 

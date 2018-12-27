@@ -1,15 +1,7 @@
 import DOM from './../dom/dom.js';
+import Ticket from './ticket.js';
 
 const cart = [];
-
-class Ticket {
-  constructor(date, venue, show, price) {
-    this.date = date;
-    this.venue = venue;
-    this.show = show;
-    this.price = price;
-  }
-}
 
 const getShowInfo = i => {
   const get = info => i.getAttribute(info);
@@ -21,21 +13,21 @@ const getShowInfo = i => {
   return [date, venue, show, price]
 }
 
-// GET SHOW INFO ON CLICK
-const addToCart = () => {
-  const { addCartBtns } = DOM.dates;
-  const { cartCount } = DOM.cart;
-  addCartBtns.forEach(i => i.addEventListener('click', () => {
-    const show = getShowInfo(i)
-    const ticket = new Ticket(show[0], show[1], show[2], show[3]);
-    cart.push(ticket);
-    if (cart.length >= 1) {
-      cartCount.forEach( i => {
-        i.style.opacity = '1';
-        i.innerText = cart.length;
-      });
-    };
-  }))
+const updateDom = cartNum => {
+  DOM.cart.cartCount.forEach( i => {
+    i.innerText = `${cartNum}`;
+    i.style.opacity = '1';
+  });
+  DOM.form.splashTotal.innerText = `${cartNum}`;
 }
 
-export default addToCart();
+DOM.dates.addCartBtns.forEach(i => i.addEventListener('click', () => {
+  const show = getShowInfo(i);
+  const ticket = new Ticket(show[0], show[1], show[2], show[3]);
+  cart.push(ticket);
+  if (cart.length >= 1) { updateDom(cart.length) };
+  console.log(cart);
+  })
+)
+
+export default cart;

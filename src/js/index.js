@@ -1,4 +1,3 @@
 import "../sass/main.scss";
-import DOM from "./dom/dom.js";
-import scrollingReviews from "./dom/home.js";
-import addtoCart from "./cart/cart.js";
+import scrollingReviews from "./dom/reviews.js";
+import { addToCart, cart} from "./cart/cart.js";

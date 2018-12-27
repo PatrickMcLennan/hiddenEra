@@ -25,10 +25,8 @@
     border: 1px solid red;
     padding: 2vh 3.5vw 2vh 1vw;
     background: rgba(0,0,0,.75);
-    animation: 1.25s ease-out forwards dates__shows;
-    opacity: 0;
     z-index: 2;
-    margin-bottom: 22vh;
+    margin-bottom: 21vh;
 
     & span {
       position: absolute;
@@ -44,13 +42,14 @@
       padding: 0 1vw;
       width: 95%;
       height: calc(20vh - 20%);
-      top: 110%;
+      top: calc(100% + 1vh);
       transform-origin: 100%;
-      right: 0%;
+      right: -1.5%;
       border: 1px solid white;
       background: rgba(0,0,0,.75);
       overflow: hidden;
       z-index: 1;
+      animation: 1.25s ease-out forwards dates__shows;
     }
 
     &__media {
@@ -95,5 +94,11 @@
       margin-right: -9vw;
       margin-top: -9vh;
     }
+  }
+}
+
+@for $i from 1 through 7 {
+  .dates__show__info:nth-child(#{$i}) {
+    animation-delay: calc(.25s * #{$i});
   }
 }

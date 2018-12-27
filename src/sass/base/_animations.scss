@@ -39,11 +39,11 @@
 // DATES
 @keyframes dates__shows {
   0% {
-    transform: translateY(100%) rotateY(90deg);
+    transform: rotateY(90deg);
     opacity: 0;
   }
   100% {
-    transform: translateY(0) rotateY(0);
+    transform: rotateY(0);
     opacity: 1;
   }
 }
