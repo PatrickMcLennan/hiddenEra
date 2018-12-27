@@ -140,6 +140,10 @@
     font-size: 2.5rem;
   }
   &__splash {
+    @include latoWhite(300);
+    text-transform: uppercase;
+    font-size: 1.75rem;
+    letter-spacing: .6rem;
 
     &__heading {
       font-size: 3rem;
@@ -150,11 +154,18 @@
     &__total {
       font-weight: 300;
     }
+
+    &__ul {
+      @include latoWhite;
+    }
   }
 }
 
 .footer {
-  @include latoWhite;
+  @include latoWhite(300);
+  text-transform: uppercase;
+  font-size: 1.75rem;
+  letter-spacing: .6rem;
 
   &__legal {
     font-size: 2rem;

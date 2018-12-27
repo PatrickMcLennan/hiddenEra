@@ -2,7 +2,7 @@
   @include flexin(space-evenly, center, row, nowrap);
   min-height: var(--review-height);
   max-height: var(--review-height);
-  padding: 0 5vw;
+  width: 100%;
   transition: all 3.25s ease-in-out;
 
   &__logo {
