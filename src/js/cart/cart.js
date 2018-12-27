@@ -29,12 +29,13 @@ const addToCart = () => {
     const show = getShowInfo(i)
     const ticket = new Ticket(show[0], show[1], show[2], show[3]);
     cart.push(ticket);
-    if (cart.length >= 1) { cartCount.style.opacity = '1' };
-    cartCount.innertext = cart.length;
-    console.log(cart);
+    if (cart.length >= 1) {
+      cartCount.forEach( i => {
+        i.style.opacity = '1';
+        i.innerText = cart.length;
+      });
+    };
   }))
 }
 
-addToCart();
-
-export default cart;
+export default addToCart();

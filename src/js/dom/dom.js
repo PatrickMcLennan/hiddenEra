@@ -11,7 +11,7 @@ const DOM = {
     addCartBtns: [...document.querySelectorAll('.dates__cta')]
   },
   cart: {
-    cartCount: document.querySelector('.cartCount')
+    cartCount: [...document.querySelectorAll('.cartCount')]
   }
 }
 

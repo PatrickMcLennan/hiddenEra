@@ -20,7 +20,12 @@ nav.nav
     span.nav__logo__span
     span.nav__logo__span
   ul.nav__ul
-    each i in header.menu
-      li.nav__item
-        a.nav__link(href=i.url)= i.text
-
+    li.nav__item
+      a.nav__link(href='#home')= 'Home'
+    li.nav__item
+      a.nav__link(href='#dates')= 'Dates'
+    li.nav__item
+      a.nav__link(href='#aboutUs')= 'About Us'
+    li.nav__item
+      a.nav__link(href='#cart')= 'Cart'
+      span.cartCount
