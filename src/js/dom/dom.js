@@ -1,3 +1,4 @@
+
 const DOM = {
   home: {
     reviewsColL: document.querySelector('.home__reviews__col:nth-child(1)'),
@@ -14,6 +15,7 @@ const DOM = {
     cartCount: [...document.querySelectorAll('.cartCount')]
   },
   form: {
+    splash: document.querySelector('.form__splash'),
     splashTotal: document.querySelector('.form__splash__total'),
     nextButtons: [...document.querySelectorAll('.form__nextButton')],
     backButtons: [...document.querySelectorAll('.form__backButton')],

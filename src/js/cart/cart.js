@@ -14,19 +14,21 @@ const getShowInfo = i => {
 }
 
 const updateDom = cartNum => {
+  const { splashTotal, backButtons, nextButtons } = DOM.form;
   DOM.cart.cartCount.forEach( i => {
     i.innerText = `${cartNum}`;
     i.style.opacity = '1';
   });
-  DOM.form.splashTotal.innerText = `${cartNum}`;
+  splashTotal.innerText = `${cartNum}`;
+  backButtons.forEach(i => i.style.opacity = '1');
+  nextButtons.forEach(i => i.style.opacity = '1');
 }
 
 DOM.dates.addCartBtns.forEach(i => i.addEventListener('click', () => {
   const show = getShowInfo(i);
   const ticket = new Ticket(show[0], show[1], show[2], show[3]);
   cart.push(ticket);
-  if (cart.length >= 1) { updateDom(cart.length) };
-  console.log(cart);
+  updateDom(cart.length);
   })
 )
 
