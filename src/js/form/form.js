@@ -2,6 +2,7 @@ import DOM from './../dom/dom.js';
 import cart from './../cart/cart.js'
 
 let cartCount = cart.length;
+let formInfo;
 
   // SPLASH
 
@@ -36,13 +37,12 @@ const createUl = show => {
 }
 
 // LISTEN FOR NEW ITEM IN CART
-DOM.dates.addCartBtns.forEach(i => i.addEventListener('click', () => {
-  const newTicket = cart[cartCount];
-  let formInfo = newTicket === cart[0] ? createUl(newTicket) : appendChild(createLi(newTicket), document.querySelector('.form__splash__ul'));
-  cartCount = cart.length;
-  return formInfo;
-}))
+// DOM.dates.addCartBtns.forEach(i => i.addEventListener('click', () => {
+//   const newTicket = cart[cartCount];
+//   formInfo = newTicket === cart[0] ? createUl(newTicket) : appendChild(createLi(newTicket), document.querySelector('.form__splash__ul'));
+//   cartCount = cart.length;
+//   return formInfo;
+// }))
 
 export default formInfo;
 
-// ABILITY TO ADD OR REMOVE TICKETS
