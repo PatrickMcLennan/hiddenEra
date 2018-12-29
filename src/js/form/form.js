@@ -1,10 +1,9 @@
 import DOM from './../dom/dom.js';
 import cart from './../cart/cart.js'
-
-let cartCount = cart.length;
-let formInfo;
+import { create } from 'domain';
 
   // SPLASH
+
 
 const appendChild = (element, parent) => parent.appendChild(element);
 
@@ -13,7 +12,7 @@ const createSpans = array => {
   const spans = [];
   array.forEach(i => {
     const span = document.createElement('span');
-    span.classList.add('form__splash__span');
+    span.classList.add(`form__splash__${Object.keys(array)[i]}`);
     span.innerText = i;
     spans.push(span);
   })
@@ -25,6 +24,7 @@ const createLi = show => {
   listing.classList.add('form__splash__li');
   const spans = createSpans(data)
   spans.forEach(i => appendChild(i, listing));
+  appendChild(listing, document.querySelector('.form__splash__ul'));
   return listing;
 }
 const createUl = show => {
@@ -37,12 +37,10 @@ const createUl = show => {
 }
 
 // LISTEN FOR NEW ITEM IN CART
-// DOM.dates.addCartBtns.forEach(i => i.addEventListener('click', () => {
-//   const newTicket = cart[cartCount];
-//   formInfo = newTicket === cart[0] ? createUl(newTicket) : appendChild(createLi(newTicket), document.querySelector('.form__splash__ul'));
-//   cartCount = cart.length;
-//   return formInfo;
-// }))
+const splashUl = DOM.dates.addCartBtns.forEach(i => i.addEventListener('click', () => {
+  document.removeChild('.form__splash__ul');
+  cart.forEach(i => i === cart[0] ? createUl(i) : createLi(i));
+}))
 
-export default formInfo;
+export default splashUl;
 

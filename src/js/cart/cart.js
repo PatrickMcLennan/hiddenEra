@@ -23,15 +23,15 @@ const updateDom = cartNum => {
   nextButtons.forEach(i => i.style.opacity = '1');
 }
 const orgCart = (array, ticket) => {
-  array.unshift(ticket);
+  array.push(ticket);
   const sortedArr = array.sort((a, b) => a.date.localeCompare(b.date));
-  console.log(sortedArr);
+  return sortedArr;
 }
 
 
 DOM.dates.addCartBtns.forEach(i => i.addEventListener('click', () => {
   const show = getShowInfo(i);
-  const ticket = new Ticket(show[0], show[1], show[2], show[3]);
+  const ticket = new Ticket(show[0], show[1], show[2], show[3], show[4]);
   orgCart(cart, ticket);
   updateDom(cart.length);
   return cart;
@@ -39,3 +39,25 @@ DOM.dates.addCartBtns.forEach(i => i.addEventListener('click', () => {
 )
 
 export default cart;
+
+
+// network:
+//     ethernets:
+//         enp2s0f0:
+//             addresses: []
+//             dhcp4: true
+//     version: 2
+
+
+// auto enp0s3
+// iface enp0s3 inet static
+//         address 192.168.1.98
+//         netmask 255.255.255.0
+//         gateway 192.168.0.1
+//         dns-nameservers 8.8.8.8
+
+// /Users/patrickmclennan/Downloads
+
+// HEY - ONCE THE ISO ISS ON THE SERVER, INSTALL IT FROM THERE WITH THE ALTERED CODE FROM THE WEBPAGE ON THE LEFT -- CHANGE THE GRAPHIC, RAM, DIRECTORY, NETWORK BRIDGE <- GODSPEED
+
+// /home/patrick/ubuntu..
