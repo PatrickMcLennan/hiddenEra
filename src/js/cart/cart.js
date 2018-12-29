@@ -24,10 +24,15 @@ const updateDom = cartNum => {
 }
 const orgCart = (array, ticket) => {
   array.push(ticket);
-  const sortedArr = array.sort((a, b) => a.date.localeCompare(b.date));
-  return sortedArr;
+  const sortedArr = array.sort((a, b) => a.date.localeCompare(b.date))
+  const reducedArr = sortedArr.reduce((accum, show) => {
+    const date = show.date;
+    if (!accum[date]) accum[date] = [];
+    accum[date].push(show);
+    return accum;
+  }, []);
+  return reducedArr;
 }
-
 
 DOM.dates.addCartBtns.forEach(i => i.addEventListener('click', () => {
   const show = getShowInfo(i);

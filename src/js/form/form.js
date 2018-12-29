@@ -38,8 +38,8 @@ const createUl = show => {
 
 // LISTEN FOR NEW ITEM IN CART
 const splashUl = DOM.dates.addCartBtns.forEach(i => i.addEventListener('click', () => {
-  document.removeChild('.form__splash__ul');
   cart.forEach(i => i === cart[0] ? createUl(i) : createLi(i));
+  return splashUl;
 }))
 
 export default splashUl;
